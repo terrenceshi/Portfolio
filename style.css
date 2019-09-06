@@ -1,1 +1,20 @@
 <link rel="stylesheet" href="https://use.typekit.net/jqo0geg.css">
+
+@font-face {
+        font-family: "steelfish";
+        src: url("fonts/steelfish_bd.ttf") format("truetype"),
+
+}
+@font-face {
+        font-family: "Aileron";
+        src: url("fonts/Aileron-Regular.ttf") format("truetype"),
+
+}
+@font-face {
+        font-family: "expressway";
+        src: url("fonts/expressway rg.ttf") format("truetype"),
+}
+@font-face {
+        font-family: "Franklin Gothic Medium";
+        src: url("fonts/framd.ttf") format("truetype"),
+}
