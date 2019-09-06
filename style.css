@@ -19,3 +19,8 @@
         font-family: "Franklin Gothic Medium";
         src: url("Fonts/framd.ttf") format("truetype"),
 }
+h1{
+        font-family: 'Permanent Marker', cursive;
+        font-size: 100px;
+
+}
