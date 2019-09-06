@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='icon' href='assets/icon.png' type='image/x-icon'/>
+    <title>Terrence Shi</title>
+    <style>
+        @font-face {
+            font-family: "steelfish";
+            src: url("fonts/steelfish_bd.ttf") format("truetype"),
+
+        }
+        h1{
+            font-family: steelfish;
+            font-size: 100px;
+
+        }
+        h2{
+            font-family: Aileron;
+            font-size: 14px;
+            color: #696969;
+            font-weight: normal;
+            line-height: 260%;
+
+        }
+        .title
+        {
+          line-height: 40px;
+          text-align: center;
+
+        }
+
+        .image {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        a:visited
+        {
+            color: black;
+        }
+        a:link
+        {
+            color: black;
+        }
+
+        @keyframes appear
+        {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+        .pictures {
+          position: relative;
+          top: 20px;
+          display: inline-block;
+          text-align: center;
+          width: 110%;
+          margin-left: auto;
+          margin-right: auto;
+          
+          padding-bottom: 50%;
+          animation-name: appear;
+          animation-duration: 3s;
+
+        }
+        .art {
+          position: absolute;
+          width: 30%;
+          left: 46%;
+        }
+        .art:hover .overlay {
+          opacity: 0.8;
+        }
+
+        .bio {
+          position: absolute;
+          width: 30%;
+          left: 15%;
+        }
+        .bio:hover .overlay2 {
+          opacity: 0.8;
+        }
+
+        .music {
+          position: absolute;
+          width: 30%;
+          left: 15%;
+          transform: translate(-0%, 187.5%);
+        }
+        .music:hover .overlay3 {
+          opacity: 0.8;
+        }
+
+        .compsci {
+          position: absolute;
+          width: 30%;
+          left: 15%;
+          transform: translate(-0%,235%);
+        }
+        .compsci:hover .overlay4 {
+          opacity: 0.8;
+        }
+
+        .resume {
+          position: absolute;
+          width: 30%;
+          left: 46%;
+          transform: translate(-0%,337.5%);
+        }
+        .resume:hover .overlay5 {
+          opacity: 0.8;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #c44f2a;
+        }
+
+        .overlay2 {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #394052;
+        }
+
+        .overlay3 {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #7b2844;
+        }
+
+        .overlay4 {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #5850a7;
+        }
+
+        .overlay5 {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: #353130;
+        }
+
+        .text {
+          color: white;
+          font-size: 50px;
+          font-family: steelfish;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+
+        a.gray{
+            color: #696969;
+        }
+        .contact {
+            position: relative;
+            width: 90%;
+            column-count: 2;
+            column-gap: 15%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+
+        .logo {
+            width: 20px;
+            position: relative;
+            vertical-align: sub;
+            margin-right: 1%;
+        }
+
+        .bottom_sec {
+          animation-name: appear;
+          animation-duration: 3s;
+            
+          height: 145px;
+          background-color: #f4f4f4;
+          
+        }
+        .socials {
+            position: relative;
+            top: 12px;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class = "title">
+        <a href = "index.html"style="text-decoration: none" >
+            <h1>TERRENCE SHI</h1>
+        </a>
+    </div>
+
+    <div class="pictures">
+        <div class="art">
+          <a href = "art.html"><img src="assets/catTN.jpg" alt="Art" class="image">
+          <div class="overlay" >
+            <div class="text">Art</div>
+          </div>
+        </a></div>
+
+        <div class="bio">
+          <a href = "bio.html"><img src="assets/shadyTN.JPG" alt="Bio" class="image">
+          <div class="overlay2" >
+            <div class="text">Bio</div>
+          </div>
+        </a></div>
+
+        <div class="music">
+          <a href = "music.html"><img src="assets/jhinTN.jpg" alt="Music" class="image">
+          <div class="overlay3" >
+            <div class="text">Music</div>
+          </div>
+        </a></div>
+
+        <div class="compsci">
+          <a href = "cs.html"><img src="assets/interdisciplinaryTN.jpg" alt="CS" class="image">
+          <div class="overlay4" >
+            <div class="text">CS</div>
+          </div>
+        </a></div>
+
+        <div class="resume">
+          <a href = "resume.html"><img src="assets/patternsTN.jpeg" alt="Resume" class="image">
+          <div class="overlay5" >
+            <div class="text">Skills</div>
+          </div>
+          </a></div>
+
+    </div>
+
+    <div class = "bottom_sec" style = "text-align: center">
+        <div class = contact style = "text-align: left"><h2>
+            <img src="assets/email.png" class="logo" alt="email" class="image">terrenceshi@gmail.com<br>
+            <img src="assets/phone.png" class="logo" alt="phone" class="image">862-754-0573<br>
+            <img src="assets/address.png" class="logo" alt="addres" class="image">44 Oval Rd, Millburn, NJ<br>
+
+            <div class = "socials">
+                <img src="assets/fb.png" class="logo" alt="fb" class="image" >
+                <a href = "https://www.facebook.com/terrence.shi.9"style="text-decoration: none" class = "gray">
+                    fb.com/terrence.shi.9<br>
+                </a>
+                <img src="assets/linkedin.png" class="logo" alt="linkedin" class="image" >
+                <a href = "https://www.linkedin.com/in/tshi"style="text-decoration: none" class = "gray">
+                    linkedin.com/in/tshi<br>
+                </a>
+                <img src="assets/github.png" class="logo" alt="github" class="image" >
+                <a href = "https://www.github.com/terrenceshi"style="text-decoration: none" class = "gray">
+                    github.com/terrenceshi
+                </a>
+            </div>
+            </h2>
+        </div>
+
+    </div>
+    
+</body>
+</html>
