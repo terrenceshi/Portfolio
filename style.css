@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://use.typekit.net/jqo0geg.css">
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 
 @font-face {
         font-family: "steelfish";
@@ -25,13 +24,4 @@ h1{
         font-size: 80px;
         font-weight: normal;
 
-}
-@media only screen and (max-width: 820px) {
-    .title{
-        line-height: 420%;
-        margin-bottom: 15%;
-    }
-    h2{
-        line-height: 200%;
-    }
 }
