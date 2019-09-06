@@ -2,19 +2,19 @@
 
 @font-face {
         font-family: "steelfish";
-        src: url("fonts/steelfish_bd.ttf") format("truetype"),
+        src: url("Fonts/steelfish_bd.ttf") format("truetype"),
 
 }
 @font-face {
         font-family: "Aileron";
-        src: url("fonts/Aileron-Regular.ttf") format("truetype"),
+        src: url("Fonts/Aileron-Regular.ttf") format("truetype"),
 
 }
 @font-face {
         font-family: "expressway";
-        src: url("fonts/expressway rg.ttf") format("truetype"),
+        src: url("Fonts/expressway rg.ttf") format("truetype"),
 }
 @font-face {
         font-family: "Franklin Gothic Medium";
-        src: url("fonts/framd.ttf") format("truetype"),
+        src: url("Fonts/framd.ttf") format("truetype"),
 }
