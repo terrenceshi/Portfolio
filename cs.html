@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <meta charset="UTF-8">
     <link rel='icon' href='assets/icon.png' type='image/x-icon'/>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -56,11 +57,18 @@
           line-height: 50px;
           margin-right: 10%;
           margin-left: 10%;
-          padding-bottom: 7.5%;
+          padding-bottom: 5%;
           padding-top: 1.25%;
 
           animation-name: appear;
           animation-duration: 3s;
+        }
+        a-scene {
+          height: 70%;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 7.5%;
         }
         .combo{
             margin: 2.5%;
@@ -120,6 +128,7 @@
         }
         
     </style>
+    
 </head>
 <body>
 
@@ -130,13 +139,62 @@
     </div>
 
     <div class="content" style = "text-align: center">
-        <div style = "text-align: left">
-            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because I've taken introductionary java courses at high school, NJIT, and now at Georgia Tech, I'd consider myself extremely familiar with java. In high school, the highlight project was the Traveling Salesman Project. My partner and I had to calculate the shortest path to take in a neighborhood while reaching multiple destinations, as well as graphing the results and computing the costs. 
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At NJIT, in my CS114 class, there were various highlight projects including finding the zeroes of a cubic function using binary search; implementing addition, subtraction, and multiplication with extremely large numbers; implementing various heap and tree functions; and writing a calculator that took in strings.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Over the summer, I had an internship at ENVRMNT, an arm of Verizon. I learned docker to set up and maintain servers that ran kubernetes to test various applications the team had developed.</h2>
-        </div>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is my aframe project for LMC2700, where I recreated the car explosion
+        from the Godfather. The car model and smoke is by me, while the explosion and grass is downloaded from the internet.</h2>
         
     </div>
+    
+    <a-assets>
+        <a-asset-item id="sky" src="3dassets/sky.jpg"></a-asset-item>
+        
+        <a-asset-item id="car" src="3dassets/car.obj"></a-asset-item>
+        <a-asset-item id="carm" src="3dassets/car.mtl"></a-asset-item>
+        
+        <a-asset-item id="grass" src="3dassets/LowPolyGrass.obj"></a-asset-item>
+        <a-asset-item id="grassm" src="3dassets/LowPolyGrass.mtl"></a-asset-item>
+        
+        <a-asset-item id="fire" src="3dassets/55-1.obj"></a-asset-item>
+        <a-asset-item id="firem" src="3dassets/55-1.mtl"></a-asset-item>
+      </a-assets>
+    
+    <a-scene embedded>
+        <a-entity camera look-controls position="0 1.5 0" rotation="0 -50 0"></a-entity>
+        <a-sky src="#sky"></a-sky>
+        <a-plane position="0 0.5 -4" rotation="-90 0 0" width="20" height="20" color="#bba678"></a-plane>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+        
+        <a-entity light="color: #e1cb4f; intensity: 0.35; type: point" position="1 4 -3"></a-entity>
+        
+        <a-entity obj-model="obj: #car; mtl: #carm" position="1 0.5 -3.25" scale=".20 0.20 .20" rotation="0 190 0"></a-entity>
+        <a-entity obj-model="obj: #fire; mtl: #firem" position="1 1.5 -3" scale=".35 0.35 .35" rotation="0 0 60"></a-entity>
+        
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 4" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 2" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 0" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -2" scale="1 0.5 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -4" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -6" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -8" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -10" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 4" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 2" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 0" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 -2" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 -4" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 -6" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 -8" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-3 0.5 -10" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 4" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 2" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 0" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 -2" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 -4" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 -6" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 -8" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-5 0.5 -10" scale="1 0.45 .95"></a-entity>
+        
+    </a-scene>
 
     <div class = "bottom_sec" style = "text-align: center">
         <div class = contact style = "text-align: left"><h4>
