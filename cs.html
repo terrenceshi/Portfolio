@@ -57,7 +57,7 @@
           line-height: 50px;
           margin-right: 10%;
           margin-left: 10%;
-          padding-bottom: 5%;
+          padding-bottom: 2.5%;
           padding-top: 1.25%;
 
           animation-name: appear;
@@ -139,9 +139,64 @@
     </div>
 
     <div class="content" style = "text-align: center">
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects coming soon.</h2>
+        <div style = "text-align: left">
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is my aframe project for LMC2700, where I recreated the car explosion
+            from the Godfather. The car model is by me, while the explosion and grass is downloaded from the internet.</h2>
+        </div>
         
     </div>
+    
+    <a-assets>
+        <a-asset-item id="sky" src="3dassets/sky.jpg"></a-asset-item>
+        
+        <a-asset-item id="car" src="3dassets/car.obj"></a-asset-item>
+        <a-asset-item id="carm" src="3dassets/car.mtl"></a-asset-item>
+        
+        <a-asset-item id="grass" src="3dassets/LowPolyGrass.obj"></a-asset-item>
+        <a-asset-item id="grassm" src="3dassets/LowPolyGrass.mtl"></a-asset-item>
+        
+        <a-asset-item id="fire" src="3dassets/explode.obj"></a-asset-item>
+        <a-asset-item id="firem" src="3dassets/explode.mtl"></a-asset-item>
+      </a-assets>
+    
+    <a-scene embedded>
+        <a-entity camera look-controls wasd-controls position="0 1.5 0" rotation="0 -50 0"></a-entity>
+        <a-sky src="#sky"></a-sky>
+        <a-plane position="0 0.5 -4" rotation="-90 0 0" width="12.5" height="20" color="#bba678"material="shader: flat"></a-plane>
+        <a-entity light="type: ambient; color: #BBB; castShadow:true;"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.4; castShadow:true;" position="-0.5 1 1"></a-entity>
+        
+        <a-entity light="color: #bb8a3e; intensity: 2; type: point; castShadow:true;" position="3 4 -2.75"></a-entity>
+        
+        <a-entity obj-model="obj: #car; mtl: #carm" position="1 0.5 -3.25" scale=".20 0.20 .20" rotation="0 190 0"></a-entity>
+        <a-entity obj-model="obj: #fire; mtl: #firem" position="1 1.5 -3.25" scale=".3 0.3 .3" rotation="0 0 60"></a-entity>
+        
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 4" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 2" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 0" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -2" scale="1 0.5 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -4" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -6" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -8" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-1 0.5 -10" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 4" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 2" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 0" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 -2" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 -4" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 -6" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 -8" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-2.5 0.5 -10" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 4" scale="1 0.4 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 2" scale="1 0.3 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 0" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 -2" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 -4" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 -6" scale="1 0.35 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 -8" scale="1 0.45 .95"></a-entity>
+        <a-entity obj-model="obj: #grass; mtl: #grassm" position="-4 0.5 -10" scale="1 0.45 .95"></a-entity>
+        
+    </a-scene>
 
     <div class = "bottom_sec" style = "text-align: center">
         <div class = contact style = "text-align: left"><h4>
