@@ -2,26 +2,91 @@
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 @font-face {
-        font-family: "steelfish";
-        src: url("Fonts/steelfish_bd.ttf") format("truetype"),
+    font-family: "steelfish";
+    src: url("Fonts/steelfish_bd.ttf") format("truetype"),
 
 }
 @font-face {
-        font-family: "Aileron";
-        src: url("Fonts/Aileron-Regular.ttf") format("truetype"),
+    font-family: "Aileron";
+    src: url("Fonts/Aileron-Regular.ttf") format("truetype"),
 
 }
 @font-face {
-        font-family: "expressway";
-        src: url("Fonts/expressway rg.ttf") format("truetype"),
+    font-family: "expressway";
+    src: url("Fonts/expressway rg.ttf") format("truetype"),
 }
 @font-face {
-        font-family: "Franklin Gothic Medium";
-        src: url("Fonts/framd.ttf") format("truetype"),
+    font-family: "Franklin Gothic Medium";
+    src: url("Fonts/framd.ttf") format("truetype"),
 }
 h1{
-        font-family: 'Permanent Marker', cursive;
-        font-size: 80px;
-        font-weight: normal;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 80px;
+    font-weight: normal;
 
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: normal;
+
+}
+h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 4.5vh;
+    font-weight: bold;
+
+}
+h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #696969;
+    font-weight: lighter;
+    line-height: 260%;
+
+}
+h5{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.25vh;
+    font-weight: normal;
+
+}
+.contact {
+    position: relative;
+    width: 90%;
+    column-count: 2;
+    column-gap: 15%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.logo {
+    width: 20px;
+    position: relative;
+    vertical-align: sub;
+    margin-right: 1%;
+}
+
+.bottom_sec {
+    animation-name: appear;
+    animation-duration: 3s;
+
+    height: 145px;
+    background-color: #f4f4f4;
+
+}
+.socials {
+    position: relative;
+    top: 12px;
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
