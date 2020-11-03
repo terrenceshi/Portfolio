@@ -5,7 +5,7 @@ skills{
 }
 
 .skills-bar{
-    width: 60%;
+    max-width: 650px;
     background: #fff;
 
     border-radius: 10px;
@@ -20,6 +20,7 @@ skills{
 
 .skills-bar .bar{
     margin: 20px 0;
+    
 }
 
 .skills-bar .bar:first-child{
@@ -31,12 +32,14 @@ skills{
 }
 
 .skills-bar .bar .info span{
+    /* text by the progress bar */
     font-size: 17px;
     font-family: "Montserrat", regular;
     font-weight: 580
 }
 
 .skills-bar .bar .progress-line{
+    /* this is the background gray */
     position: relative;
     height: 20px;
     width: 100%;
@@ -50,6 +53,7 @@ skills{
 }
 
 .bar .progress-line span{
+    /* this is the actual progress bar */
     height: 100%;
     width: 80%;
     background: #ea81b5;
@@ -67,11 +71,11 @@ skills{
 }
 
 .progress-line.java span{
-    width: 80%;
+    width: 85%;
 }
 
 .progress-line.python span{
-    width: 70%;
+    width: 80%;
 }
 
 .progress-line.c span{
@@ -87,11 +91,11 @@ skills{
 }
 
 .progress-line.photoshop span{
-    width: 85%;
+    width: 90%;
 }
 
 .progress-line.premiere span{
-    width: 70%;
+    width: 80%;
 }
 
 .progress-line.illustrator span{
@@ -99,4 +103,7 @@ skills{
 }
 .progress-line.maya span{
     width: 50%;
+}
+.progress-line.flstudio span{
+    width: 60%;
 }
