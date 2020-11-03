@@ -1,286 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel='icon' href='assets/icon.png' type='image/x-icon'/>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>Terrence Shi</title>
-    <style>
-        h2{
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            color: #696969;
-            font-weight: lighter;
-            line-height: 260%;
-
-        }
-        .title
-        {
-            line-height: 40px;
-            text-align: center;
-        }
-
-        .image {
-          display: block;
-          width: 100%;
-          height: auto;
-        }
-
-        a:visited
-        {
-            color: black;
-        }
-        a:link
-        {
-            color: black;
-        }
-
-        @keyframes appear
-        {
-          from {opacity: 0;}
-          to {opacity: 1;}
-        }
-        .pictures {
-          position: relative;
-          top: 20px;
-          display: inline-block;
-          text-align: center;
-          width: 110%;
-          margin-left: auto;
-          margin-right: auto;
-          
-          padding-bottom: 50%;
-          animation-name: appear;
-          animation-duration: 3s;
-
-        }
-        .art {
-          position: absolute;
-          width: 30%;
-          left: 46%;
-        }
-        .art:hover .overlay {
-          opacity: 0.8;
-        }
-
-        .bio {
-          position: absolute;
-          width: 30%;
-          left: 15%;
-        }
-        .bio:hover .overlay2 {
-          opacity: 0.8;
-        }
-
-        .music {
-          position: absolute;
-          width: 30%;
-          left: 15%;
-          transform: translate(-0%, 187.5%);
-        }
-        .music:hover .overlay3 {
-          opacity: 0.8;
-        }
-
-        .compsci {
-          position: absolute;
-          width: 30%;
-          left: 15%;
-          transform: translate(-0%,235%);
-        }
-        .compsci:hover .overlay4 {
-          opacity: 0.8;
-        }
-
-        .resume {
-          position: absolute;
-          width: 30%;
-          left: 46%;
-          transform: translate(-0%,337.5%);
-        }
-        .resume:hover .overlay5 {
-          opacity: 0.8;
-        }
-
-        .overlay {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #c44f2a;
-        }
-
-        .overlay2 {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #394052;
-        }
-
-        .overlay3 {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #7b2844;
-        }
-
-        .overlay4 {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #5850a7;
-        }
-
-        .overlay5 {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #353130;
-        }
-
-        .text {
-          color: white;
-          font-size: 50px;
-          font-family: 'Permanent Marker', cursive;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
-
-        a.gray{
-            color: #696969;
-        }
-
-        @media only screen and (max-width: 820px) {
-            .bars{          
-                column-count: 1;
-
-            }
-            .title{
-                line-height: 450%;
-                margin-bottom: -5%;
-            }
-            h2{
-                line-height: 200%;
-            }
-            .pictures{
-                margin-bottom: 5%;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class = "title">
-        <a href = "index.html"style="text-decoration: none" >
-            <h1>Terrence Shi</h1>
-        </a>
-    </div>
-
-    <h3 style = "text-align: center; font-size: 25px">WEBSITE OVERHAUL COMING SOON</h3>
+<html>
     
-    
-    <div class="pictures">
-        <div class="art">
-          <a href = "art.html"><img src="assets/catTN.jpg" alt="Art" class="image">
-          <div class="overlay" >
-            <div class="text">Art</div>
-          </div>
-        </a></div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Terrence Shi</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="skills.css">
+        <link rel="stylesheet" href="socicons/css/social-circles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <style>
+            .about{
+                display: flex;
+                align-items: center;
+                
+            }
+            .mePic{
+                border-radius: 50%;
+            }
+            .pfp
+            {
+                max-width: 250px;
+                margin: 2% 2.5%;
+            }
+            .textColumn{
+                max-width: 700px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header class = "bigheader">
+            <div class="navbar">
+                <a href="index.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="cs.html">CS</a>
+            </div>
+        </header>
+        
+        <div class = "title">
+            <a href = "index.html"style="text-decoration: none" >
+                <h1>Terrence Shi</h1>
+            </a>
+        </div>
+        <div class = "content">
+            <div class = "about">
+                    
+                    <div class = "textColumn">
+                        <h2>Hi, I'm Terrence</h2>
 
-        <div class="bio">
-          <a href = "bio.html"><img src="assets/shadyTN.JPG" alt="Bio" class="image">
-          <div class="overlay2" >
-            <div class="text">Bio</div>
-          </div>
-        </a></div>
+                        <p>
+                            I'm a Computational Media major in Georgia Tech's class of 2022. I'm just a kid who likes to make things sometimes. On this website, you'll find my portfolios for art, music, and CS. I'm not quite sure where I want my career to go quite yet, so I'm keeping my range of work broad. 
+                        </p>
 
-        <div class="music">
-          <a href = "music.html"><img src="assets/jhinTN.jpg" alt="Music" class="image">
-          <div class="overlay3" >
-            <div class="text">Music</div>
-          </div>
-        </a></div>
+                    </div>
+                    
+                    <div class = "pfp">
+                        <img alt="me" class = "mePic" src="assets/me.jpg" />
+                    </div>
 
-        <div class="compsci">
-          <a href = "cs.html"><img src="assets/interdisciplinaryTN.jpg" alt="CS" class="image">
-          <div class="overlay4" >
-            <div class="text">Projects</div>
-          </div>
-        </a></div>
+            </div>
 
-        <div class="resume">
-          <a href = "resume.html"><img src="assets/patternsTN.jpeg" alt="Resume" class="image">
-          <div class="overlay5" >
-            <div class="text">Skills</div>
-          </div>
-          </a></div>
+            <section id = "skills" class = "section">
+                <h2>Skills</h2>
 
-    </div>
+                <div class = "skills-bar">
+                    <div class = skillFont><h4 style = "margin-top: 0px">CS</h4></div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Java</span>
+                            
+                        </div>
+                        <div class = "progress-line java"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Python</span>
+                            
+                        </div>
+                        <div class = "progress-line python"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>C</span>
+                            
+                        </div>
+                        <div class = "progress-line c"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Angular</span>
+                            
+                        </div>
+                        <div class = "progress-line angular"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>AWS</span>
+                            
+                        </div>
+                        <div class = "progress-line AWS"><span></span></div>
+                        
+                    </div>
+                    
+                </div>
 
-    <div class = "bottom_sec" style = "text-align: center">
-        <div class = contact style = "text-align: left"><h2>
-            <img src="assets/email.png" class="logo" alt="email" class="image">
-                terrenceshi@gmail.com<br>
-            <img src="assets/phone.png" class="logo" alt="phone" class="image" style="text-decoration: none" class = "gray">
-                862-754-0573<br>
-            <img src="assets/address.png" class="logo" alt="addres" class="image">
-                44 Oval Rd, Millburn, NJ<br>
+            </section>
+            
+            <section id = "skills" class = "section">
 
+                <div class = "skills-bar">
+                    <div class = skillFont><h4 style = "margin-top: 0px">Art</h4></div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Photoshop</span>
+                            
+                        </div>
+                        <div class = "progress-line photoshop"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Premiere</span>
+                            
+                        </div>
+                        <div class = "progress-line premiere"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Illustrator</span>
+                            
+                        </div>
+                        <div class = "progress-line illustrator"><span></span></div>
+                        
+                    </div>
+                    
+                    <div class = bar>
+                        <div class = "info">
+                            <span>Maya</span>
+                            
+                        </div>
+                        <div class = "progress-line maya"><span></span></div>
+                        
+                    </div>
+                    
+                </div>
+
+            </section>
+            
+            <section id = "contact" class = "section">
+                <h2>Contact</h2>
+
+                <p>
+                    862-754-0573
+                </p>
+                <p>
+                    terrenceshi@gmail.com
+                </p>
+
+            </section>
+        </div>
+        
+        <footer id = "footer" class = "section">
             <div class = "socials">
-                <img src="assets/fb.png" class="logo" alt="fb" class="image" >
-                <a href = "https://www.facebook.com/terrence.shi.9"style="text-decoration: none" class = "gray">
-                    fb.com/terrence.shi.9<br>
+                <a href = "https://www.facebook.com/terrence.shi.9" class = "icon-facebook social-button color">
                 </a>
-                <img src="assets/linkedin.png" class="logo" alt="linkedin" class="image" >
-                <a href = "https://www.linkedin.com/in/tshi"style="text-decoration: none" class = "gray">
-                    linkedin.com/in/tshi<br>
+                <a href = "https://www.linkedin.com/in/tshi" class = "icon-linkedin social-button color">
                 </a>
-                <img src="assets/github.png" class="logo" alt="github" class="image" >
-                <a href = "https://www.github.com/terrenceshi"style="text-decoration: none" class = "gray">
-                    github.com/terrenceshi
+                <a href = "https://www.github.com/terrenceshi" class = "icon-github social-button color">
                 </a>
             </div>
-            </h2>
-        </div>
+        </footer>
+        
+        
 
-    </div>
-    
-</body>
+    </body>
 </html>
