@@ -78,8 +78,8 @@ skills{
     width: 80%;
 }
 
-.progress-line.c span{
-    width: 70%;
+.progress-line.pytorch span{
+    width: 65%;
 }
 
 .progress-line.react span{
