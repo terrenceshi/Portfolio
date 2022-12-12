@@ -12,11 +12,21 @@
 }
 
 .banner_title {
-    position: absolute;
     color: white;
-    font-size: 2rem;
-    padding: 15px;
+    font-size: 3rem;
 
-    background-image: linear-gradient(120deg, #d87660, #ea81b5);
+    display: inline-block; 
+    text-align: left;
 
+    padding: 20px;
+    
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    background-image: linear-gradient(120deg, #404152, #1e1836);
+    text-align: center;
 }
