@@ -23,8 +23,9 @@ function App() {
         </div>
       </div>
       
-      <p>hi</p>
-      
+      <div className = "bio">
+        <p>hi my name is terrence i like bimm uh text</p>
+      </div>
 
     </div>
   );
