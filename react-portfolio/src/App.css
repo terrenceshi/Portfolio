@@ -36,7 +36,6 @@
     top: 0px;
     padding: 2em 4em 4em;
     background-color: transparent;
-    width: 100%;
 }
 
 .navbar a {
@@ -52,4 +51,9 @@
 .navbar a:hover {
     transform: scale(1.2);
     z-index: 5;
+}
+
+.content {
+    margin: 50px;
+    text-align: center;
 }

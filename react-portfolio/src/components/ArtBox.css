@@ -1,0 +1,12 @@
+.art_img{
+    cursor: pointer;
+
+    object-fit: cover;
+    height: 400px;
+    width: 400px;
+    margin: 15px;
+}
+
+.art_img_zoom{
+    height: 80%;
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import testImg from "./assets/test.jpg"
+
 
 import { useInView } from 'react-intersection-observer';
 
