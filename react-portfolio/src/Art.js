@@ -31,6 +31,7 @@ import hanniSketch from "./assets/art/misc/hanni.jpg"
 import moira from "./assets/art/misc/moira.jpg"
 
 function Art() {
+    
     return (
       <div className="Art">
         <div className = "row">

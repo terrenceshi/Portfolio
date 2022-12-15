@@ -1,0 +1,11 @@
+.article_img{
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}

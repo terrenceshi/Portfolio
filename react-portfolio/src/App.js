@@ -1,9 +1,8 @@
 import './App.css';
 
-
 import { useInView } from 'react-intersection-observer';
 
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import Home from "./Home"
 import Art from "./Art"
 import CS from "./CS"
@@ -44,6 +43,7 @@ function App() {
           <Route path="/CS" element={<CS />} />
           <Route path="/Music" element={<Music />} />
         </Routes>
+        
       </div>
 
     </div>

@@ -10,3 +10,9 @@
 .art_img_zoom{
     height: 80%;
 }
+
+.arrow{
+    cursor: pointer;
+    
+    margin: 15px;
+}
