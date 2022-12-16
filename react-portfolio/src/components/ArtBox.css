@@ -30,6 +30,15 @@
     margin-left: 50px;
 }
 
+.arrowLeftDisabled{
+    margin: 15px;
+    margin-right: 50px;
+}
+.arrowRightDisabled{
+    margin: 15px;
+    margin-left: 50px;
+}
+
 .arrows{
     top: 30em;
 }

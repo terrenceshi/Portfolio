@@ -1,6 +1,6 @@
 import './Article.css';
 import Paper from '@mui/material/Paper';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Article = ({ imageSrc, link, text, title, external }) => {
     

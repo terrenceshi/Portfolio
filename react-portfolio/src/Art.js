@@ -1,4 +1,5 @@
 import ArtBox from './components/ArtBox.js';
+import ArtBoxSolo from './components/ArtBoxSolo.js';
 import './Art.css';
 import Paper from '@mui/material/Paper';
 
@@ -85,27 +86,27 @@ function Art() {
           </div>
 
           <div className = "row">
-            <ArtBox imageSrc = {[portal]}
+            <ArtBoxSolo imageSrc = {portal}
                     title = "Portal"
                     text = {"Photoshop assignment for graphic design class in 2020."}/>
-            <ArtBox imageSrc = {[cat]}
+            <ArtBoxSolo imageSrc = {cat}
                     title = "Inebriated Cat"
                     text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
-            <ArtBox imageSrc = {[starlord]}
+            <ArtBoxSolo imageSrc = {starlord}
                     title = "Starlord"
                     text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
           </div>
 
           <div className = "row">
-            <ArtBox imageSrc = {[goblin]}
+            <ArtBoxSolo imageSrc = {goblin}
                     type = "bot"
                     title = "Green Goblin"
                     text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
-            <ArtBox imageSrc = {[hanniSketch]}
+            <ArtBoxSolo imageSrc = {hanniSketch}
                     type = "bot"
                     title = "Hannibal Sketch"
                     text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
-            <ArtBox imageSrc = {[moira]}
+            <ArtBoxSolo imageSrc = {moira}
                     type = "bot"
                     title = "Moira"
                     text = {"Sketch of the maid from American Horror Story's first season."}/>
