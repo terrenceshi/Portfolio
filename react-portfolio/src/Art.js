@@ -54,7 +54,7 @@ function Art() {
     
     return (
       <div className="Art">
-        <Paper className = "artPaper">
+        <Paper className = "artPaper" elevation={2}>
           <div className = "row">
             <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
                     type = "top"

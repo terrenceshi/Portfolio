@@ -12,10 +12,10 @@ const ArtBox = ({ imageSrc, text, type }) => {
     var mbVar = 15
 
     if(type == "top"){
-        mtVar = 45
+        mtVar = 60
     }
     if(type == "bot"){
-        mbVar = 45
+        mbVar = 60
     }
         
 

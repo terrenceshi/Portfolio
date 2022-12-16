@@ -31,7 +31,7 @@ function App() {
         </div>
       </div>
 
-      <div class="navbar">
+      <div className="navbar">
           <a href="/">Home</a>
           <a href="/Art">Art</a>
           <a href="/CS">CS</a>

@@ -9,6 +9,7 @@ function CS() {
         <Article imageSrc={b2n}
           link = {"https://books2nooks.ml"}
           title = "Books2Nooks"
+          external = "True"
           text = {"Books2Nooks takes a user inputted book and generates a music playlist. \
                   We collected 16k books and 400k songs from various datasets. I cleaned the data by removing \
                   null valued songs, ensuring that all songs were in english, and making sure that each song \

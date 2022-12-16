@@ -1,0 +1,30 @@
+.csText{
+    text-align: left;
+    padding: 50px;
+    padding-top: 25px;
+    margin: 0px;
+}
+
+.csTitle{
+    padding: 50px;
+    margin: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+}
+
+.csImg{
+    padding: 20px;
+    margin: 20px;
+    width: 60%;
+}
+
+.csImgSmall{
+    width: 35%;
+}
+
+.csRow{
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
