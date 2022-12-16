@@ -36,5 +36,13 @@
 
 .artText{
     max-width: 300px;
-    margin: 24px;
+    padding: 24px;
+    padding-top: 12px;
+    margin: 0px;
+}
+
+.artTitle{
+    padding: 24px;
+    padding-bottom: 6px;
+    margin: 0px;
 }

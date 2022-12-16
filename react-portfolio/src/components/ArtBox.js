@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-const ArtBox = ({ imageSrc, text, type }) => {
+const ArtBox = ({ imageSrc, text, type, title }) => {
     var mtVar = 15
     var mbVar = 15
 
@@ -54,6 +54,7 @@ const ArtBox = ({ imageSrc, text, type }) => {
                     <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" style={{ overflow: "hidden" }} />
 
                     <Stack direction = "column">
+                        <h2 className = "artTitle">{title}</h2>
                         <p className = "artText">{text}</p>
                         <Stack direction = "row" 
                             sx = {{margin: 2}}
