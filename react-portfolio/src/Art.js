@@ -1,7 +1,7 @@
 import ArtBox from './components/ArtBox.js';
 import './Art.css';
 
-import getOut from "./assets/art/get_out/wip5.png"
+import getOut from "./assets/art/get_out/wip6.png"
 import getOutWip from "./assets/art/get_out/wip.gif"
 
 import eren from "./assets/art/eren/yeager.png"
@@ -35,27 +35,41 @@ function Art() {
     return (
       <div className="Art">
         <div className = "row">
-          <ArtBox imageSrc = {[getOut, getOutWip]}/>
-          <ArtBox imageSrc = {[para, paraWip]}/>
-          <ArtBox imageSrc = {[eren, erenWip]}/>
+          <ArtBox imageSrc = {[getOut, getOutWip]}
+                  text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
+                          I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
+          <ArtBox imageSrc = {[para, paraWip]}
+                  text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
+                          geometric planes to make this painting from imagination, lighting and everything."}/>
+          <ArtBox imageSrc = {[eren, erenWip]}
+                  text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
         </div>
 
         <div className = "row">
-          <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}/>
-          <ArtBox imageSrc = {[hl, hlWip]}/>
-          <ArtBox imageSrc = {[bizFront, bizBack, poster]}/>
+          <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
+                  text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
+          <ArtBox imageSrc = {[hl, hlWip]}
+                  text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
+          <ArtBox imageSrc = {[bizFront, bizBack, poster]}
+                  text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
         </div>
 
         <div className = "row">
-          <ArtBox imageSrc = {[cat]}/>
-          <ArtBox imageSrc = {[starlord]}/>
-          <ArtBox imageSrc = {[portal]}/>
+          <ArtBox imageSrc = {[portal]}
+                  text = {"Photoshop assignment for graphic design class in 2020."}/>
+          <ArtBox imageSrc = {[cat]}
+                  text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
+          <ArtBox imageSrc = {[starlord]}
+                  text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
         </div>
 
         <div className = "row">
-          <ArtBox imageSrc = {[goblin]}/>
-          <ArtBox imageSrc = {[hanniSketch]}/>
-          <ArtBox imageSrc = {[moira]}/>
+          <ArtBox imageSrc = {[goblin]}
+                  text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
+          <ArtBox imageSrc = {[hanniSketch]}
+                  text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
+          <ArtBox imageSrc = {[moira]}
+                  text = {"Sketch of the maid from American Horror Story's first season."}/>
         </div>
   
       </div>

@@ -7,12 +7,21 @@
     margin: 15px;
 }
 
+.dialog{
+
+}
+
 .art_img_zoom{
-    height: 80%;
+    max-height: 600px;
 }
 
 .arrow{
     cursor: pointer;
     
     margin: 15px;
+}
+
+.artText{
+    max-width: 300px;
+    margin: 24px;
 }

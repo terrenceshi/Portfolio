@@ -1,11 +1,11 @@
 import './Article.css';
 
-const Article = ({ imageSrc }) => {
+const Article = ({ imageSrc, text }) => {
 
     return (
         <div className = "article">
             <div className = "row">
-                <p>sasdfgwas</p>
+                <p>{text}</p>
                 <img src = {imageSrc} alt = "pic" className = "article_img" />
             </div>
             
