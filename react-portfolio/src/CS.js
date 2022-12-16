@@ -8,7 +8,7 @@ function CS() {
           <p>hi my name is terrence i like bimm uh text3</p>
         </div>
 
-        <Article imageSrc={b2n} text = {"fuck chiggas"} />
+        <Article imageSrc={b2n} text = {"asgwe8l"} />
   
       </div>
     );

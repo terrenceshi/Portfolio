@@ -7,8 +7,13 @@
     margin: 15px;
 }
 
-.dialog{
-
+.art_img:hover {
+    -webkit-filter: brightness(60%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .art_img_zoom{
@@ -17,7 +22,6 @@
 
 .arrow{
     cursor: pointer;
-    
     margin: 15px;
 }
 
