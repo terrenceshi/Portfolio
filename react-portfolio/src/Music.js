@@ -1,9 +1,29 @@
+import './Music.css';
+
+import Player from "./components/player.js"
+import Paper from '@mui/material/Paper';
+
 function Music() {
     return (
       <div className="Music">
-        <div className = "bio">
-          <p>hi my name is terrence i like bimm uh text4</p>
-        </div>
+        <Player />
+        
+        <Paper className = "musicPlayer" elevation = {3}>
+          <p>
+            chads here <br></br>
+            hey! <br></br>
+            chads here <br></br>
+            hey! <br></br>
+            chads here <br></br>
+            hey! <br></br>
+            chads here <br></br>
+            hey! <br></br>
+            chads here <br></br>
+            hey! <br></br>
+          </p>
+        </Paper>
+
+        <div className = "holder"/>
   
       </div>
     );

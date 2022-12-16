@@ -6,16 +6,16 @@ import Stack from '@mui/material/Stack';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const ArtBoxSolo = ({ imageSrc, text, type, title }) => {
     var mtVar = 15
     var mbVar = 15
 
-    if(type == "top"){
+    if(type === "top"){
         mtVar = 60
     }
-    if(type == "bot"){
+    if(type === "bot"){
         mbVar = 60
     }
 
