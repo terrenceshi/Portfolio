@@ -7,13 +7,25 @@ import Stack from '@mui/material/Stack';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-const ArtBox = ({ imageSrc, text }) => {
+const ArtBox = ({ imageSrc, text, type }) => {
+    var mtVar = 15
+    var mbVar = 15
+
+    if(type == "top"){
+        mtVar = 45
+    }
+    if(type == "bot"){
+        mbVar = 45
+    }
+        
+
     const [current, setCurrent] = useState(0)
     const length = imageSrc.length;
 
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
+        setCurrent(0)
     };
     const handleToggle = () => {
         setOpen(!open);
@@ -29,7 +41,8 @@ const ArtBox = ({ imageSrc, text }) => {
 
     return (
         <div className = "artBox">
-            <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}/>
+            <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
+                style = {{ margin: "15px", marginTop: `${mtVar}px`, marginBottom: `${mbVar}px` }}/>
 
             <Dialog onClose={handleClose} 
                 open={open} 
@@ -46,16 +59,20 @@ const ArtBox = ({ imageSrc, text }) => {
                             sx = {{margin: 2}}
                             alignItems="center"
                             justifyContent="center"
+                            className = "arrows"
                         >
                             <ArrowCircleLeftRoundedIcon 
-                                className = "arrow" 
+                                className = "arrowLeft" 
                                 onClick = {leftArrow}
-                                sx={{ fontSize: "50px" }} 
+                                sx={{ fontSize: "50px",
+                                "& :hover": { color: "#526fce" } }} 
+                                
                             />
                             <ArrowCircleRightRoundedIcon 
-                                className = "arrow" 
+                                className = "arrowRight" 
                                 onClick = {rightArrow}
-                                sx={{ fontSize: "50px" }} 
+                                sx={{ fontSize: "50px",
+                                "& :hover": { color: "#526fce" } }} 
                             />
                         </Stack>
                     </Stack>

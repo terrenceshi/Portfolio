@@ -7,6 +7,8 @@ import Home from "./Home"
 import Art from "./Art"
 import CS from "./CS"
 import Music from "./Music"
+import Authorship from "./cspages/authorship.js"
+import Compression from "./cspages/compression.js"
 
 function App() {
 
@@ -42,6 +44,8 @@ function App() {
           <Route path="/Art" element={<Art />} />
           <Route path="/CS" element={<CS />} />
           <Route path="/Music" element={<Music />} />
+          <Route path="/CS/Authorship" element={<Authorship />} />
+          <Route path="/CS/Compression" element={<Compression />} />
         </Routes>
         
       </div>

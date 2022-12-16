@@ -4,7 +4,6 @@
     object-fit: cover;
     height: 400px;
     width: 400px;
-    margin: 15px;
 }
 
 .art_img:hover {
@@ -20,9 +19,19 @@
     max-height: 600px;
 }
 
-.arrow{
+.arrowLeft{
     cursor: pointer;
     margin: 15px;
+    margin-right: 50px;
+}
+.arrowRight{
+    cursor: pointer;
+    margin: 15px;
+    margin-left: 50px;
+}
+
+.arrows{
+    top: 30em;
 }
 
 .artText{

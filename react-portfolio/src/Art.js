@@ -1,5 +1,6 @@
 import ArtBox from './components/ArtBox.js';
 import './Art.css';
+import Paper from '@mui/material/Paper';
 
 import getOut from "./assets/art/get_out/wip6.png"
 import getOut1 from "./assets/art/get_out/wip0.png"
@@ -53,43 +54,53 @@ function Art() {
     
     return (
       <div className="Art">
-        <div className = "row">
-          <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
-                  text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
-                          I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
-          <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
-                  text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
-                          geometric planes to make this painting from imagination, lighting and everything."}/>
-          <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
-                  text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
-        </div>
+        <Paper className = "artPaper">
+          <div className = "row">
+            <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
+                    type = "top"
+                    text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
+                            I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
+            <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
+                    type = "top"
+                    text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
+                            geometric planes to make this painting from imagination, lighting and everything."}/>
+            <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
+                    type = "top"
+                    text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
+          </div>
 
-        <div className = "row">
-          <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
-                  text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
-          <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
-                  text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
-          <ArtBox imageSrc = {[bizFront, bizBack, poster]}
-                  text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
-        </div>
+          <div className = "row">
+            <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
+                    text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
+            <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
+                    text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
+            <ArtBox imageSrc = {[bizFront, bizBack, poster]}
+                    text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
+          </div>
 
-        <div className = "row">
-          <ArtBox imageSrc = {[portal]}
-                  text = {"Photoshop assignment for graphic design class in 2020."}/>
-          <ArtBox imageSrc = {[cat]}
-                  text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
-          <ArtBox imageSrc = {[starlord]}
-                  text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
-        </div>
+          <div className = "row">
+            <ArtBox imageSrc = {[portal]}
+                    text = {"Photoshop assignment for graphic design class in 2020."}/>
+            <ArtBox imageSrc = {[cat]}
+                    text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
+            <ArtBox imageSrc = {[starlord]}
+                    text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
+          </div>
 
-        <div className = "row">
-          <ArtBox imageSrc = {[goblin]}
-                  text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
-          <ArtBox imageSrc = {[hanniSketch]}
-                  text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
-          <ArtBox imageSrc = {[moira]}
-                  text = {"Sketch of the maid from American Horror Story's first season."}/>
-        </div>
+          <div className = "row">
+            <ArtBox imageSrc = {[goblin]}
+                    type = "bot"
+                    text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
+            <ArtBox imageSrc = {[hanniSketch]}
+                    type = "bot"
+                    text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
+            <ArtBox imageSrc = {[moira]}
+                    type = "bot"
+                    text = {"Sketch of the maid from American Horror Story's first season."}/>
+          </div>
+
+        </Paper>
+        
   
       </div>
     );
