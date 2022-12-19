@@ -1,0 +1,19 @@
+.trackTitle{
+    text-align: left;
+    padding: 20px;
+    margin: 0px;
+}
+
+.trackPlayButton{
+    margin:15px;
+    cursor: pointer;
+}
+
+.trackStack:hover {
+    -webkit-filter: brightness(60%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
