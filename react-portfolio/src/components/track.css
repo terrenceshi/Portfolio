@@ -1,11 +1,11 @@
 .trackTitle{
     text-align: left;
-    padding: 20px;
+    padding: 30px;
     margin: 0px;
 }
 
 .trackPlayButton{
-    margin:15px;
+    margin: 30px;
     cursor: pointer;
 }
 

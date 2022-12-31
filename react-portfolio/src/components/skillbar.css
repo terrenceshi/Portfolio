@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
- 
 .container{
     position: relative;
     max-width: 500px;
@@ -36,7 +34,7 @@
     width: 100%;
     border-radius: 6px;
     margin-top: 6px;
-    background: rgba(0,0, 0, 0.1);
+    background: rgba(0,0, 0, 0.4);
 }
 
 .skill-box .skill-per{
@@ -45,7 +43,7 @@
     height: 100%;
     width: 95%;
     border-radius: 6px;
-    background: crimson;
+    background-image: linear-gradient(120deg, #d87660, #ea81b5);
     animation: progress 0.4s ease-in-out forwards;
     opacity: 0;
 }

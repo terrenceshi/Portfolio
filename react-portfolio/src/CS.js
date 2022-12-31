@@ -1,3 +1,5 @@
+import './CS.css';
+
 import Article from "./components/Article.js"
 import b2n from "./assets/cs_thumbs/b2n.png"
 import aa from "./assets/cs_thumbs/authorship_comp.jpg"

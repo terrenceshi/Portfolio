@@ -11,10 +11,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #d8d8d8;
+  background-color: #eeeee3;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 2rem;
 }

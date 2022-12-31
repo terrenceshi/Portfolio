@@ -55,7 +55,7 @@ function Art() {
     
     return (
       <div className="Art">
-        <Paper className = "artPaper" elevation={2}>
+        <div className = "artPaper">
           <div className = "row">
             <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
                     type = "top"
@@ -78,7 +78,7 @@ function Art() {
                     title  = "3D Head"
                     text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
             <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
-                    title = "I'm the Homelander and..."
+                    title = "Homelander"
                     text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
             <ArtBox imageSrc = {[bizFront, bizBack, poster]}
                     title = "Price Heist"
@@ -112,7 +112,7 @@ function Art() {
                     text = {"Sketch of the maid from American Horror Story's first season."}/>
           </div>
 
-        </Paper>
+        </div>
         
   
       </div>

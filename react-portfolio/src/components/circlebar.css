@@ -1,0 +1,67 @@
+.Circlebar{
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-wrap {
+    display: grid;
+    grid-template-columns: repeat(1, 160px);
+    grid-gap: 80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0,0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill-1,
+.circle-wrap .circle .fill-2,
+.circle-wrap .circle .fill-3 {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 300px, 300px, 150px);
+}
+
+.mask .fill-2 {
+    clip: rect(0px, 150px, 300px, 0px);
+    background-image: linear-gradient(120deg, #d87660, #ea81b5);
+}
+
+.mask.full-2,
+.circle .fill-2 {
+    animation: fill-2 ease-in-out 2s;
+    transform: rotate(117deg);
+}
+
+@keyframes fill-2{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(117deg);
+    }
+}
+
+.circle-wrap .inside-circle {
+    width: 248px;
+    height: 248px;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg, #404152, #1e1836);
+    line-height: 120px;
+    text-align: center;
+    margin-top: 26px;
+    margin-left: 26px;
+    color: white;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+}
