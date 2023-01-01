@@ -5,8 +5,6 @@ import Stack from '@mui/material/Stack';
 
 import pfp from "./assets/me_test5.jpg"
 
-
-
 function Home() {
   return (
     <div className="Home">
@@ -19,13 +17,13 @@ function Home() {
             <Stack direction="row" spacing={2}>
               <p className = "bio">
                 I'm a CS grad student at Georgia Tech. There, I'm studying Machine Learning and Computer Graphics.
-                Hence, I have experience working with Pytorch in projects ranging from Image Classification to 
-                Natural Language Processing. 
+                Academics are super hard but I still try to find time to work on my own projects and have fun.
                 <br></br>
                 <br></br>
-                Like any other CS student, I also have a strong background in software development. In terms of backend,
-                I've worked with Django and Flask. React and Angular for frontend. While I'm proficient at both, I'd say
-                I'm better at frontend development, as my skills are bolstered by my background in Art and Graphic Design.
+                Aside from CS, I also make digital art, primarily drawing people and faces. I also dabble in 3D
+                modeling objects, with the hardest thing I've modeled being a human head. You'll also find a little 
+                bit of music on this website. I haven't done much outside of make a few samples here and there, but 
+                eventually I will compose my Magnus Opus.
               </p>
 
               <img src = {pfp} className = "pfp"/>
@@ -55,11 +53,6 @@ function Home() {
                           using AWS."}/>
               </div>
 
-              
-
-              
-
-              
             </div>
 
           </div>

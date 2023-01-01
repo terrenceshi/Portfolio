@@ -10,7 +10,7 @@ import VisibilitySensor from "react-visibility-sensor";
 function Circlebar({ percent, skill, desc }) {
   let percentage = 0;
   return (
-    <Paper elevation={2} className = "circlePaper">
+    <Paper elevation={3} className = "circlePaper">
       <div className="Circlebar">
 
         <h2 className = "circleTitle">{skill}</h2>
