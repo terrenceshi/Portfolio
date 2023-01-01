@@ -55,3 +55,5 @@
 		-my own art
 
 -add a favicon
+
+-add a footer

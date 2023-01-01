@@ -13,9 +13,9 @@ function Circlebar({ percent, skill, desc }) {
     <Paper elevation={3} className = "circlePaper">
       <div className="Circlebar">
 
-        <h2 className = "circleTitle">{skill}</h2>
+        <h3 className = "circleTitle">{skill}</h3>
 
-        <div style={{ width: 200, height: 200 }}>
+        <div style={{ width: 100, height: 100 }}>
           <VisibilitySensor>
             {({ isVisible }) => {
               

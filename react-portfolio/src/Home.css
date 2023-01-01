@@ -3,19 +3,15 @@
 }
 
 .bio{
-    padding: 30px;
+    padding: 25px;
     padding-top: 15px;
     margin: 0px;
     text-align: left;
 }
 
-.bioPaper{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
 .bioHeader{
-    padding: 30px;
+    padding: 25px;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin: 0px;
     text-align: left;
@@ -29,23 +25,6 @@
     
 }
 
-.bioBanner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    text-align: center;
-}
-
-.skillsBanner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    text-align: center;
-    
-}
-
 .bannerContainer {
     position: relative;
     width: 100%;
@@ -54,14 +33,24 @@
 }
 
 .bannerContent {
-    margin: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
+    padding-top: 25px;
 }
 
 .pfp{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+    margin-top: 15px;
     border-radius: 50%;
+}
+
+.bioBox{
+    text-align: center;
+    width: 955px;
+    margin:0px auto;
+}
+
+.bioRow{
+    display: flex;
+    justify-content: center;
 }
