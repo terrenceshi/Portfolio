@@ -2,6 +2,7 @@
     text-align: left;
     padding: 50px;
     padding-top: 25px;
+    padding-bottom: 25px;
     margin: 0px;
 }
 
@@ -13,8 +14,8 @@
 }
 
 .csImg{
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
     width: 60%;
 }
 
@@ -35,4 +36,8 @@
 
 .compression{
     margin: 50px;
+}
+
+.articleContent{
+    padding-bottom: 25px;
 }

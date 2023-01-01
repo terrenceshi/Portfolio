@@ -34,7 +34,7 @@
 	-add interactivity when hovering "read more"
 		-probably mui effect
 
-	-edit image compression images
+	-make image compression images dark mode friendly (optional)
 
 -music
 	-have player come up when page loads
