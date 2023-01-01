@@ -19,13 +19,13 @@ function Circlebar({ percent, skill, desc }) {
           <VisibilitySensor>
             {({ isVisible }) => {
               
-              if(isVisible == true & percentage === 0){
+              if(isVisible === true & percentage === 0){
                 percentage += percent;
               }
               return (
                 <CircularProgressbar
                   value={percentage}
-                  text={`${percentage}%`}
+                  text={""}
                   styles={buildStyles({
                     strokeLinecap: "butt",
                     textColor: "white",

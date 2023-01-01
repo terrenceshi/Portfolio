@@ -1,6 +1,7 @@
 import './CS.css';
 
 import Article from "./components/Article.js"
+import ExternalArticle from "./components/externalArticle.js"
 import b2n from "./assets/cs_thumbs/b2n.png"
 import aa from "./assets/cs_thumbs/authorship_comp.jpg"
 import monaLisa from "./assets/cs_thumbs/mona_lisa.jpg"
@@ -8,10 +9,9 @@ import monaLisa from "./assets/cs_thumbs/mona_lisa.jpg"
 function CS() {
     return (
       <div className="CS">
-        <Article imageSrc={b2n}
+        <ExternalArticle imageSrc={b2n}
           link = {"https://books2nooks.ml"}
           title = "Books2Nooks"
-          external = "True"
           text = {"Books2Nooks takes a user inputted book and generates a music playlist. \
                   We collected 16k books and 400k songs from various datasets. I cleaned the data by removing \
                   null valued songs, ensuring that all songs were in english, and making sure that each song \

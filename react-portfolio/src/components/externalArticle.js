@@ -1,10 +1,7 @@
 import './Article.css';
 import Paper from '@mui/material/Paper';
-import React, { useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
-
-const Article = ({ imageSrc, link, text, title }) => {
+const ExternalArticle = ({ imageSrc, link, text, title }) => {
 
     return (
         <div className = "article">
@@ -12,12 +9,12 @@ const Article = ({ imageSrc, link, text, title }) => {
                 <h2 className = "articleTitle">{title}</h2>
                 <div className = "row">
                     <p className = "articleText">{text} <br></br><br></br>
-                        <Link id = "link1" className = "linkText" to={link}>Read more</Link> 
+                        <a id = "link1" className = "linkText" href={link}  target="_blank" rel="noopener noreferrer">Read more</a> 
                     </p>
                     
-                    <Link id = "link2" to = {link}>
+                    <a id = "link2" href = {link} target="_blank" rel="noopener noreferrer">
                         <img src = {imageSrc} alt = "pic" className = "article_img"/>
-                    </Link>
+                    </a>
                     
                 </div>
             </Paper>
@@ -26,4 +23,4 @@ const Article = ({ imageSrc, link, text, title }) => {
         </div>
     )
 }
-export default Article;
+export default ExternalArticle;
