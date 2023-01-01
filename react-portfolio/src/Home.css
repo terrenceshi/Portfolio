@@ -45,9 +45,7 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
-    background-image: linear-gradient(120deg, #404152, #1e1836);
     text-align: center;
-    
 }
 
 .bannerContainer {

@@ -1,5 +1,7 @@
 -landing page
-	-figure out skills layout (!!!!!!!)
+	-skills
+		-make percentages variable (Worst case hard code it)
+		-see if there is a way to fix the fucked up line
 
 	-figure out colors
 		-probably related to banner colors
@@ -14,10 +16,16 @@
 
 		-skills will show animation on spawn
 
+	-possibly rewrite bio
+
 -navigation
 	-make banner condensed when not on landing page
 		-look into blurring image in css
 		-everything that isn't the banner image fades out
+
+	-possibly add logo
+
+	-different navigation hover (mui one)
 
 -art page
 	-make side arrow buttons lower (no fucking clue how)
@@ -37,3 +45,6 @@
 	-fix margins
 
 	-make it so on hover track is properly hovered. (check spotify for rip off)
+
+-overall
+	-make mobile playable

@@ -1,10 +1,11 @@
 import './Home.css';
-import Skillbar from "./components/skillbar.js"
 import Circlebar from "./components/circlebar.js"
 
 import Stack from '@mui/material/Stack';
 
 import pfp from "./assets/me_test5.jpg"
+
+
 
 function Home() {
   return (
@@ -42,9 +43,23 @@ function Home() {
             <h1 className = "bioHeader">Skills</h1>
             
             <div className = "skills">
-              <Skillbar percent = {95} title = {"Python"}/>
+              <div className = "row">
+                <Circlebar percent = {70} skill = {"Machine Learning"}
+                  desc = {"I am comfortable using Pytorch and Tensorflow for Image \
+                          Classification and NLP projects."}/>
+                <Circlebar percent = {90} skill = {"Frontend"}
+                  desc = {"With a background in graphic design, I also am \
+                          proficient with React and Angular."}/>
+                <Circlebar percent = {75} skill = {"Backend"}
+                  desc = {"I have experience deploying Flask and Django backends \
+                          using AWS."}/>
+              </div>
 
-              <Circlebar percent = {95} skill = {"Html + CSS"}/>
+              
+
+              
+
+              
             </div>
 
           </div>

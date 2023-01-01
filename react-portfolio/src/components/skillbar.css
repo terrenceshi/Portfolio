@@ -43,7 +43,7 @@
     height: 100%;
     width: 95%;
     border-radius: 6px;
-    background-image: linear-gradient(120deg, #d87660, #ea81b5);
+    background-image: linear-gradient(120deg, #90caf9, #90caf9);
     animation: progress 0.4s ease-in-out forwards;
     opacity: 0;
 }
