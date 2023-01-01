@@ -2,6 +2,8 @@ import './Article.css';
 import Paper from '@mui/material/Paper';
 import React, { useEffect } from 'react';
 
+import { Link } from 'react-router-dom';
+
 const Article = ({ imageSrc, link, text, title, external }) => {
     
     useEffect(() => {
@@ -23,12 +25,12 @@ const Article = ({ imageSrc, link, text, title, external }) => {
                 <h2 className = "articleTitle">{title}</h2>
                 <div className = "row">
                     <p className = "articleText">{text} <br></br><br></br>
-                        <a id = "link1" className = "linkText" href={link}>Read more</a> 
+                        <Link id = "link1" className = "linkText" to={link}>Read more</Link> 
                     </p>
                     
-                    <a id = "link2" href = {link}>
+                    <Link id = "link2" to = {link}>
                         <img src = {imageSrc} alt = "pic" className = "article_img"/>
-                    </a>
+                    </Link>
                     
                 </div>
             </Paper>
