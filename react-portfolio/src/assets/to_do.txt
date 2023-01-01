@@ -31,6 +31,8 @@
 
 -music
 	-have player come up when page loads
+		-have player go down when page is left
+		-may have to possibly make player a component in app.js
 
 	-fix margins
 
