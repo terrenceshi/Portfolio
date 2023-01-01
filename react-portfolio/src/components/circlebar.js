@@ -5,15 +5,15 @@ function Circlebar({ percent, skill }) {
 
   return (
     <div className="Circlebar">
-        <div class="circle-wrap">
-          <div class="circle">
-            <div class="mask full-2">
-              <div class="fill-2"/>
+        <div className="circle-wrap">
+          <div className="circle">
+            <div className="mask full-2">
+              <div className="fill-2"/>
             </div>
-            <div class="mask half">
-              <div class="fill-2"/>
+            <div className="mask half">
+              <div className="fill-2"/>
             </div>
-            <div class="inside-circle"/>
+            <div className="inside-circle"/>
           </div>
         </div>
 

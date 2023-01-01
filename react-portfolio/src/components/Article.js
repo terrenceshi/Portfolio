@@ -23,7 +23,7 @@ const Article = ({ imageSrc, link, text, title, external }) => {
                 <h2 className = "articleTitle">{title}</h2>
                 <div className = "row">
                     <p className = "articleText">{text} <br></br><br></br>
-                        <a id = "link1" href={link}>Read more</a> 
+                        <a id = "link1" className = "linkText" href={link}>Read more</a> 
                     </p>
                     
                     <a id = "link2" href = {link}>

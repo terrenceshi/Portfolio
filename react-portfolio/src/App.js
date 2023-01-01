@@ -1,8 +1,6 @@
 import './App.css';
 
-import { useInView } from 'react-intersection-observer';
-
-import { Route, Routes} from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Home from "./Home"
 import Art from "./Art"
 import CS from "./CS"
@@ -13,6 +11,8 @@ import Compression from "./cspages/compression.js"
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+import bannerSrc from "./assets/citytest21.jpg";
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -21,10 +21,6 @@ const darkTheme = createTheme({
 
 function App() {
 
-  const {ref, inView, entry} = useInView({
-    threshold: 0.4,
-  });
-
   return (
     <div className="App">
 
@@ -32,22 +28,22 @@ function App() {
         <CssBaseline />
 
         <div className = 'bannerContainer'>
-          <div className = "banner">
-            {/* put an image here later */}
+          <img src={bannerSrc} className="banner" />
 
+          <div className = "centerBanner">
             <h1 className = "banner_title">
-              Hi. <br></br>
-              I'm Terrence.
+                Hi. <br></br>
+                I'm Terrence.
             </h1>
-            
           </div>
+          
         </div>
 
         <div className="navbar">
-            <a href="/">Home</a>
-            <a href="/Art">Art</a>
-            <a href="/CS">CS</a>
-            <a href="/Music">Music</a>
+            <Link to="/">Home</Link>
+            <Link to="/Art">Art</Link>
+            <Link to="/CS">CS</Link>
+            <Link to="/Music">Music</Link>
         </div>
 
         <div className = "content">

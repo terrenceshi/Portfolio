@@ -13,14 +13,18 @@
 
     padding: 20px;
     padding-top: 100px;
+    position: relative;
 }
 
-.banner {
+.banner{
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
-    background-image: linear-gradient(120deg, #404152, #1e1836);
+    -webkit-filter: brightness(60%);
+}
+
+.centerBanner{
     text-align: center;
 }
 
@@ -28,7 +32,6 @@
     position: relative;
     width: 100%;
     height: 100vh;
-
 }
 
 .navbar {

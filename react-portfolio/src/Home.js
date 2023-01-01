@@ -1,4 +1,3 @@
-import Paper from '@mui/material/Paper';
 import './Home.css';
 import Skillbar from "./components/skillbar.js"
 import Circlebar from "./components/circlebar.js"
@@ -10,7 +9,6 @@ import pfp from "./assets/me_test5.jpg"
 function Home() {
   return (
     <div className="Home">
-
 
       <div className = 'bannerContainer'>
         <div className = "bioBanner">
@@ -39,7 +37,7 @@ function Home() {
       </div>
 
       <div className = 'bannerContainer'>
-        <div className = "banner">
+        <div className = "skillsBanner">
           <div className = "bannerContent">
             <h1 className = "bioHeader">Skills</h1>
             
