@@ -68,14 +68,14 @@ const ArtBox = ({ imageSrc, text, type, title }) => {
                                 className = "arrowLeft" 
                                 onClick = {leftArrow}
                                 sx={{ fontSize: "50px",
-                                "& :hover": { color: "#44a8e1" } }} 
+                                "& :hover": { color: "#90caf9" } }} 
                                 
                             />
                             <ArrowCircleRightRoundedIcon 
                                 className = "arrowRight" 
                                 onClick = {rightArrow}
                                 sx={{ fontSize: "50px",
-                                "& :hover": { color: "#44a8e1" } }} 
+                                "& :hover": { color: "#90caf9" } }} 
                             />
                         </Stack>
                     </Stack>

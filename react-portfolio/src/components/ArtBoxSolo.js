@@ -51,15 +51,7 @@ const ArtBoxSolo = ({ imageSrc, text, type, title }) => {
                             justifyContent="center"
                             className = "arrows"
                         >
-                            <ArrowCircleLeftRoundedIcon 
-                                className = "arrowLeftDisabled" 
-                                sx={{ fontSize: "50px", color : "#bcbcbc" }} 
-                                
-                            />
-                            <ArrowCircleRightRoundedIcon 
-                                className = "arrowRightDisabled" 
-                                sx={{ fontSize: "50px", color : "#bcbcbc" }} 
-                            />
+
                         </Stack>
                     </Stack>
                     

@@ -1,0 +1,37 @@
+-landing page
+	-figure out skills layout (!!!!!!!)
+
+	-figure out colors
+		-probably related to banner colors
+
+	-see if you can add secondary color (black background, white text, blue something?)
+
+	-maybe photoshop pfp
+
+	-add scroll FX
+		-bio can literally come in any way
+		-(text if near bottom should be translucent)
+
+		-skills will show animation on spawn
+
+-navigation
+	-make banner condensed when not on landing page
+		-look into blurring image in css
+		-everything that isn't the banner image fades out
+
+-art page
+	-make side arrow buttons lower (no fucking clue how)
+	-use original resolution images (?)
+
+-CS
+	-add interactivity when hovering "read more"
+		-probably mui effect
+
+	-edit image compression images
+
+-music
+	-have player come up when page loads
+
+	-fix margins
+
+	-make it so on hover track is properly hovered. (check spotify for rip off)
