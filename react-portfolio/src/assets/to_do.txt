@@ -53,3 +53,5 @@
 		-galaxy
 		-superheroes
 		-my own art
+
+-add a favicon
