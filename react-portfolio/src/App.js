@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import Home from "./Home"
 import Art from "./Art"
 import CS from "./CS"
@@ -20,6 +20,7 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  const location = useLocation();
 
   return (
     <div className="App">
@@ -58,7 +59,10 @@ function App() {
           
         </div>
 
-      
+        <div className = "footer">
+          <div className = "row">
+          </div>
+        </div>
 
       </ThemeProvider>
 

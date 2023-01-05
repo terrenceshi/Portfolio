@@ -2,12 +2,11 @@
 	-skills
 		-work out the strange text sizes. establish good font size.
 
-	-figure out colors
-		-probably related to banner colors
+	-turn skills into carousel of cards. 
 
-	-see if you can add secondary color (black background, white text, blue something?)
+	-consider changing skill bar color
 
-	-maybe photoshop pfp
+	-maybe photoshop pfp (probably not)
 
 	-add scroll FX
 		-bio can literally come in any way

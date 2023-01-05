@@ -1,7 +1,7 @@
 import ArtBox from './components/ArtBox.js';
 import ArtBoxSolo from './components/ArtBoxSolo.js';
 import './Art.css';
-import Paper from '@mui/material/Paper';
+import { useState, useEffect} from 'react';
 
 import getOut from "./assets/art/get_out/wip6.png"
 import getOut1 from "./assets/art/get_out/wip0.png"
@@ -52,71 +52,86 @@ import hanniSketch from "./assets/art/misc/hanni.jpg"
 import moira from "./assets/art/misc/moira.jpg"
 
 function Art() {
-    
-    return (
-      <div className="Art">
-        <div className = "artPaper">
-          <div className = "row">
-            <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
-                    type = "top"
-                    title  = "Get Out"
-                    text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
-                            I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
-            <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
-                    type = "top"
-                    title  = "Split Face"
-                    text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
-                            geometric planes to make this painting from imagination, lighting and everything."}/>
-            <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
-                    type = "top"
-                    title  = "Eren Yeager"
-                    text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
-          </div>
+        const [windowMode, setWindowMode] = useState(0)
 
-          <div className = "row">
-            <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
-                    title  = "3D Head"
-                    text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
-            <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
-                    title = "Homelander"
-                    text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
-            <ArtBox imageSrc = {[bizFront, bizBack, poster]}
-                    title = "Price Heist"
-                    text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
-          </div>
+        const handleResize = () => {
+                if (window.innerWidth < 905) {
+                setWindowMode(1)
 
-          <div className = "row">
-            <ArtBoxSolo imageSrc = {portal}
-                    title = "Portal"
-                    text = {"Photoshop assignment for graphic design class in 2020."}/>
-            <ArtBoxSolo imageSrc = {cat}
-                    title = "Inebriated Cat"
-                    text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
-            <ArtBoxSolo imageSrc = {starlord}
-                    title = "Starlord"
-                    text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
-          </div>
+                } else {
+                setWindowMode(0)
+                }
+        }
 
-          <div className = "row">
-            <ArtBoxSolo imageSrc = {goblin}
-                    type = "bot"
-                    title = "Green Goblin"
-                    text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
-            <ArtBoxSolo imageSrc = {hanniSketch}
-                    type = "bot"
-                    title = "Hannibal Sketch"
-                    text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
-            <ArtBoxSolo imageSrc = {moira}
-                    type = "bot"
-                    title = "Moira"
-                    text = {"Sketch of the maid from American Horror Story's first season."}/>
-          </div>
+        useEffect(() => {
+                window.addEventListener("resize", handleResize);
 
-        </div>
+        })
+
+        return (
+        <div className="Art">
+                <div className = "artPaper">
+                <div className = "row">
+                <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
+                        type = "top"
+                        title  = "Get Out"
+                        text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
+                                I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
+                <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
+                        type = "top"
+                        title  = "Split Face"
+                        text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
+                                geometric planes to make this painting from imagination, lighting and everything."}/>
+                <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
+                        type = "top"
+                        title  = "Eren Yeager"
+                        text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
+                </div>
+
+                <div className = "row">
+                <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
+                        title  = "3D Head"
+                        text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
+                <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
+                        title = "Homelander"
+                        text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
+                <ArtBox imageSrc = {[bizFront, bizBack, poster]}
+                        title = "Price Heist"
+                        text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
+                </div>
+
+                <div className = "row">
+                <ArtBoxSolo imageSrc = {portal}
+                        title = "Portal"
+                        text = {"Photoshop assignment for graphic design class in 2020."}/>
+                <ArtBoxSolo imageSrc = {cat}
+                        title = "Inebriated Cat"
+                        text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
+                <ArtBoxSolo imageSrc = {starlord}
+                        title = "Starlord"
+                        text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
+                </div>
+
+                <div className = "row">
+                <ArtBoxSolo imageSrc = {goblin}
+                        type = "bot"
+                        title = "Green Goblin"
+                        text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
+                <ArtBoxSolo imageSrc = {hanniSketch}
+                        type = "bot"
+                        title = "Hannibal Sketch"
+                        text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
+                <ArtBoxSolo imageSrc = {moira}
+                        type = "bot"
+                        title = "Moira"
+                        text = {"Sketch of the maid from American Horror Story's first season."}/>
+                </div>
+
+                </div>
+                
         
-  
-      </div>
-    );
+        </div>
+        );
   }
   
   export default Art;
