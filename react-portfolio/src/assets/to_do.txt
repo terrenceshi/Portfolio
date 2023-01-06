@@ -1,13 +1,12 @@
+-mobile
+	-make banner good for mobile
+	-figure out why mobile view in inspect element has mental illness
+
+-add a footer
+
+-add a favicon
+
 -landing page
-	-skills
-		-work out the strange text sizes. establish good font size.
-
-	-turn skills into carousel of cards. 
-
-	-consider changing skill bar color
-
-	-maybe photoshop pfp (probably not)
-
 	-add scroll FX
 		-bio can literally come in any way
 		-(text if near bottom should be translucent)
@@ -21,17 +20,22 @@
 		-look into blurring image in css
 		-everything that isn't the banner image fades out
 
+		-alternatively, swap banner image like carousel in page navigation
+
 	-possibly add logo
 
 	-different navigation hover (mui one)
 
 -art page
-	-make side arrow buttons lower (no fucking clue how)
-	-use original resolution images (?)
+	-use original resolution images and add siggy
+
+-add loading screen(s) if using large images
 
 -CS
 	-add interactivity when hovering "read more"
 		-probably mui effect
+
+	-shave off short summary or change window change threshold
 
 	-make image compression images dark mode friendly (optional)
 
@@ -44,15 +48,8 @@
 
 	-make it so on hover track is properly hovered. (check spotify for rip off)
 
--overall
-	-make mobile playable
-
 -banner
 	-consider other options
 		-galaxy
 		-superheroes
 		-my own art
-
--add a favicon
-
--add a footer
