@@ -15,7 +15,45 @@ import stacy from './assets/music/stacy.mp3'
 import uv from './assets/music/uv_sample.mp3'
 import james from './assets/music/james_is_a_demo.mp3'
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+
+  if(width >= 1200){
+    return 0;
+  } else if (width < 1200 & width > 800) {
+    return 1;
+  } else if (width <= 800) {
+    return 2;
+  }
+
+}
 function Music() {
+  const [windowMode, setWindowMode] = useState(getWindowDimensions())
+ 
+  const handleResize = () => {
+    if (window.innerWidth >= 1200){ //give some margin. 
+      setWindowMode(0)
+
+    } else if (window.innerWidth < 1200 & window.innerWidth > 800) {
+      setWindowMode(1)
+
+    } else if(window.innerWidth <= 800) {
+      setWindowMode(2)
+    } 
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    if(windowMode === 0){
+
+    } else if(windowMode === 1){
+
+    } else if(windowMode === 2){
+
+    }
+  })
+
   const songs = [oz, dino, stacy, uv, james]
   const songNames = ["40oz Instrumental Cover", "Dino Sample", "Stacy's Mom Instrumental", "Ultraviolet Sample", "James is a Demo"]
 
@@ -164,6 +202,7 @@ function Music() {
         setVolume = {setVolume}
         setMute = {setMute}
         mute = {mute}
+        windowMode = {windowMode}
       />
       <audio 
         src={currentSong}
@@ -186,7 +225,7 @@ function Music() {
         </Stack>
       </Paper>
 
-      <div className = "holder"/>
+      <div className = "holder" style = {windowMode === 2 ? {height: 190}:{height: 150}}/>
 
     </div>
   );

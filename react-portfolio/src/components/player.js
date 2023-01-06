@@ -13,7 +13,7 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 function Player({playFn, playing, songName, percentage, audioElem, 
     setSongDuration, backFn, nextFn, ct, maxDuration, volume, setVolume, 
-    setMute, mute}) {
+    setMute, mute, windowMode}) {
 
     const handleTimeChange = (event, newValue) => {
         audioElem.current.currentTime = (newValue / 100) * audioElem.current.duration;
@@ -28,18 +28,34 @@ function Player({playFn, playing, songName, percentage, audioElem,
         setMute(!mute)
     }
 
+    let stackSpace = 16;
+    let timeWidth = 400;
+
+    if(windowMode === 1){
+        stackSpace = 6;
+        timeWidth = 220;
+    } else if(windowMode === 2){
+        stackSpace = 1
+        timeWidth = 150;
+    }
+
     return (
       <div className="Player">
 
-        <div className = "paperPlayer">
-            <Stack direction="row"
+        <div className = "paperPlayer" style = {windowMode === 2 ? {height: 200}: {height: 160}}>
+            <p className = "songTitle" style = {windowMode == 2 ? {marginBottom: 24} : {marginBottom: 5}}>
+                {songName}
+            </p>
+            <Stack direction= {windowMode === 2 ? "column" : "row"}
                 alignItems="center"
                 justifyContent="center"
+                spacing = {stackSpace}
             >
                 <Stack direction="row"
                     alignItems="center"
                     justifyContent="center"
                     className = "musicButtons"
+                    spacing = {windowMode >= 1 ? 3:4}
                 >
                     <SkipPreviousIcon
                         className = "musicIcon"
@@ -72,8 +88,6 @@ function Player({playFn, playing, songName, percentage, audioElem,
                     />
                 </Stack>
 
-                <p className = "songTitle">{songName}</p>
-
                 <Stack direction="row"
                     alignItems="center"
                     justifyContent="center"
@@ -83,7 +97,7 @@ function Player({playFn, playing, songName, percentage, audioElem,
                     <Slider aria-label="audioLength" 
                         value={percentage}
                         onChange={handleTimeChange}
-                        sx={{ width: 400, margin: 2 }}
+                        sx={windowMode >= 1 ? { width: timeWidth, margin: 2 } : { width: timeWidth, margin: 2 }}
                     />
                     <p className = "audioText">{maxDuration}</p>
                 </Stack>
@@ -92,6 +106,8 @@ function Player({playFn, playing, songName, percentage, audioElem,
                     className = "volumeSet"
                     alignItems="center"
                     justifyContent="center"
+                    spacing = {2}
+                    style = {windowMode === 2 ? {display: "none"}: {display: "flex"}}
                 >
                     {volume === 0 || mute ? 
                         <VolumeOffIcon
@@ -109,10 +125,11 @@ function Player({playFn, playing, songName, percentage, audioElem,
                         />
                     }
 
-                    <Slider aria-label="Volume" value={volume * 100} 
-                        sx={{ width: 125, margin: 2 }}
+                    <Slider aria-label="Volume" value={volume * 100}
+                        sx={windowMode >= 1 ? { width: 100, margin: 0 } : { width: 126, margin: 0 }}
                         onChange = {handleVolumeChange}
                     />
+                    <div className = "nothing" />
                 </Stack>
             </Stack>
 

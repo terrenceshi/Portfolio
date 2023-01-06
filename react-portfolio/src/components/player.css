@@ -1,18 +1,10 @@
 .musicIcon{
-    margin: 20px;
-    margin-bottom: 10px;
     cursor: pointer;
-}
-
-.mainPlayer{
-    position: fixed;
-    bottom: 0;
-    margin: 20px;
 }
 
 .paperPlayer{
     width: 100%;
-    height: 150px;
+    
     position: fixed;
     bottom: 0;
     left: 0;
@@ -21,26 +13,15 @@
     z-index: 10;
 }
 
-.musicButtons{
-    position: fixed;
-    bottom: 20px;
-    margin: 20px;
-    left: 10%;
-}
-
-.timeline{
-    position: fixed;
-    bottom: 20px;
-    margin: 20px;
-}
-
-.volumeSet{
-    position: fixed;
-    bottom: 20px;
-    margin: 20px;
-    left: 72%;
+.songTitle{
+    margin-bottom: 5px;
 }
 
 .volumeIcon{
     cursor: pointer;
+}
+
+.nothing{
+    width: 26px;
+    height: 20px;
 }
