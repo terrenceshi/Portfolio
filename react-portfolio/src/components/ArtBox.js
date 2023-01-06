@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const ArtBox = ({ imageSrc, text, type, title, small }) => {
     var mtVar = 15

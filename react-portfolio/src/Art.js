@@ -1,5 +1,4 @@
 import ArtBox from './components/ArtBox.js';
-import ArtBoxSolo from './components/ArtBoxSolo.js';
 import './Art.css';
 import { useState, useEffect} from 'react';
 

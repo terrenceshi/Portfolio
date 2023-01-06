@@ -3,7 +3,7 @@
     height: 200px;
     width: 200px;
     margin: 30px;
-    margin-top: 0px;
+    margin-top: 15px;
     margin-left: 0px;
 }
 
@@ -17,6 +17,13 @@
     margin: 0px;
     padding: 30px;
     padding-top: 15px;
+}
+
+.readMore{
+    text-align: left;
+    margin: 0px;
+    padding: 30px;
+    padding-top: 0px;
 }
 
 .articlePaper{

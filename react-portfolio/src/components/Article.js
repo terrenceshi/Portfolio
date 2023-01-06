@@ -1,27 +1,69 @@
 import './Article.css';
 import Paper from '@mui/material/Paper';
-import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
-const Article = ({ imageSrc, link, text, title }) => {
+const externalReadMore = ({link}) => {
+    return (
+        <a id = "link1" className = "linkText" href={link}  target="_blank" rel="noopener noreferrer">Read more</a>
+    )
+}
+const normalReadMore = ({link}) => {
+    return (
+        <Link id = "link1" className = "linkText" to={link}>Read more</Link>
+    )
+}
+
+const externalImg = ({link, imageSrc, windowMode}) => {
+    return (
+        <a id = "link2" href = {link} target="_blank" rel="noopener noreferrer">
+            <img src = {imageSrc} alt = "pic" className = "article_img" 
+            style = {windowMode === 2 ? {marginLeft : 30} : {marginLeft : 0}}/>
+        </a>
+    )
+}
+const normalImg = ({link, imageSrc, windowMode}) => {
+    return (
+        <Link id = "link2" to = {link}>
+            <img src = {imageSrc} alt = "pic" className = "article_img"
+            style = {windowMode === 2 ? {marginLeft : 30} : {marginLeft : 0}}/>
+        </Link>
+    )
+}
+
+const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
+    let readMore;
+    if(external){
+        readMore = externalReadMore({link})
+    } else {
+        readMore = normalReadMore({link})
+    }
+
+    let imgLink;
+    if(external){
+        imgLink = externalImg({link, imageSrc, windowMode})
+    } else {
+        imgLink = normalImg({link, imageSrc, windowMode})
+    }
 
     return (
         <div className = "article">
             <Paper elevation={2} className = "articlePaper">
-                <h2 className = "articleTitle">{title}</h2>
-                <div className = "row">
-                    <p className = "articleText">{text} <br></br><br></br>
-                        <Link id = "link1" className = "linkText" to={link}>Read more</Link> 
-                    </p>
+                <h2 className = "articleTitle" style = {windowMode === 2 ? {textAlign: "center"} : {textAlign: "left"}}>{title}</h2>
+                <div className = "row" style = {windowMode === 2 ? {flexDirection: "column-reverse", alignItems: "center"} : {}}>
+                    <div>
+                        <p className = "articleText" style = {windowMode === 2 ? { display: "none"} : { display: "block"}}>
+                            {text}
+                            
+                        </p>
+                        <p className = "readMore ">{readMore}</p>
+                    </div>
                     
-                    <Link id = "link2" to = {link}>
-                        <img src = {imageSrc} alt = "pic" className = "article_img"/>
-                    </Link>
+                    
+                    {imgLink}
                     
                 </div>
             </Paper>
-            
             
         </div>
     )
