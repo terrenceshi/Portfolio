@@ -6,9 +6,9 @@ import Stack from '@mui/material/Stack';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ArtBox = ({ imageSrc, text, type, title }) => {
+const ArtBox = ({ imageSrc, text, type, title, small }) => {
     var mtVar = 15
     var mbVar = 15
 
@@ -40,6 +40,9 @@ const ArtBox = ({ imageSrc, text, type, title }) => {
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
+    useEffect(() => {
+
+    })
 
     return (
         <div className = "artBox">
@@ -52,12 +55,13 @@ const ArtBox = ({ imageSrc, text, type, title }) => {
                 maxWidth = 'xl'
             >
                 
-                <Stack direction="row">
-                    <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" style={{ overflow: "hidden" }} />
+                <Stack direction = {small ? "column" : "row"}>
+                    <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
+                        style={{ overflow: "hidden" }} />
 
-                    <Stack direction = "column">
+                    <Stack direction = {small ? "row": "column"}>
                         <h2 className = "artTitle">{title}</h2>
-                        <p className = "artText">{text}</p>
+                        <p className = "artText" style = {small ? { display: "none"} : { display: "block"}}>{text}</p>
                         <Stack direction = "row" 
                             sx = {{margin: 2}}
                             alignItems="center"
@@ -68,14 +72,18 @@ const ArtBox = ({ imageSrc, text, type, title }) => {
                                 className = "arrowLeft" 
                                 onClick = {leftArrow}
                                 sx={{ fontSize: "50px",
-                                "& :hover": { color: "#90caf9" } }} 
+                                    "& :hover": { color: "#90caf9" }
+                                }}
+                                style = {imageSrc.length === 1 ? { display: "none"} : { display: "block"}}
                                 
                             />
                             <ArrowCircleRightRoundedIcon 
                                 className = "arrowRight" 
                                 onClick = {rightArrow}
                                 sx={{ fontSize: "50px",
-                                "& :hover": { color: "#90caf9" } }} 
+                                    "& :hover": { color: "#90caf9" } 
+                                }} 
+                                style = {imageSrc.length === 1 ? { display: "none"} : { display: "block"}}
                             />
                         </Stack>
                     </Stack>

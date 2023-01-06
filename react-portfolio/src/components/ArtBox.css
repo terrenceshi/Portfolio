@@ -16,18 +16,15 @@
 }
 
 .art_img_zoom{
-    max-height: 600px;
-}
+    max-height: 550px;}
 
 .arrowLeft{
     cursor: pointer;
-    margin: 15px;
-    margin-right: 50px;
+
 }
 .arrowRight{
     cursor: pointer;
-    margin: 15px;
-    margin-left: 50px;
+
 }
 
 .arrowLeftDisabled{
