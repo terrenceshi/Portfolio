@@ -53,6 +53,10 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  })
+
   const location = useLocation();
 
   let titleStyle = {

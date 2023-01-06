@@ -33,6 +33,10 @@ function CS() {
     } 
   }
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  })
+
   return (
     <div className="CS">
       <Article imageSrc={b2n}
