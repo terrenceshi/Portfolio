@@ -15,16 +15,13 @@
     transition: all 0.5s ease;
 }
 
-.art_img_zoom{
-    max-height: 550px;}
-
 .arrowLeft{
     cursor: pointer;
-
+    margin-right: 20px;
 }
 .arrowRight{
     cursor: pointer;
-
+    margin-left: 20px;
 }
 
 .arrowLeftDisabled{
@@ -43,12 +40,11 @@
 .artText{
     max-width: 300px;
     padding: 24px;
-    padding-top: 12px;
+    padding-top: 0px;
     margin: 0px;
 }
 
 .artTitle{
     padding: 24px;
-    padding-bottom: 6px;
     margin: 0px;
 }

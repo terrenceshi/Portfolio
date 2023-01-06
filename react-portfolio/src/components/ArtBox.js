@@ -40,10 +40,6 @@ const ArtBox = ({ imageSrc, text, type, title, small }) => {
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
-    useEffect(() => {
-
-    })
-
     return (
         <div className = "artBox">
             <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
@@ -57,13 +53,17 @@ const ArtBox = ({ imageSrc, text, type, title, small }) => {
                 
                 <Stack direction = {small ? "column" : "row"}>
                     <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
-                        style={{ overflow: "hidden" }} />
+                        style={small ? { overflow: "hidden", maxHeight : 525 } : { overflow: "hidden", maxHeight : 600 }} 
+                    />
 
-                    <Stack direction = {small ? "row": "column"}>
-                        <h2 className = "artTitle">{title}</h2>
-                        <p className = "artText" style = {small ? { display: "none"} : { display: "block"}}>{text}</p>
+                    <Stack direction = {small ? "row": "column"} justifyContent="space-between">
+                        <div>
+                            <h2 className = "artTitle">{title}</h2>
+                            <p className = "artText" style = {small ? { display: "none"} : { display: "block"}}>{text}</p>
+                        </div>
+                        
                         <Stack direction = "row" 
-                            sx = {{margin: 2}}
+                            sx = {{margin: 3}}
                             alignItems="center"
                             justifyContent="center"
                             className = "arrows"

@@ -67,7 +67,7 @@ function Art() {
         const [small, setSmall] = useState(getWindowDimensions())
 
         const handleResize = () => {
-                if (window.innerWidth < 925) {
+                if (window.innerWidth < 935) {
                 setSmall(true)
 
                 } else {
