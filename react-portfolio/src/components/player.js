@@ -43,7 +43,7 @@ function Player({playFn, playing, songName, percentage, audioElem,
       <div className="Player">
 
         <div className = "paperPlayer" style = {windowMode === 2 ? {height: 200}: {height: 160}}>
-            <p className = "songTitle" style = {windowMode == 2 ? {marginBottom: 24} : {marginBottom: 5}}>
+            <p className = "songTitle" style = {windowMode === 2 ? {marginBottom: 24} : {marginBottom: 5}}>
                 {songName}
             </p>
             <Stack direction= {windowMode === 2 ? "column" : "row"}

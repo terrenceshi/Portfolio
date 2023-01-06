@@ -33,18 +33,6 @@ function CS() {
     } 
   }
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    if(windowMode === 0){
-
-    } else if(windowMode === 1){
-
-    } else if(windowMode === 2){
-
-    }
-  })
-
   return (
     <div className="CS">
       <Article imageSrc={b2n}

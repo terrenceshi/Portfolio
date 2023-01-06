@@ -11,6 +11,8 @@ import Compression from "./cspages/compression.js"
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+import { useState, useEffect} from 'react';
+
 import bannerSrc from "./assets/citytest21.jpg";
 
 const darkTheme = createTheme({
@@ -19,8 +21,61 @@ const darkTheme = createTheme({
   },
 });
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+
+  if(width >= 955){
+    return 0;
+  } else if (width < 955 & width > 750) {
+    return 1;
+  } else if (width <= 750 & width > 550) {
+    return 2;
+  } else if (width <= 550){
+    return 3;
+  }
+
+}
+
 function App() {
+  const [windowMode, setWindowMode] = useState(getWindowDimensions())
+ 
+  const handleResize = () => {
+    if (window.innerWidth >= 955){ //give some margin. 
+      setWindowMode(0)
+
+    } else if (window.innerWidth < 955 & window.innerWidth > 750) {
+      setWindowMode(1)
+
+    } else if(window.innerWidth <= 750 & window.innerWidth > 550) {
+      setWindowMode(2)
+    } else if (window.innerWidth <= 550){
+      setWindowMode(3)
+    }
+  }
+
   const location = useLocation();
+
+  let titleStyle = {
+    paddingTop: 100, 
+    fontSize: "8rem"
+  }
+
+  if(windowMode === 1){
+    titleStyle = {
+      paddingTop: 100, 
+      fontSize: "7rem"
+    }
+  } else if(windowMode === 2){
+    titleStyle = {
+      paddingTop: 200, 
+      fontSize: "5rem"
+    }
+  } else if(windowMode === 3){
+    titleStyle = {
+      paddingTop: 250,
+      fontSize: "4rem"
+    }
+  }
 
   return (
     <div className="App">
@@ -32,7 +87,7 @@ function App() {
           <img src={bannerSrc} className="banner" />
 
           <div className = "centerBanner">
-            <h1 className = "banner_title">
+            <h1 className = "banner_title" style = {titleStyle}>
                 Hi. <br></br>
                 I'm Terrence.
             </h1>
