@@ -60,9 +60,9 @@ function CS() {
                 We then constructed a matrix where each element is the cosine similarity between every single book \
                 and song. When the user selects a book, we take the top 15 most similar songs and make it a playlist."
                 :
-                "Books2Nooks takes a user inputted book and generates a music playlist. \
-                We got thousands of books descriptions and songs lyrics and converted them into vectors using sentence \
-                transformers. Then, we constructed a matrix where each element is the cosine similarity between every \
+                "Books2Nooks takes an inputted book and generates a playlist. \
+                We got 1000s of books descriptions and songs lyrics and converted them into vectors using NLP \
+                transformers. Then, we made a matrix where each element is the cosine similarity between every \
                 book and song. The top 15 most similar songs are returned."
               
               } />
@@ -72,24 +72,36 @@ function CS() {
         external = {false}
         windowMode = {windowMode}
         title = "Authorship Attribution"
-        text = {"Authorship Attribution is the task of guessing the author of an anonymous article. We trained our \
+        text = {windowMode === 0 ?
+                "Authorship Attribution is the task of guessing the author of an anonymous article. We trained our \
                 Recurrent Neural Network on famous datasets and manually selected passages such as lyrics from artists \
                 such as Kanye West and Taylor Swift and passages from young adult authors such as Rick Riordan and James \
                 Dashner, as we wanted our model to be robust. Identifying passages between West and Swift served to be a \
                 hypothetically easier test, while Riordan vs Dashner served to be a more difficult one. Our testing accuracies \
-                range from 70-80%."} />
+                range from 70-80%."
+                :
+                "Authorship Attribution is the task of guessing the author of an anonymous article. We trained our \
+                model on datasets and selected passages from Kanye West & Taylor lyrics and Rick Riordan & James \
+                Dashner novels. Our testing accuracies range from 70-80%."
+              } />
 
       <Article imageSrc={monaLisa}
         link = {"/CS/Compression"}
         external = {false}
         windowMode = {windowMode}
         title = "Image Compression"
-        text = {"I perform image compression using Singular Value Decomposition (SVD) as well as Gaussian Mixture Modeling (GMM). \
+        text = {windowMode === 0 ?
+                "I perform image compression using Singular Value Decomposition (SVD) as well as Gaussian Mixture Modeling (GMM). \
                 An image is essentially a matrix of pixel values. SVD is the act of reducing a matrix into three smaller matrices \
                 using linear algebraic techniques. We then reconstruct the original image's matrix using the three smaller matrices \
                 but to a smaller size. GMM groups certain pixels by clusters. We initialize each cluster randomly \
                 and determine the probability each pixel goes to each cluster. We then update each cluster's statistics with the new pixels \
-                we selected. The process is repeated until we are satisfied."} />
+                we selected. The process is repeated until we are satisfied."
+                :
+                "I perform image compression using Singular Value Decomposition (SVD) and Gaussian Mixture Modeling (GMM). \
+                An image is a matrix of pixel values. SVD is a linear algebraic technique that reduces a matrix into smaller matrices. \
+                GMM is an iterative process that assigns pixels to clusters and updates each cluster's statistics each iteration."
+              } />
 
     </div>
   );
