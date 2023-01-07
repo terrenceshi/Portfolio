@@ -47,7 +47,7 @@ function App() {
   const [windowMode, setWindowMode] = useState(getWindowDimensions())
  
   const handleResize = () => {
-    console.log(window.innerHeight)
+    //console.log(window.innerHeight)
 
     if (window.innerWidth >= 955){ //give some margin. 
       setWindowMode(0)

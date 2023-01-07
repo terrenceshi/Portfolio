@@ -1,16 +1,32 @@
 import './Article.css';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
 import { Link } from 'react-router-dom';
 
 const externalReadMore = ({link}) => {
     return (
-        <a id = "link1" className = "linkText" href={link} target="_blank" rel="noopener noreferrer">Read more</a>
+        <a id = "link1" className = "linkText" href={link} target="_blank" rel="noopener noreferrer">
+            <Button
+                component = {Link}
+                to = {link}
+                sx={{ fontSize : "1.2rem" }}
+            >
+                Read More
+            </Button>
+        </a>
     )
 }
 const normalReadMore = ({link}) => {
     return (
-        <Link id = "link1" className = "linkText" to={link}>Read more</Link>
+        <Button
+            className = "linkText"
+            component = {Link}
+            to = {link}
+            sx={{ fontSize : "1.2rem" }}
+        >
+            Read More
+        </Button>
     )
 }
 

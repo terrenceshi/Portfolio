@@ -37,7 +37,7 @@ function Player({playFn, playing, songName, percentage, audioElem,
     } else if(windowMode === 1){
         stackSpace = 6;
         timeWidth = 220;
-    } else if(windowMode === 2){
+    } else{
         stackSpace = 1
         timeWidth = 150;
     }
@@ -45,11 +45,11 @@ function Player({playFn, playing, songName, percentage, audioElem,
     return (
       <div className="Player">
 
-        <div className = "paperPlayer" style = {windowMode === 2 ? {height: 200}: {height: 160}}>
-            <p className = "songTitle" style = {windowMode === 2 ? {marginBottom: 24} : {marginBottom: 5}}>
+        <div className = "paperPlayer" style = {windowMode >= 2 ? {height: 200}: {height: 160}}>
+            <p className = "songTitle" style = {windowMode >= 2 ? {marginBottom: 24} : {marginBottom: 5}}>
                 {songName}
             </p>
-            <Stack direction= {windowMode === 2 ? "column" : "row"}
+            <Stack direction= {windowMode >= 2 ? "column" : "row"}
                 alignItems="center"
                 justifyContent="center"
                 spacing = {stackSpace}
@@ -110,7 +110,7 @@ function Player({playFn, playing, songName, percentage, audioElem,
                     alignItems="center"
                     justifyContent="center"
                     spacing = {2}
-                    style = {windowMode === 2 ? {display: "none"}: {display: "flex"}}
+                    style = {windowMode >= 2 ? {display: "none"}: {display: "flex"}}
                 >
                     {volume === 0 || mute ? 
                         <VolumeOffIcon

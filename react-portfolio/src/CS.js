@@ -47,7 +47,7 @@ function CS() {
         text = {windowMode === 0 ? 
                 "Books2Nooks takes a user inputted book and generates a music playlist. \
                 We collected 16k books and 400k songs from various datasets. I cleaned the data by ensuring \
-                that all songs were in english, and making sure that each song could be found on spotify. Next, \
+                that all songs were in english and making sure that each song could be found on spotify. Next, \
                 all book descriptions and song lyrics were converted to vectors using NLP sentence transformers. \
                 We then constructed a matrix where each element is the cosine similarity between every single book \
                 and song. When the user selects a book, we take the top 15 most similar songs and make it a playlist."

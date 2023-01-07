@@ -22,8 +22,10 @@ function getWindowDimensions() {
     return 0;
   } else if (width < 1200 & width > 800) {
     return 1;
-  } else if (width <= 800) {
+  } else if (width <= 800 & width > 400) {
     return 2;
+  } else if (width <= 400) {
+    return 3;
   }
 
 }
@@ -37,9 +39,11 @@ function Music() {
     } else if (window.innerWidth < 1200 & window.innerWidth > 800) {
       setWindowMode(1)
 
-    } else if(window.innerWidth <= 800) {
+    } else if(window.innerWidth <= 800 & window.innerWidth > 400) {
       setWindowMode(2)
-    } 
+    } else if(window.innerWidth <= 400){
+      setWindowMode(3)
+    }
   }
 
   useEffect(() => {
@@ -179,7 +183,7 @@ function Music() {
   }
 
   return (
-    <div className="Music">
+    <div className="Music" style = {windowMode === 3 ? {margin : 0}: {margin: 50}}>
       <Player playFn = {click} 
         playing = {isPlaying} 
         songName = {songName} 

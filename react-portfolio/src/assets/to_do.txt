@@ -1,5 +1,3 @@
--add a favicon
-
 -landing page
 	-add scroll FX
 		-bio can literally come in any way
@@ -26,10 +24,9 @@
 -add loading screen(s) if using large images
 
 -CS
-	-add interactivity when hovering "read more"
-		-probably mui effect
-
 	-shave off short summary or change window change threshold
+
+	-make link go back to top
 
 	-make image compression images dark mode friendly (optional)
 
