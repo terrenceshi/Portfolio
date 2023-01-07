@@ -6,32 +6,36 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 
-const Track = ({ title, clickFn, playing, songName }) => {
+const Track = ({ title, clickFn, playing, songName, windowMode }) => {
     return (
       <div className="Track">
         <Stack direction="row" className = "trackStack">
             
-
             {playing & (title === songName) ? 
               <PauseCircleIcon
                 className = "trackPlayButton"
                 onClick = {clickFn}
-                sx={{ fontSize: "35px",
-                "& :hover": { color: "#44a8e1" } }}
+                sx={windowMode !== 3 ? 
+                  { fontSize: "35px", "& :hover": { color: "#90caf9" }, marginLeft: 10 }
+                  :
+                  { fontSize: "35px", "& :hover": { color: "#90caf9" } }
+                }
               />
               :
               <PlayCircleIcon
                 className = "trackPlayButton"
                 onClick = {clickFn}
-                sx={{ fontSize: "35px",
-                "& :hover": { color: "#44a8e1" } }}
+                sx={windowMode !== 3 ? 
+                  { fontSize: "35px", "& :hover": { color: "#90caf9" }, marginLeft: 10 }
+                  :
+                  { fontSize: "35px", "& :hover": { color: "#90caf9" } }
+                }
               />
             }
 
-            <p className = "trackTitle">{title}</p>
+            <p className = "trackTitle" style = {playing & (title === songName) ? {color:"#90caf9"}: {color: "white"}}>{title}</p>
         </Stack>
         
-  
       </div>
     );
   }

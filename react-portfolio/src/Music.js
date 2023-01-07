@@ -3,7 +3,6 @@ import './Music.css';
 import Player from "./components/player.js"
 import Track from "./components/track.js"
 
-import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 
@@ -209,17 +208,17 @@ function Music() {
 
 
         <Stack
-          divider={<Divider orientation="horizontal" flexItem/>}
-          spacing={2}
+          divider={<Divider orientation="horizontal" flexItem sx = {{mt: 0}}/>}
+          sx = {{mt: 0}}
         >
-          <Track title = {songNames[0]} clickFn = {ozClick} playing = {isPlaying} songName = {songName}/>
-          <Track title = {songNames[1]} clickFn = {dinoClick} playing = {isPlaying} songName = {songName}/>
-          <Track title = {songNames[2]} clickFn = {stacyClick} playing = {isPlaying} songName = {songName}/>
-          <Track title = {songNames[3]} clickFn = {uvClick} playing = {isPlaying} songName = {songName}/>
-          <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName}/>
+          <Track title = {songNames[0]} clickFn = {ozClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+          <Track title = {songNames[1]} clickFn = {dinoClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+          <Track title = {songNames[2]} clickFn = {stacyClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+          <Track title = {songNames[3]} clickFn = {uvClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+          <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+          <Divider />
 
         </Stack>
-
 
     </div>
   );
