@@ -27,21 +27,12 @@
 
 .bioBox{
     text-align: center;
-    width: 955px;
     margin:0px auto;
 }
 
 .bioRow{
     display: flex;
     justify-content: center;
-}
-
-.skills{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 .skillRow{

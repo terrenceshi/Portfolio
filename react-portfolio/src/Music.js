@@ -44,14 +44,6 @@ function Music() {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
-    if(windowMode === 0){
-
-    } else if(windowMode === 1){
-
-    } else if(windowMode === 2){
-
-    }
   })
 
   const songs = [oz, dino, stacy, uv, james]

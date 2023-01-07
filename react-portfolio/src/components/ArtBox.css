@@ -17,20 +17,9 @@
 
 .arrowLeft{
     cursor: pointer;
-    margin-right: 20px;
 }
 .arrowRight{
     cursor: pointer;
-    margin-left: 20px;
-}
-
-.arrowLeftDisabled{
-    margin: 15px;
-    margin-right: 50px;
-}
-.arrowRightDisabled{
-    margin: 15px;
-    margin-left: 50px;
 }
 
 .arrows{
@@ -45,6 +34,5 @@
 }
 
 .artTitle{
-    padding: 24px;
     margin: 0px;
 }

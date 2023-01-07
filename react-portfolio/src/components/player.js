@@ -28,10 +28,13 @@ function Player({playFn, playing, songName, percentage, audioElem,
         setMute(!mute)
     }
 
-    let stackSpace = 16;
-    let timeWidth = 400;
+    let stackSpace;
+    let timeWidth;
 
-    if(windowMode === 1){
+    if(windowMode === 0){
+        stackSpace = 16;
+        timeWidth = 400;
+    } else if(windowMode === 1){
         stackSpace = 6;
         timeWidth = 220;
     } else if(windowMode === 2){

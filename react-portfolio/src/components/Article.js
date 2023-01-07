@@ -49,7 +49,10 @@ const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
     return (
         <div className = "article">
             <Paper elevation={2} className = "articlePaper">
-                <h2 className = "articleTitle" style = {windowMode === 2 ? {textAlign: "center"} : {textAlign: "left"}}>{title}</h2>
+                <h2 className = "articleTitle" 
+                    style = {windowMode === 2 ? {textAlign: "center", fontSize: "1.4rem"} : {textAlign: "left", fontSize: "2rem"}}>
+                    {title}
+                </h2>
                 <div className = "row" style = {windowMode === 2 ? {flexDirection: "column-reverse", alignItems: "center"} : {}}>
                     <div>
                         <p className = "articleText" style = {windowMode === 2 ? { display: "none"} : { display: "block"}}>

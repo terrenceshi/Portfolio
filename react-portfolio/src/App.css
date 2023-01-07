@@ -6,12 +6,11 @@
 
 .banner_title {
     color: white;
-
     display: inline-block; 
     text-align: left;
-
-    padding: 20px;
     position: relative;
+    padding: 15px;
+    z-index: 5;
 }
 
 .banner{
@@ -20,6 +19,14 @@
     object-fit: cover;
     position: absolute;
     filter: brightness(60%);
+}
+
+.centerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .centerBanner{
@@ -36,26 +43,13 @@
     position: absolute;
     top: 0px;
     padding: 2em 4em 4em;
-    background-color: transparent;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    padding: 14px 20px;
-    text-decoration: none;
-    transition: transform .2s;
-    font-size: 1.25rem;
-}
-
-.navbar a:hover {
-    transform: scale(1.2);
-    z-index: 5;
+    z-index: 6;
 }
 
 .content {
     text-align: center;
+    z-index: 6;
+    position: relative;
 }
 
 .row{

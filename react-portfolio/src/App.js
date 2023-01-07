@@ -1,12 +1,13 @@
 import './App.css';
 
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from "./Home"
 import Art from "./Art"
 import CS from "./CS"
 import Music from "./Music"
 import Authorship from "./cspages/authorship.js"
 import Compression from "./cspages/compression.js"
+import Navbar from "./components/Navbar.js"
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,6 +19,11 @@ import bannerSrc from "./assets/citytest21.jpg";
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+  },
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
   },
 });
 
@@ -40,13 +46,15 @@ function App() {
   const [windowMode, setWindowMode] = useState(getWindowDimensions())
  
   const handleResize = () => {
+    console.log(window.innerHeight)
+
     if (window.innerWidth >= 955){ //give some margin. 
       setWindowMode(0)
 
-    } else if (window.innerWidth < 955 & window.innerWidth > 750) {
+    } else if ((window.innerWidth < 955 & window.innerWidth > 750)) {
       setWindowMode(1)
 
-    } else if(window.innerWidth <= 750 & window.innerWidth > 550) {
+    } else if((window.innerWidth <= 750 & window.innerWidth > 550)) {
       setWindowMode(2)
     } else if (window.innerWidth <= 550){
       setWindowMode(3)
@@ -59,24 +67,21 @@ function App() {
 
   const location = useLocation();
 
-  let titleStyle = {
-    paddingTop: 100, 
-    fontSize: "8rem"
-  }
-
-  if(windowMode === 1){
+  let titleStyle 
+  if (windowMode === 0){
     titleStyle = {
-      paddingTop: 100, 
+      fontSize: "8rem"
+    }
+  } else if(windowMode === 1){
+    titleStyle = {
       fontSize: "7rem"
     }
   } else if(windowMode === 2){
     titleStyle = {
-      paddingTop: 200, 
       fontSize: "5rem"
     }
   } else if(windowMode === 3){
     titleStyle = {
-      paddingTop: 250,
       fontSize: "4rem"
     }
   }
@@ -91,24 +96,25 @@ function App() {
           <img src={bannerSrc} className="banner" />
 
           <div className = "centerBanner">
-            <h1 className = "banner_title" style = {titleStyle}>
-                Hi. <br></br>
-                I'm Terrence.
-            </h1>
+            <div className = "centerBox">
+              <h1 className = "banner_title" style = {titleStyle}>
+                  Hi. <br></br>
+                  I'm Terrence.
+              </h1>
+            </div>
+            
           </div>
           
         </div>
 
-        <div className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/Art">Art</Link>
-            <Link to="/CS">CS</Link>
-            <Link to="/Music">Music</Link>
+        <div className = "navbar" style = {windowMode === 3 ? {paddingLeft: "0em"} : {paddingLeft: "4em"}}>
+          <Navbar windowMode = {windowMode}/>
         </div>
-
+        
         <div className = "content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
             <Route path="/Art" element={<Art />} />
             <Route path="/CS" element={<CS />} />
             <Route path="/Music" element={<Music />} />
@@ -124,9 +130,6 @@ function App() {
         </div>
 
       </ThemeProvider>
-
-
-      
 
     </div>
   );

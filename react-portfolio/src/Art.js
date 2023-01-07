@@ -52,31 +52,32 @@ import moira from "./assets/art/misc/moira.jpg"
 
 function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
-      
-        if (width < 925) {
-                return true
 
-        } else {
-                return false
+        if(width >= 935){
+                return 0;
+        } else if (width < 935 & width > 400) {
+                return 1;
+        } else if (width <= 400) {
+                return 2;
         }
-      
-      }
+}
 
 function Art() {
-        const [small, setSmall] = useState(getWindowDimensions())
+        const [windowMode, setWindowMode] = useState(getWindowDimensions())
 
         const handleResize = () => {
-                if (window.innerWidth < 935) {
-                setSmall(true)
-
-                } else {
-                setSmall(false)
+                if (window.innerWidth >= 935){
+                  setWindowMode(0)
+            
+                } else if (window.innerWidth < 935 & window.innerWidth > 400) {
+                  setWindowMode(1)
+            
+                } else if(window.innerWidth <= 400) {
+                  setWindowMode(2)
                 }
         }
-
         useEffect(() => {
                 window.addEventListener("resize", handleResize);
-
         })
 
         return (
@@ -85,66 +86,66 @@ function Art() {
                 <div className = "row">
                 <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
                         type = "top"
-                        small = {small}
+                        windowMode = {windowMode}
                         title  = "Get Out"
                         text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
                                 I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
                 <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
                         type = "top"
-                        small = {small}
+                        windowMode = {windowMode}
                         title  = "Split Face"
                         text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
                                 geometric planes to make this painting from imagination, lighting and everything."}/>
                 <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
                         type = "top"
-                        small = {small}
+                        windowMode = {windowMode}
                         title  = "Eren Yeager"
                         text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
                 </div>
 
                 <div className = "row">
                 <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title  = "3D Head"
                         text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
                 <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title = "Homelander"
                         text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
                 <ArtBox imageSrc = {[bizFront, bizBack, poster]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title = "Price Heist"
                         text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
                 </div>
 
                 <div className = "row">
                 <ArtBox imageSrc = {[portal]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title = "Portal"
                         text = {"Photoshop assignment for graphic design class in 2020."}/>
                 <ArtBox imageSrc = {[cat]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title = "Inebriated Cat"
                         text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
                 <ArtBox imageSrc = {[starlord]}
-                        small = {small}
+                        windowMode = {windowMode}
                         title = "Starlord"
                         text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
                 </div>
 
                 <div className = "row">
                 <ArtBox imageSrc = {[goblin]}
-                        small = {small}
+                        windowMode = {windowMode}
                         type = "bot"
                         title = "Green Goblin"
                         text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
                 <ArtBox imageSrc = {[hanniSketch]}
-                        small = {small}
+                        windowMode = {windowMode}
                         type = "bot"
                         title = "Hannibal Sketch"
                         text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
                 <ArtBox imageSrc = {[moira]}
-                        small = {small}
+                        windowMode = {windowMode}
                         type = "bot"
                         title = "Moira"
                         text = {"Sketch of the maid from American Horror Story's first season."}/>
