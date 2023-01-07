@@ -94,15 +94,18 @@ function Home() {
             <Circlebar percent = {70} skill = {windowMode === 0 ? "Machine Learning" : "ML"} id = "mlBar"
               desc = {"I'm familiar with Pytorch & Tensorflow."}
               widthInput = {windowMode === 1 ? 190 : 260}
-              marginInput = {windowMode === 1 ? 7.5 : 15} />
+              marginInput = {windowMode === 1 ? 7.5 : 15}
+              windowMode = {windowMode} />
             <Circlebar percent = {90} skill = {"Frontend"}
               desc = {"I'm proficient with React & Angular."}
               widthInput = {windowMode === 1 ? 190 : 260}
-              marginInput = {windowMode === 1 ? 7.5 : 15} />
+              marginInput = {windowMode === 1 ? 7.5 : 15}
+              windowMode = {windowMode} />
             <Circlebar percent = {75} skill = {"Backend"}
               desc = {"I've deployed Flask, Django BEs on AWS."}
               widthInput = {windowMode === 1 ? 190 : 260}
-              marginInput = {windowMode === 1 ? 7.5 : 15} />
+              marginInput = {windowMode === 1 ? 7.5 : 15}
+              windowMode = {windowMode} />
           </div>
 
         </div>

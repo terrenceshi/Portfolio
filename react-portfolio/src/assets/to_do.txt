@@ -1,9 +1,3 @@
--mobile
-	-make banner good for mobile
-	-figure out why mobile view in inspect element has mental illness
-
--add a footer
-
 -add a favicon
 
 -landing page
@@ -47,6 +41,8 @@
 	-fix margins
 
 	-make it so on hover track is properly hovered. (check spotify for rip off)
+
+-fix stupid mobile bug that literally only exists for me
 
 -banner
 	-consider other options

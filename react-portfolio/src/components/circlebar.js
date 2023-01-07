@@ -7,14 +7,14 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import VisibilitySensor from "react-visibility-sensor";
 
-function Circlebar({ percent, skill, desc, widthInput, marginInput }) {
+function Circlebar({ percent, skill, desc, widthInput, marginInput, windowMode }) {
   let percentage = 0;
   return (
     <Paper elevation={3} className = "circlePaper"
       sx = {{margin: marginInput/8,
             width: widthInput}}
     >
-      <div className="Circlebar">
+      <div className="Circlebar" style = {windowMode === 1 ? {rowGap : 8} : {rowGap : 20}}>
 
         <h3 className = "circleTitle">{skill}</h3>
 
