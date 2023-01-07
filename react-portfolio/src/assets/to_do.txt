@@ -35,10 +35,6 @@
 		-have player go down when page is left
 		-may have to possibly make player a component in app.js
 
-	-fix margins
-
-	-make it so on hover track is properly hovered. (check spotify for rip off)
-
 -fix stupid mobile bug that literally only exists for me
 
 -banner
