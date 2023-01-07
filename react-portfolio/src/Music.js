@@ -217,8 +217,6 @@ function Music() {
         </Stack>
       </Paper>
 
-      <div className = "holder" style = {windowMode === 2 ? {height: 190}:{height: 150}}/>
-
     </div>
   );
   }

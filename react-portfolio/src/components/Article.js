@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const externalReadMore = ({link}) => {
     return (
-        <a id = "link1" className = "linkText" href={link}  target="_blank" rel="noopener noreferrer">Read more</a>
+        <a id = "link1" className = "linkText" href={link} target="_blank" rel="noopener noreferrer">Read more</a>
     )
 }
 const normalReadMore = ({link}) => {

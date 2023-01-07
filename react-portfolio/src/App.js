@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar.js"
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Stack from '@mui/material/Stack';
 
 import { useState, useEffect} from 'react';
 
@@ -125,8 +126,25 @@ function App() {
         </div>
 
         <div className = "footer">
-          <div className = "row">
-          </div>
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+          <Stack direction = "row"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {8}
+              sx = {{mt: 10, mb: 10}}
+          >
+            <a href="https://github.com/terrenceshi/" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-github fa-4x icon-3d" style = {windowMode === 3 ? {fontSize : 50} : {fontSize : 80}}></i>
+            </a>
+            <a href="https://www.instagram.com/tshi_xd/" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-instagram fa-4x icon-3d" style = {windowMode === 3 ? {fontSize : 50} : {fontSize : 80}}></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tshi/" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-linkedin fa-4x icon-3d" style = {windowMode === 3 ? {fontSize : 50} : {fontSize : 80}}></i>
+            </a>
+            
+          </Stack>
         </div>
 
       </ThemeProvider>

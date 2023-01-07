@@ -50,18 +50,18 @@ const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
                 maxWidth = 'xl'
             >
                 
-                <Stack direction = {windowMode != 0 ? "column" : "row"}>
+                <Stack direction = {windowMode !== 0 ? "column" : "row"}>
                     <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
-                        style={windowMode != 0 ? { overflow: "hidden", maxHeight : 525 } : { overflow: "hidden", maxHeight : 600 }} 
+                        style={windowMode !== 0 ? { overflow: "hidden", maxHeight : 525 } : { overflow: "hidden", maxHeight : 600 }} 
                     />
 
-                    <Stack direction = {windowMode != 0 ? "row": "column"} justifyContent="space-between">
+                    <Stack direction = {windowMode !== 0 ? "row": "column"} justifyContent="space-between">
                         <div>
                             <h2 className = "artTitle" 
                                 style = {windowMode === 2 ? {fontSize: "1.4rem", padding: 16}: {fontSize: "2rem", padding: 24}}>
                                 {title}
                             </h2>
-                            <p className = "artText" style = {windowMode != 0 ? { display: "none"} : { display: "block"}}>{text}</p>
+                            <p className = "artText" style = {windowMode !== 0 ? { display: "none"} : { display: "block"}}>{text}</p>
                         </div>
                         
                         <Stack direction = "row" 
