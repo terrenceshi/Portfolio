@@ -183,7 +183,7 @@ function Music() {
   }
 
   return (
-    <div className="Music" style = {windowMode === 3 ? {margin : 0}: {margin: 50}}>
+    <div className="Music" style = {{margin : 0}}>
       <Player playFn = {click} 
         playing = {isPlaying} 
         songName = {songName} 
@@ -207,7 +207,7 @@ function Music() {
         onEnded={onEnd}
       />
 
-      <Paper className = "musicPlayer" elevation = {3}>
+
         <Stack
           divider={<Divider orientation="horizontal" flexItem/>}
           spacing={2}
@@ -219,7 +219,7 @@ function Music() {
           <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName}/>
 
         </Stack>
-      </Paper>
+
 
     </div>
   );
