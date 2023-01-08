@@ -9,18 +9,6 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 import React, { useState } from 'react';
 
 const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
-    if(windowMode === 2){
-        mtVar = 5
-        mbVar = 5
-    }
-
-    if(type === "top"){
-        mtVar = 60
-    }
-    if(type === "bot"){
-        mbVar = 60
-    }
-
     const [current, setCurrent] = useState(0)
     const length = imageSrc.length;
 
