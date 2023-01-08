@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 const pages = ['Home', 'Art','CS','Music'];
 
-const Nav = ({windowMode}) => {
+const Nav = ({windowMode, x, setX}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -24,6 +24,15 @@ const Nav = ({windowMode}) => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const updateX = (pageName) => {
+    //console.log(pageName)
+  };
+
+  const btnClick = (pageName) =>{
+    updateX(pageName);
+    handleCloseNavMenu();
+  }
 
   return (
     <AppBar 

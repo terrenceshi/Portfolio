@@ -7,5 +7,5 @@
 .Music-zoom{
     opacity: 1;
     transform: scale(100%);
-    transition: 1.25s;
+    transition: 2s;
 }

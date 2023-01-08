@@ -8,6 +8,7 @@ import Music from "./Music"
 import Authorship from "./cspages/authorship.js"
 import Compression from "./cspages/compression.js"
 import Navbar from "./components/Navbar.js"
+import Slider from "./components/Slider.js"
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,7 +17,10 @@ import Stack from '@mui/material/Stack';
 import { useState, useEffect} from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import bannerSrc from "./assets/citytest21.jpg";
+import banImg1 from "./assets/citytest21.jpg";
+import banImg2 from "./assets/citytest17s.jpg";
+import banImg3 from "./assets/citytest13s.jpg";
+import banImg4 from "./assets/citytest2s.jpg";
 
 const darkTheme = createTheme({
   palette: {
@@ -67,11 +71,25 @@ function App() {
     }
   }
 
+  const location = useLocation();
+  const [x, setX] = useState(0)
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-  })
 
-  const location = useLocation();
+    if((location['pathname'] === '/' || location['pathname'] === '/Home')& x !== 0){
+      setX(0)
+    }
+    if(location['pathname'] === '/Art' & x !== -100){
+      setX(-100)
+    }
+    if(location['pathname'] === '/CS' & x !== -200){
+      setX(-200)
+    }
+    if(location['pathname'] === '/Music' & x !== -300){
+      setX(-300)
+    }
+  })
 
   let titleStyle 
   if (windowMode === 0){
@@ -99,22 +117,19 @@ function App() {
         <CssBaseline />
 
         <div className = 'bannerContainer'>
-          <img src={bannerSrc} className="banner" />
+          <Slider sliderArr = {[banImg1, banImg2, banImg3, banImg4]} x = {x} />
 
-          <div className = "centerBanner">
             <div className = "centerBox">
               <h1 className = "banner_title" style = {titleStyle}>
                   Hi. <br></br>
                   I'm Terrence.
               </h1>
             </div>
-            
-          </div>
           
         </div>
 
         <div className = "navbar" style = {windowMode === 3 ? {paddingLeft: "0em"} : {paddingLeft: "4em"}}>
-          <Navbar windowMode = {windowMode}/>
+          <Navbar windowMode = {windowMode} x = {x} setX = {setX}/>
         </div>
         
         <div className = "content">
