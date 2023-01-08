@@ -66,7 +66,7 @@ function Home() {
     homeHeight = "100%";
   }
 
-  let th = windowMode !== 2 ? 0.5 : 0.1;
+  let th = windowMode !== 2 ? 0.15 : 0.01;
 
   const { ref, inView } = useInView({
     threshold: th, //percentage that should be visible
