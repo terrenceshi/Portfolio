@@ -1,11 +1,8 @@
 -add loading screen(s) if using large images
 	-look into preloading images so you dont deal with dumb loading
 
--art page
-	-use original resolution images and add siggy
-
 -CS
-	-shave off short summary or change window change threshold
+	-work on making mobile view not disgusting
 
 	-make link go back to top
 
@@ -19,6 +16,9 @@
 -music
 	-have player go down when page is left
 		-may have to possibly make player a component in app.js
+
+-art page
+	-use original resolution images and add siggy
 
 -fix stupid mobile bug that literally only exists for me
 
