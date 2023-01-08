@@ -1,6 +1,8 @@
 -add loading screen(s) if using large images
 	-look into preloading images so you dont deal with dumb loading
 
+-fix stupid mobile bug that literally only exists for me
+
 -CS
 	-work on making mobile view not disgusting (optional)
 
@@ -16,14 +18,11 @@
 -art page
 	-use original resolution images and add siggy
 
--fix stupid mobile bug that literally only exists for me
-
 -landing page
 	-possibly rewrite bio
 
 -navigation
 	-possibly add logo (hella optional for now)
-
 
 -banner
 	-consider other options
