@@ -2,8 +2,22 @@ import { useState, useEffect} from 'react';
 import { useInView } from 'react-intersection-observer';
 import './cspage.css';
 
-import svd from "./../assets/cs_thumbs/svd_white.png"
+import Stack from '@mui/material/Stack';
+
 import gmm from "./../assets/cs_thumbs/gmm_white.png"
+
+import svd1 from "./../assets/cs_thumbs/svd1.png"
+import svd2 from "./../assets/cs_thumbs/svd2.png"
+import svd5 from "./../assets/cs_thumbs/svd5.png"
+import svd10 from "./../assets/cs_thumbs/svd10.png"
+import svd20 from "./../assets/cs_thumbs/svd20.png"
+import svd40 from "./../assets/cs_thumbs/svd40.png"
+
+import gmm4 from "./../assets/cs_thumbs/gmm4.png"
+import gmm8 from "./../assets/cs_thumbs/gmm8.png"
+import gmm12 from "./../assets/cs_thumbs/gmm12.png"
+import gmm16 from "./../assets/cs_thumbs/gmm16.png"
+import gmmOg from "./../assets/cs_thumbs/gmm_original.png"
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -36,6 +50,17 @@ function Compression() {
       }
     }
 
+    let monaTh;
+    let rowTh;
+
+    if(windowMode === 3){
+      monaTh = 0.01;
+      rowTh = 0.1;
+    } else{
+      monaTh = 0.2;
+      rowTh = 0.2;
+    }
+
     const [ ref1, inView1 ] = useInView({
           threshold: 0.2,
     })
@@ -43,18 +68,22 @@ function Compression() {
           threshold: 0.2,
     })
     const [ ref3, inView3 ] = useInView({
-          threshold: 0.2,
+          threshold: rowTh,
+    })
+    const [ ref3s, inView3s ] = useInView({
+          threshold: rowTh,
     })
     const [ ref4, inView4 ] = useInView({
           threshold: 0.2,
     })
     const [ ref5, inView5 ] = useInView({
-          threshold: 0.2,
+          threshold: monaTh,
     })
 
     const [first1, setFirst1] = useState(true)
     const [first2, setFirst2] = useState(true)
     const [first3, setFirst3] = useState(true)
+    const [first3s, setFirst3s] = useState(true)
     const [first4, setFirst4] = useState(true)
     const [first5, setFirst5] = useState(true)
     
@@ -70,6 +99,9 @@ function Compression() {
       if(first3 === true & inView3 === true){
         setFirst3(false)
       }
+      if(first3s === true & inView3s === true){
+        setFirst3s(false)
+      }
       if(first4 === true & inView4 === true){
         setFirst4(false)
       }
@@ -82,6 +114,7 @@ function Compression() {
           setFirst1(true)
           setFirst2(true)
           setFirst3(true)
+          setFirst3s(true)
           setFirst4(true)
           setFirst5(true)
         }
@@ -121,11 +154,95 @@ function Compression() {
         This first method utilizes SVD (Singular Value Decomposition). An image is essentially a matrix 
         of pixel values. We then decompose the matrix into three different matrices using linear algebra 
         techniques and essentially reduce the size of the matrices. For colored images, you store red, green, 
-        and blue values into three matrices and have to perform SVD for each matrix. Here are the results:
+        and blue values into three matrices and have to perform SVD for each matrix. Here are the results 
+        (note that RV = Recovered Variance):
         </p>
 
-        <img src = {svd} alt = "svd" className = {inView3 || first3 === false ? "csImg-zoom":"csImg"} ref = {ref3}
-          style = {windowMode === 3 ? {width: "82vw" } : {width: "70vw"} }/>
+        <Stack direction = {windowMode >= 2 ? "column":"row"}
+            alignItems="center"
+            justifyContent="center"
+            spacing = {15/8}
+            sx = {{mt:30/8}}
+            className = {inView3 || first3 === false ? "csImg-zoom":"csImg"}
+            ref = {ref3}
+        >
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>1 component</p>
+            <img src = {svd1} alt = "svd1" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.0025</p>
+            <p className = "subText">RV: R: 0.224 G: 0.224 B: 0.224</p>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>2 components</p>
+            <img src = {svd2} alt = "svd2" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.005</p>
+            <p className = "subText">RV: R: 0.543 G: 0.543 B: 0.543</p>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>5 components</p>
+            <img src = {svd5} alt = "svd5" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.0125</p>
+            <p className = "subText">RV: R: 0.985 G: 0.985 B: 0.985</p>
+          </Stack>
+
+        </Stack>
+
+        <Stack direction = {windowMode >= 2 ? "column":"row"}
+            alignItems="center"
+            justifyContent="center"
+            spacing = {15/8}
+            sx = {{mt:30/8, mb:30/8}}
+            className = {inView3s || first3s === false ? "csImg-zoom":"csImg"}
+            ref = {ref3s}
+        >
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>10 components</p>
+            <img src = {svd10} alt = "svd10" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.025</p>
+            <p className = "subText">RV: R: 0.988 G: 0.988 B: 0.988</p>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>20 components</p>
+            <img src = {svd20} alt = "svd20" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.05</p>
+            <p className = "subText">RV: R: 0.989 G: 0.989 B: 0.989</p>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>40 components</p>
+            <img src = {svd40} alt = "svd40" style = {windowMode === 1 ? {width: 210}:{}}/>
+            <p className = "subText">Compression: 0.1</p>
+            <p className = "subText">RV: R: 0.991 G: 0.991 B: 0.991</p>
+          </Stack>
+
+        </Stack>
 
         <p className = {inView4 || first4 === false ? "csText-zoom":"csText"} ref = {ref4}>
         This next method uses GMM (Gaussian Mixture Modeling). It utilizes clusters and gives each point a probability 
@@ -134,8 +251,60 @@ function Compression() {
         belongs to a cluster. Here are the results:
         </p>
 
-        <img src = {gmm} alt = "gmm" className = {inView5 || first5 === false ? "csImg-zoom":"csImg"} ref = {ref5}
-          style = {windowMode === 3 ? {width: "82vw" } : {width: "70vw"} }/>
+        <Stack direction = {windowMode >= 2 ? "column":"row"}
+            alignItems="center"
+            justifyContent="center"
+            spacing = {15/8}
+            sx = {{mt:30/8}}
+            className = {inView5 || first5 === false ? "csImg-zoom":"csImg"}
+            ref = {ref5}
+        >
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>4 Clusters</p>
+            <img src = {gmm4} alt = "gmm4" style = {windowMode === 1 ? {width: 130}:{width: 180}}/>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>8 Clusters</p>
+            <img src = {gmm8} alt = "gmm8" style = {windowMode === 1 ? {width: 130}:{width: 180}}/>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>12 Clusters</p>
+            <img src = {gmm12} alt = "gmm12" style = {windowMode === 1 ? {width: 130}:{width: 180}}/>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>16 Clusters</p>
+            <img src = {gmm16} alt = "gmm16" style = {windowMode === 1 ? {width: 130}:{width: 180}}/>
+          </Stack>
+
+          <Stack direction = "column"
+              alignItems="center"
+              justifyContent="center"
+              spacing = {1}
+          >
+            <p className = "subText" style = {{margin: "8px 0px"}}>Original</p>
+            <img src = {gmmOg} alt = "gmmOg" style = {windowMode === 1 ? {width: 130}:{width: 180}}/>
+          </Stack>
+
+        </Stack>
 
       </div>
     );

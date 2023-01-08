@@ -83,7 +83,7 @@ function App() {
     if(location['pathname'] === '/Art' & x !== -100){
       setX(-100)
     }
-    if(location['pathname'] === '/CS' & x !== -200){
+    if((location['pathname'] === '/CS' || location['pathname'] === '/CS/Authorship' || location['pathname'] === '/CS/Compression') & x !== -200){
       setX(-200)
     }
     if(location['pathname'] === '/Music' & x !== -300){
