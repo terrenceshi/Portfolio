@@ -1,43 +1,53 @@
-.csText{
-    text-align: left;
-    padding: 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin: 0px;
+@keyframes translateAnimCSPage {
+    0%    { transform: translate(0, 100%); opacity: 0; }
+    100%  { transform: translate(0); opacity: 1; }
 }
 
 .csTitle{
-    padding: 50px;
     margin: 0px;
-    padding-bottom: 0px;
+    opacity: 0;
     text-align: left;
+}
+.csTitle-zoom{
+    margin: 0px;
+    text-align: left;
+    animation: translateAnimCSPage 1.25s;
+}
+
+.csText{
+    text-align: left;
+    padding: 30px 0;
+    margin: 0px;
+    opacity: 0;
+}
+.csText-zoom{
+    text-align: left;
+    padding: 30px 0;
+    margin: 0px;
+    animation: translateAnimCSPage 1.25s;
 }
 
 .csImg{
-    padding: 10px;
-    margin: 10px;
-    width: 60%;
+    opacity: 0;
 }
-
-.csImgSmall{
-    width: 35%;
+.csImg-zoom{
+    animation: translateAnimCSPage 1.25s;
 }
 
 .csRow{
-    padding: 20px;
-    margin: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.csRow-zoom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    animation: translateAnimCSPage 1.25s;
 }
 
-.authorship{
-    margin: 50px;
-}
-
-.compression{
-    margin: 50px;
-}
-
-.articleContent{
-    padding-bottom: 25px;
+.csImgSmall{
+    width: 34vw;
 }

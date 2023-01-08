@@ -2,14 +2,10 @@
 	-look into preloading images so you dont deal with dumb loading
 
 -CS
-	-work on making mobile view not disgusting
+	-work on making mobile view not disgusting (optional)
 
-	-make link go back to top
-
-	-make mobile cs articles not stupid
-		-make images better
-
-	-make image compression images dark mode friendly (optional)
+	-compression image edit perhaps
+		-make image compression images dark mode friendly (optional)
 
 	-photoshop books2nooks image to be cooler
 
