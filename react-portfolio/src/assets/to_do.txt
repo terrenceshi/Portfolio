@@ -22,6 +22,8 @@
 
 	-make image compression images dark mode friendly (optional)
 
+	-photoshop books2nooks image to be cooler
+
 -music
 	-have player go down when page is left
 		-may have to possibly make player a component in app.js
