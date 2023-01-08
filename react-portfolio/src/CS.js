@@ -12,10 +12,12 @@ function getWindowDimensions() {
 
   if(width >= 955){
     return 0;
-  } else if (width < 955 & width > 650) {
+  } else if (width < 955 & width > 700) {
     return 1;
-  } else if (width <= 650) {
+  } else if (width <= 700 & width > 450) {
     return 2;
+  } else if (width <= 450){
+    return 3;
   }
 
 }
@@ -26,12 +28,14 @@ function CS() {
     if (window.innerWidth >= 955){ //give some margin. 
       setWindowMode(0)
 
-    } else if (window.innerWidth < 955 & window.innerWidth > 650) {
+    } else if (window.innerWidth < 955 & window.innerWidth > 700) {
       setWindowMode(1)
 
-    } else if(window.innerWidth <= 650) {
+    } else if(window.innerWidth <= 700 & window.innerWidth > 450) {
       setWindowMode(2)
-    } 
+    } else if (window.innerWidth <= 450){
+      setWindowMode(3)
+    }
   }
 
   const [ ref3, inView3 ] = useInView({

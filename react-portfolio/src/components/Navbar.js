@@ -25,15 +25,6 @@ const Nav = ({windowMode, x, setX}) => {
     setAnchorElNav(null);
   };
 
-  const updateX = (pageName) => {
-    //console.log(pageName)
-  };
-
-  const btnClick = (pageName) =>{
-    updateX(pageName);
-    handleCloseNavMenu();
-  }
-
   return (
     <AppBar 
       position="static" 
@@ -89,7 +80,6 @@ const Nav = ({windowMode, x, setX}) => {
                 component = {Link}
                 to = {`/${page}`}
                 key={page}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', fontSize : "1.25rem" }}
               >
                   {page}

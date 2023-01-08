@@ -7,9 +7,9 @@
     margin-left: 0px;
 }
 
-.row{
-    display: flex;
-    justify-content: center;
+.article{
+    margin: 0px auto;
+    
 }
 
 .articleText{
