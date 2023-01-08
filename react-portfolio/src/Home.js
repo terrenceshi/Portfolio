@@ -66,10 +66,8 @@ function Home() {
     homeHeight = "100%";
   }
 
-  let th = windowMode !== 2 ? 0.15 : 0.01;
-
-  const { ref, inView } = useInView({
-    threshold: th, //percentage that should be visible
+  const [ ref, inView ] = useInView({
+    threshold: 0.2
   })
 
   useEffect(() => {

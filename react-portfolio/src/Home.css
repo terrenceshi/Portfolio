@@ -1,14 +1,19 @@
+@keyframes translateAnimHome {
+    0%    { transform: translate(0, 100%); opacity: 0; }
+    100%  { transform: translate(0); opacity: 1;}
+}
+
 .Home{
     /* background: radial-gradient(circle at 75.1% 15.8%, rgb(36, 36, 36) 0%, rgb(0, 0, 0) 170.4%); */
     opacity: 0;
     transform: translate(0, 20%);
-    transition: 2s;
+    transition: 1.25s;
 }
 
 .Home-zoom{
     opacity: 1;
     transform: translate(0);
-    transition: 2s;
+    transition: 1.25s;
 }
 
 .bio{
