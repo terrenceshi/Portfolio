@@ -1,3 +1,20 @@
-.artPaper{
-
+.artRow{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: 1s;
 }
+
+.artRow-zoom{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transition: 1.25s;
+
+    animation: translateAnimArt 1.25s;
+}
+
+@keyframes translateAnimArt {
+    0%    { transform: translate(0, 100%) }
+    100%  { transform: translate(0); }
+  }

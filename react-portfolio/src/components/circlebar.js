@@ -5,10 +5,13 @@ import Paper from '@mui/material/Paper';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import VisibilitySensor from "react-visibility-sensor";
+import { useInView } from 'react-intersection-observer';
 
 function Circlebar({ percent, skill, desc, widthInput, marginInput, windowMode }) {
-  let percentage = 0;
+  const { ref, inView } = useInView({
+    threshold: 0.4, //percentage that should be visible
+  })
+
   return (
     <Paper elevation={3} className = "circlePaper"
       sx = {{margin: marginInput/8,
@@ -18,28 +21,19 @@ function Circlebar({ percent, skill, desc, widthInput, marginInput, windowMode }
 
         <h3 className = "circleTitle">{skill}</h3>
 
-        <div style={{ width: 100, height: 100 }}>
-          <VisibilitySensor>
-            {({ isVisible }) => {
-              
-              if(isVisible === true & percentage === 0){
-                percentage += percent;
-              }
-              return (
-                <CircularProgressbar
-                  value={percentage}
-                  text={""}
-                  styles={buildStyles({
-                    strokeLinecap: "butt",
-                    textColor: "white",
-                    pathColor: "#90caf9",
-                    trailColor: "black",
-                    pathTransitionDuration: 1.2
-                  })}
-                />
-              );
-            }}
-          </VisibilitySensor>
+        <div style={{ width: 100, height: 100 }} ref = {ref}>
+          <CircularProgressbar
+            value={inView ? percent : 0}
+            text={""}
+            styles={buildStyles({
+              strokeLinecap: "butt",
+              textColor: "white",
+              pathColor: "#90caf9",
+              trailColor: "black",
+              pathTransitionDuration: 1.2
+            })}
+          />
+
         </div>
 
         <p className = "skillDesc">{desc}</p>

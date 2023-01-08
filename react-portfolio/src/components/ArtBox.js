@@ -12,6 +12,11 @@ const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
     var mtVar = 15
     var mbVar = 15
 
+    if(windowMode === 2){
+        mtVar = 5
+        mbVar = 5
+    }
+
     if(type === "top"){
         mtVar = 60
     }
@@ -42,7 +47,8 @@ const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
     return (
         <div className = "artBox">
             <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
-                style = {{ margin: "15px", marginTop: `${mtVar}px`, marginBottom: `${mbVar}px` }}/>
+                style = {windowMode === 2 ? { margin: "5px" } : { margin: "15px"}}
+            />
 
             <Dialog onClose={handleClose} 
                 open={open} 

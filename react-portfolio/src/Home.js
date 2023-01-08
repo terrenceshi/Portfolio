@@ -5,6 +5,8 @@ import pfp from "./assets/me_test5.jpg"
 
 import { useState, useEffect} from 'react';
 
+import { useInView } from 'react-intersection-observer';
+
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
 
@@ -64,13 +66,19 @@ function Home() {
     homeHeight = "100%";
   }
 
+  let th = windowMode !== 2 ? 0.5 : 0.1;
+
+  const { ref, inView } = useInView({
+    threshold: th, //percentage that should be visible
+  })
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     //console.log(windowMode)
   })
 
   return (
-    <div className="Home">
+    <div className= {inView ? "Home-zoom" : "Home"} ref = {ref}>
 
       <div className = 'homeContainer' style = {{height: homeHeight}}>
         <div className = 'bannerContent'>

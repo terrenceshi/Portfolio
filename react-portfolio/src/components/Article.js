@@ -8,8 +8,6 @@ const externalReadMore = ({link}) => {
     return (
         <a id = "link1" className = "linkText" href={link} target="_blank" rel="noopener noreferrer">
             <Button
-                component = {Link}
-                to = {link}
                 sx={{ fontSize : "1.2rem" }}
             >
                 Read More

@@ -1,3 +1,17 @@
 .CS{
     margin: 60px;
 }
+
+.articleDiv{
+    opacity: 0;
+}
+
+.articleDiv-zoom{
+    opacity: 1;
+    animation: translateAnimCS 0.75s;
+}
+
+@keyframes translateAnimCS {
+    0%    { transform: translate(0, 50%) }
+    100%  { transform: translate(0, 0%); }
+}

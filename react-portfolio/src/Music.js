@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 
 import { useRef, useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import oz from './assets/music/40oz_mixed.mp3'
 import dino from './assets/music/dino_sample.mp3'
@@ -44,6 +45,10 @@ function Music() {
       setWindowMode(3)
     }
   }
+
+  const [ ref, inView ] = useInView({
+      threshold: 0.2,
+  })
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -182,7 +187,7 @@ function Music() {
   }
 
   return (
-    <div className="Music" style = {{margin : 0}}>
+    <div  style = {{margin : 0}} >
       <Player playFn = {click} 
         playing = {isPlaying} 
         songName = {songName} 
@@ -208,6 +213,8 @@ function Music() {
 
 
         <Stack
+          className = {inView ? "Music-zoom":"Music"}
+          ref = {ref}
           divider={<Divider orientation="horizontal" flexItem sx = {{mt: 0}}/>}
           sx = {{mt: 0}}
         >

@@ -1,0 +1,11 @@
+.Music{
+    opacity: 0;
+    transform: scale(90%);
+    transition: 2s;
+}
+
+.Music-zoom{
+    opacity: 1;
+    transform: scale(100%);
+    transition: 1.25s;
+}

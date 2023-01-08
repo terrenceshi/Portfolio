@@ -59,6 +59,18 @@
 
 .footer{
     width: 100%;
+    opacity: 0;
+}
+
+.footer-view{
+    width: 100%;
+    opacity: 1;
+    animation: translateAnimFooter 2s;
+}
+
+@keyframes translateAnimFooter {
+    0%    { transform: translate(0, 100%) }
+    100%  { transform: translate(0); }
 }
 
 .icon-3d {

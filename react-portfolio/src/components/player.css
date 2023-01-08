@@ -11,6 +11,12 @@
     background-color: black;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 10;
+    animation: playerSpawn 0.75s;
+}
+
+@keyframes playerSpawn {
+    0%    {  transform: translate(0, 100px); }
+    100%  { transform: translate(0, 0); }
 }
 
 .songTitle{
@@ -25,3 +31,4 @@
     width: 26px;
     height: 20px;
 }
+
