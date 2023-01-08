@@ -82,7 +82,7 @@ function Home() {
 
       <div className = 'homeContainer' style = {{height: homeHeight}}>
         <div className = 'bannerContent'>
-          <div className = "bioBox" style = {{width: bbWidth}}>
+          <div className = "bioBox" style = {{maxWidth: bbWidth}}>
             <h1 className = "bioHeader">About Me</h1>
 
             <div className ="bioRow" style = {{flexDirection : brFlexDir, alignItems : brAlignItems}}>
