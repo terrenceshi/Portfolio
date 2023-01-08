@@ -46,10 +46,6 @@ function Music() {
     }
   }
 
-  const [ ref, inView ] = useInView({
-      threshold: 0.2,
-  })
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   })
@@ -186,6 +182,22 @@ function Music() {
 
   }
 
+  const [ ref1, inView1 ] = useInView({
+      threshold: 0.3,
+  })
+  const [ ref2, inView2 ] = useInView({
+      threshold: 0.3,
+  })
+  const [ ref3, inView3 ] = useInView({
+      threshold: 0.3,
+  })
+  const [ ref4, inView4 ] = useInView({
+      threshold: 0.3,
+  })
+  const [ ref5, inView5 ] = useInView({
+      threshold: 0.3,
+  })
+
   return (
     <div  style = {{margin : 0}} >
       <Player playFn = {click} 
@@ -213,17 +225,31 @@ function Music() {
 
 
         <Stack
-          className = {inView ? "Music-zoom":"Music"}
-          ref = {ref}
-          divider={<Divider orientation="horizontal" flexItem sx = {{mt: 0}}/>}
+          className = {"Music"}
           sx = {{mt: 0}}
         >
-          <Track title = {songNames[0]} clickFn = {ozClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
-          <Track title = {songNames[1]} clickFn = {dinoClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
-          <Track title = {songNames[2]} clickFn = {stacyClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
-          <Track title = {songNames[3]} clickFn = {uvClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
-          <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
-          <Divider />
+          <div className = {inView1 ? "trackDiv-zoom" : "trackDiv"} ref = {ref1}>
+            <Track title = {songNames[0]} clickFn = {ozClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          <div className = {inView2 ? "trackDiv-zoom" : "trackDiv"} ref = {ref2}>
+            <Track title = {songNames[1]} clickFn = {dinoClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          <div className = {inView3 ? "trackDiv-zoom" : "trackDiv"} ref = {ref3}>
+            <Track title = {songNames[2]} clickFn = {stacyClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          <div className = {inView4 ? "trackDiv-zoom" : "trackDiv"} ref = {ref4}>
+            <Track title = {songNames[3]} clickFn = {uvClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          <div className = {inView5 ? "trackDiv-zoom" : "trackDiv"} ref = {ref5}>
+            <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          
+          
 
         </Stack>
 

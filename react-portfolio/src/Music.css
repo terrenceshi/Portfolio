@@ -1,6 +1,6 @@
 .Music{
-    opacity: 0;
-    transform: scale(90%);
+    opacity: 1;
+    transform: scale(100%);
     transition: 2s;
 }
 
@@ -9,3 +9,18 @@
     transform: scale(100%);
     transition: 1.5s;
 }
+
+.trackDiv{
+    opacity: 0;
+}
+.trackDiv-zoom{
+    opacity: 1;
+    transition: 1.25s;
+
+    animation: translateAnimArt 1.25s;
+}
+
+@keyframes translateAnimArt {
+    0%    { transform: translate(0, 100%) }
+    100%  { transform: translate(0); }
+  }
