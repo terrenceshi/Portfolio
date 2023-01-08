@@ -6,9 +6,6 @@
 -CS
 	-work on making mobile view not disgusting (optional)
 
-	-compression image edit perhaps
-		-make image compression images dark mode friendly (optional)
-
 	-photoshop books2nooks image to be cooler
 
 -music
