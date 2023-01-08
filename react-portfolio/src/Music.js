@@ -14,6 +14,7 @@ import dino from './assets/music/dino_sample.mp3'
 import stacy from './assets/music/stacy.mp3'
 import uv from './assets/music/uv_sample.mp3'
 import james from './assets/music/james_is_a_demo.mp3'
+import richard from './assets/music/richard_is_a_sample.mp3'
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -50,8 +51,9 @@ function Music() {
     window.addEventListener("resize", handleResize);
   })
 
-  const songs = [oz, dino, stacy, uv, james]
-  const songNames = ["40oz Instrumental Cover", "Dino Sample", "Stacy's Mom Instrumental", "Ultraviolet Sample", "James is a Demo"]
+  const songs = [oz, dino, stacy, uv, james, richard]
+  const songNames = ["40oz Instrumental Cover", "Dino Sample", "Stacy's Mom Instrumental", 
+                    "Ultraviolet Sample", "James is a Demo", "Richard is a Sample"]
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(songs[0]);
@@ -161,6 +163,16 @@ function Music() {
       setIsPlaying(true);
     }
   }
+  const richardClick = () =>{
+    if(songName === songNames[5]){
+      setIsPlaying(!isPlaying);
+    } else {
+      setCurrentSong(songs[5])
+      setSongName(songNames[5])
+      audioElem.current.currentTime = 0;
+      setIsPlaying(true);
+    }
+  }
 
   const click = () =>{
     setIsPlaying(!isPlaying);
@@ -195,6 +207,9 @@ function Music() {
       threshold: 0.3,
   })
   const [ ref5, inView5 ] = useInView({
+      threshold: 0.3,
+  })
+  const [ ref6, inView6 ] = useInView({
       threshold: 0.3,
   })
 
@@ -246,6 +261,10 @@ function Music() {
           </div>
           <div className = {inView5 ? "trackDiv-zoom" : "trackDiv"} ref = {ref5}>
             <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
+            <Divider />
+          </div>
+          <div className = {inView6 ? "trackDiv-zoom" : "trackDiv"} ref = {ref6}>
+            <Track title = {songNames[5]} clickFn = {richardClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
           
