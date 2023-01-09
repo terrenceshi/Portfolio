@@ -1,13 +1,14 @@
--add loading screen(s) if using large images
-	-set up loading hooks
-		-when all banner images are loaded, show the actual app
+-figure out art page loading
+	-brainstorm: modify brians code
+		-need to be able to render all images during loading screen
+		-can put all images in plane of existence but only one isnt display: none
 
-	-when all art images are loaded, show the actual art page
+		-either do it like instagram and load all images on click
+		-or hard preload everything and pass in <img> into components
 
 -CS
-	-work on making mobile view not disgusting (optional)
-
 	-photoshop books2nooks image to be cooler
+	-consider if you care about making cs article img match going in vs going out
 
 -music
 	-have player go down when page is left

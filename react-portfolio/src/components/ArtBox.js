@@ -2,9 +2,13 @@ import './ArtBox.css';
 
 import Dialog from '@mui/material/Dialog';
 import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
 
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 import React, { useState } from 'react';
 
@@ -32,6 +36,14 @@ const ArtBox = ({ imageSrc, text, title, windowMode }) => {
     const loadFn = () =>{
         console.log("chads here")
     }
+    
+    let maxH;
+
+    if(windowMode === 0){
+        maxH = 600;
+    } else {
+        maxH = 525;
+    }
 
     return (
         <div className = "artBox">
@@ -46,15 +58,20 @@ const ArtBox = ({ imageSrc, text, title, windowMode }) => {
             >
                 
                 <Stack direction = {windowMode !== 0 ? "column" : "row"}>
-                    <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
-                        style={windowMode !== 0 ? { overflow: "hidden", maxHeight : 525 } : { overflow: "hidden", maxHeight : 600 }} 
-                        onLoad = {loadFn}
-                    />
+                    {imageSrc.map((imgItem,index)=>{
+                        return(
+                            <img src = {imgItem} key = {index} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
+                            style={current === index ? {maxHeight: maxH}:{display: "none", maxHeight: maxH}} 
+                             onLoad = {loadFn}
+                            />
+
+                        )
+                    })}
 
                     <Stack direction = {windowMode !== 0 ? "row": "column"} justifyContent="space-between">
                         <div>
                             <h2 className = "artTitle" 
-                                style = {windowMode === 2 ? {fontSize: "1.4rem", padding: 16}: {fontSize: "2rem", padding: 24}}>
+                                style = {windowMode === 2 ? {fontSize: "1.4rem", padding: 16}: {fontSize: "2rem", padding: 24, paddingBottom: 12}}>
                                 {title}
                             </h2>
                             <p className = "artText" style = {windowMode !== 0 ? { display: "none"} : { display: "block"}}>{text}</p>
@@ -63,38 +80,37 @@ const ArtBox = ({ imageSrc, text, title, windowMode }) => {
                         <Stack direction = "row" 
                             sx = {windowMode === 2 ? {margin: 2}:{margin: 3}}
                             alignItems="center"
-                            justifyContent="center"
+                            justifyContent="space-between"
                             className = "arrows"
                         >
-                            <ArrowCircleLeftRoundedIcon 
-                                className = "arrowLeft" 
+                            <IconButton 
+                                color="white" 
                                 onClick = {leftArrow}
-                                sx={windowMode === 2 ?
-                                    { fontSize: "30px",
-                                    "& :hover": { color: "#90caf9" },
-                                    mr : 10 / 8}
-                                    :
-                                    { fontSize: "40px",
-                                    "& :hover": { color: "#90caf9" },
-                                    mr : 20 / 8}
-                                }
-                                style = {imageSrc.length === 1 ? { display: "none"} : { display: "block"}}
-                                
-                            />
-                            <ArrowCircleRightRoundedIcon 
-                                className = "arrowRight" 
+                                style = {imageSrc.length === 1 ? { display: "none"} : {}}
+                            >
+                                <ArrowLeftIcon 
+                                     sx={windowMode === 2 ?
+                                        { fontSize: "30px"}
+                                        :
+                                        { fontSize: "40px"}
+                                    }
+                                />
+                            </IconButton>
+
+                            <IconButton 
+                                color="white" 
                                 onClick = {rightArrow}
-                                sx={windowMode === 2 ?
-                                    { fontSize: "30px",
-                                    "& :hover": { color: "#90caf9" },
-                                    ml : 10 / 8}
-                                    :
-                                    { fontSize: "40px",
-                                    "& :hover": { color: "#90caf9" },
-                                    ml: 20 / 8}
-                                } 
-                                style = {imageSrc.length === 1 ? { display: "none"} : { display: "block"}}
-                            />
+                                style = {imageSrc.length === 1 ? { display: "none"} : {}}
+                            >
+                                <ArrowRightIcon 
+                                     sx={windowMode === 2 ?
+                                        { fontSize: "30px"}
+                                        :
+                                        { fontSize: "40px"}
+                                    }
+                                />
+                            </IconButton>
+
                         </Stack>
                     </Stack>
                     

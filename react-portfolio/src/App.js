@@ -166,7 +166,7 @@ function App() {
           </div>
         </div>
 
-        <div className = "loadedApp" style = {bannersLoaded === sliderArr.length ? {}:{display: "none"}}>
+        <div className = "loadedApp" style = {bannersLoaded === sliderArr.length ? {}:{}}>
           <div className = 'bannerContainer'>
             <Slider sliderArr = {sliderArr} x = {x} 
               bannersLoaded = {bannersLoaded} setBannersLoaded = {setBannersLoaded}

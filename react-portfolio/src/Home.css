@@ -37,6 +37,7 @@
     margin: 25px;
     margin-top: 15px;
     border-radius: 50%;
+    animation: appLoad 1.25s;
 }
 
 .bioBox{

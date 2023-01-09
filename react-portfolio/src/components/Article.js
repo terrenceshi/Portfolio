@@ -1,8 +1,10 @@
 import './Article.css';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import Skeleton from '@mui/material/Skeleton';
 
 import { Link } from 'react-router-dom';
+import { useState, useEffect} from 'react';
 
 const externalReadMore = ({link}) => {
     return (
@@ -30,25 +32,35 @@ const normalReadMore = ({link}) => {
 
 let imgStyle;
 
-
-const externalImg = ({link, imageSrc, windowMode}) => {
+const externalImg = ({link, imageSrc, windowMode, imgLoaded, setImgLoaded}) => {
     return (
         <a id = "link2" href = {link} target="_blank" rel="noopener noreferrer">
-            <img src = {imageSrc} alt = "pic" className = "article_img" 
-            style = {imgStyle}/>
+            <img src = {imageSrc} alt = "pic" className = {windowMode >= 2 ? "nothing":"article_img"}
+                style = {imgLoaded ? {imgStyle} : {display: "none"}} onLoad = {() => setImgLoaded(true)}
+            />
+
+            <Skeleton variant="rectangular" width={200} height={200} sx = {{margin: 30/8, marginTop: 15/8, marginLeft: 0}}
+                style = {imgLoaded ? {display: "none"} : {}}
+            />
         </a>
     )
 }
-const normalImg = ({link, imageSrc, windowMode}) => {
+const normalImg = ({link, imageSrc, windowMode, imgLoaded, setImgLoaded}) => {
     return (
         <Link id = "link2" to = {link}>
-            <img src = {imageSrc} alt = "pic" className = "article_img"
-            style = {imgStyle}/>
+            <img src = {imageSrc} alt = "pic" className = {windowMode >= 2 ? "nothing":"article_img"}
+                style = {imgLoaded ? {imgStyle} : {display: "none"}} onLoad = {() => setImgLoaded(true)}
+            />
+            <Skeleton variant="rectangular" width={200} height={200} sx = {{margin: 30/8, marginTop: 15/8, marginLeft: 0}}
+                style = {imgLoaded ? {display: "none"} : {}}
+            />
         </Link>
     )
 }
 
 const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
+    const [imgLoaded, setImgLoaded] = useState(false)
+    
     let readMore;
     if(external){
         readMore = externalReadMore({link})
@@ -58,9 +70,9 @@ const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
 
     let imgLink;
     if(external){
-        imgLink = externalImg({link, imageSrc, windowMode})
+        imgLink = externalImg({link, imageSrc, windowMode, imgLoaded, setImgLoaded})
     } else {
-        imgLink = normalImg({link, imageSrc, windowMode})
+        imgLink = normalImg({link, imageSrc, windowMode, imgLoaded, setImgLoaded})
     }
 
     const imgStyleOther = {
@@ -70,7 +82,7 @@ const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
         display: "none"
     }
     const imgStyle3 = {
-        marginLeft: 30
+        display: "none"
     }
     
     if(windowMode === 2){
@@ -82,19 +94,23 @@ const Article = ({ imageSrc, link, text, title, external, windowMode }) => {
     }
 
     return (
-        <div className = "article" style = {windowMode === 3 ? {width: 200}:{}}>
+        <div className = "article">
             <Paper elevation={2} className = "articlePaper">
                 <h2 className = "articleTitle" 
-                    style = {windowMode > 2 ? {textAlign: "center", fontSize: "1.4rem"} : {textAlign: "left", fontSize: "2rem"}}>
+                    style = {windowMode === 3 ? {textAlign: "left", fontSize: "1.4rem", padding: 15, paddingBottom:0} 
+                                                :
+                                                {textAlign: "left", fontSize: "2rem"}}>
                     {title}
                 </h2>
                 <div className = "row" style = {windowMode >= 2 ? {flexDirection: "column-reverse", alignItems: "center"} : {}}>
                     <div>
-                        <p className = "articleText" style = {windowMode !== 3 ? { display: "block"} : { display: "none"}}>
+                        <p className = "articleText" style = {windowMode === 3 ? {padding: 15}:{}}>
                             {text}
                             
                         </p>
-                        <p className = "readMore ">{readMore}</p>
+                        <p className = "readMore " style = {windowMode === 3 ? {padding: 15, paddingTop: 0, paddingLeft:15-8}:{}}>
+                            {readMore}
+                        </p>
                     </div>
                     
                     

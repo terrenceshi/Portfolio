@@ -5,6 +5,7 @@
     margin: 30px;
     margin-top: 15px;
     margin-left: 0px;
+    animation: appLoad 1.25s;
 }
 
 .article{
@@ -43,4 +44,8 @@
 .linkText{
     color: #90caf9;
     text-decoration: none;
+}
+
+.nothing{
+    display: none;
 }

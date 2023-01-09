@@ -1,5 +1,6 @@
 import './Home.css';
 import Circlebar from "./components/circlebar.js"
+import Skeleton from '@mui/material/Skeleton';
 
 import pfp from "./assets/me_test5.jpg"
 
@@ -72,8 +73,9 @@ function Home() {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    //console.log(windowMode)
   })
+
+  const [pfpLoaded, setPfpLoaded] = useState(false)
 
   return (
     <div className= {inView ? "Home-zoom" : "Home"} ref = {ref}>
@@ -91,7 +93,12 @@ function Home() {
                 <br></br>
               </p>
 
-              <img src = {pfp} className = "pfp" id = "pfp"/>
+              <img src = {pfp} className = "pfp" id = "pfp" onLoad = {() => setPfpLoaded(true)} style = {pfpLoaded ? {}:{display: "none"}}/>
+              <div >
+                <Skeleton variant="circular" width={175} height={175} style = {pfpLoaded ? {display: "none"}:{margin: 25, marginTop: 15}}/>
+              </div>
+
+              
 
             </div>
           </div>
