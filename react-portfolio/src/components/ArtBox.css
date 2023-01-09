@@ -29,3 +29,7 @@
 .artTitle{
     margin: 0px;
 }
+
+.loadedDesc{
+    animation: appLoad 1.25s;
+}

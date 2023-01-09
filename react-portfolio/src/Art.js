@@ -2,6 +2,7 @@ import ArtBox from './components/ArtBox.js';
 import './Art.css';
 import { useState, useEffect} from 'react';
 import { useInView } from 'react-intersection-observer';
+import Skeleton from '@mui/material/Skeleton';
 
 import getOut from "./assets/art/get_out/wip6.png"
 import getOut1 from "./assets/art/get_out/wip0.png"
@@ -54,9 +55,9 @@ import moira from "./assets/art/misc/moira.jpg"
 function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
 
-        if(width >= 935){
+        if(width >= 970){
                 return 0;
-        } else if (width < 935 & width > 400) {
+        } else if (width < 970 & width > 400) {
                 return 1;
         } else if (width <= 400) {
                 return 2;
@@ -65,7 +66,7 @@ function getWindowDimensions() {
 
 function Art() {
         //refs and inviews for each row
-        const [ ref1, inView1 ] = useInView({
+        const [ ref1, inView1, entry1 ] = useInView({
                 threshold: 0.2,
         })
         const [ ref2, inView2 ] = useInView({
@@ -78,6 +79,13 @@ function Art() {
                 threshold: 0.2,
         })
 
+        const [ loadRef1, loadInView1 ] = useInView({
+                threshold: 0.2,
+        })
+        const [ loadRef2, loadInView2 ] = useInView({
+                threshold: 0.2,
+        })
+
         const [windowMode, setWindowMode] = useState(getWindowDimensions())
 
         const [first1, setFirst1] = useState(true)
@@ -85,11 +93,14 @@ function Art() {
         const [first3, setFirst3] = useState(true)
         const [first4, setFirst4] = useState(true)
 
+        const [first1L, setFirst1L] = useState(true)
+        const [first2L, setFirst2L] = useState(true)
+
         const handleResize = () => {
-                if (window.innerWidth >= 935){
+                if (window.innerWidth >= 970){
                   setWindowMode(0)
             
-                } else if (window.innerWidth < 935 & window.innerWidth > 400) {
+                } else if (window.innerWidth < 970 & window.innerWidth > 400) {
                   setWindowMode(1)
             
                 } else if(window.innerWidth <= 400) {
@@ -112,79 +123,121 @@ function Art() {
                         setFirst4(false)
                 }
 
+                if(first1L === true & loadInView1 === true){
+                        setFirst1L(false)
+                }
+                if(first2L === true & loadInView2 === true){
+                        setFirst2L(false)
+                }
+
                 window.onscroll = function() {
                         if(window.pageYOffset === 0) {
                                 setFirst1(true)
                                 setFirst2(true)
                                 setFirst3(true)
                                 setFirst4(true)
+
+                                setFirst1L(true)
+                                setFirst2L(true)
                         }
                 };
         })
 
+        const [numThumb, setNumThumb] = useState(0);
+
         return (
         <div className="Art">
-                <div className = "artPaper" 
+                
+                <div className = {"unloadedArt"}
+                        style = {windowMode === 2 ? {paddingTop: 30, paddingBottom: 0}:{paddingTop: 60, paddingBottom: 60}}
+                >
+
+                        <div className = {loadInView1 || first1L === false ? "artRow-zoom":"artRow"} ref = {loadRef1}>
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                        </div>
+
+                        <div className = {loadInView2 || first2L === false ? "artRow-zoom":"artRow"} ref = {loadRef2}>
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                                <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
+                                        style = {windowMode === 2 ? {margin:5}:{margin:15}}
+                                />
+                        </div>
+                </div>
+
+                <div className = {"loadedArt"}
                         style = {windowMode === 2 ? {paddingTop: 30, paddingBottom: 0}:{paddingTop: 60, paddingBottom: 60}}
                 >
                         <div className = {inView1 || first1 === false ? "artRow-zoom":"artRow"} ref = {ref1}>
                                 <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title  = "Get Out"
                                         text = {"More facial geometric practice on the main character of Jordan Peele's 'Get Out'. \
                                                 I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
                                 <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title  = "Split Face"
                                         text = {"After my other projects this summer, I used my acquired skills in facial anatomy and \
                                                 geometric planes to make this painting from imagination, lighting and everything."}/>
                                 <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title  = "Eren Yeager"
                                         text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
                         </div>
 
                         <div className = {inView2 || first2 === false ? "artRow-zoom":"artRow"} ref = {ref2}>
                                 <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title  = "3D Head"
                                         text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>
                                 <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Homelander"
                                         text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
                                 <ArtBox imageSrc = {[bizFront, bizBack, poster]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Price Heist"
                                         text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
                         </div>
 
                         <div className = {inView3 || first3 === false ? "artRow-zoom":"artRow"} ref = {ref3}>
                                 <ArtBox imageSrc = {[portal]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Portal"
                                         text = {"Photoshop assignment for graphic design class in 2020."}/>
                                 <ArtBox imageSrc = {[cat]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Inebriated Cat"
                                         text = {"Funny cat drawing I made back in 2017. Used a mouse for the edges surprisingly."}/>
                                 <ArtBox imageSrc = {[starlord]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Starlord"
                                         text = {"Painting of Starlord back when Guardians of the Galaxy 2 came out back in 2017."}/>
                         </div>
 
                         <div className = {inView4 || first4 === false ? "artRow-zoom":"artRow"} ref = {ref4}>
                                 <ArtBox imageSrc = {[goblin]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Green Goblin"
                                         text = {"Sketch of the green goblin. Made an effort to get his helmet's geometry accurate."}/>
                                 <ArtBox imageSrc = {[hanniSketch]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Hannibal Sketch"
                                         text = {"Outline and hatching heavy style drawing of Hannibal Lector."}/>
                                 <ArtBox imageSrc = {[moira]}
-                                        windowMode = {windowMode}
+                                        windowMode = {windowMode} numThumb = {numThumb} setNumThumb = {setNumThumb}
                                         title = "Moira"
                                         text = {"Sketch of the maid from American Horror Story's first season."}/>
                         </div>

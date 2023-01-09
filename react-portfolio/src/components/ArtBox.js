@@ -3,20 +3,23 @@ import './ArtBox.css';
 import Dialog from '@mui/material/Dialog';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-
-import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import Skeleton from '@mui/material/Skeleton';
 
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 import React, { useState } from 'react';
 
-const ArtBox = ({ imageSrc, text, title, windowMode }) => {
+var numLoaded = 0;
+
+const ArtBox = ({ imageSrc, text, title, windowMode, load, setLoad }) => {
     const [current, setCurrent] = useState(0)
     const length = imageSrc.length;
 
     const [open, setOpen] = React.useState(false);
+
+    const [imagesLoaded, setImagesLoaded] = React.useState(false);
+
     const handleClose = () => {
         setOpen(false);
         setCurrent(0)
@@ -33,16 +36,23 @@ const ArtBox = ({ imageSrc, text, title, windowMode }) => {
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
-    const loadFn = () =>{
-        console.log("chads here")
+    const loadFn = () => {
+        numLoaded += 1
+        
+        if(numLoaded >= imageSrc.length){
+            setImagesLoaded(true)
+        }
     }
-    
+
     let maxH;
+    let skMb;
 
     if(windowMode === 0){
         maxH = 600;
+        skMb = 0;
     } else {
         maxH = 525;
+        skMb = 24;
     }
 
     return (
@@ -62,13 +72,43 @@ const ArtBox = ({ imageSrc, text, title, windowMode }) => {
                         return(
                             <img src = {imgItem} key = {index} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
                             style={current === index ? {maxHeight: maxH}:{display: "none", maxHeight: maxH}} 
-                             onLoad = {loadFn}
+                            onLoad = {loadFn}
                             />
-
+                            
                         )
                     })}
 
-                    <Stack direction = {windowMode !== 0 ? "row": "column"} justifyContent="space-between">
+                    <Stack 
+                        className = "loadingDesc"
+                        direction = {windowMode !== 0 ? "row": "column"} 
+                        justifyContent="space-between"
+                        style = {imagesLoaded ? {display: "none"}:{}}
+                    >
+                        <div>
+                            <Skeleton variant="text"
+                                style = {windowMode === 2 ? {fontSize: "1.4rem", margin: 16, width: 80}
+                                                                :
+                                                            {fontSize: "2rem", margin: 24, marginBottom: skMb, width: 120}}
+                            />
+
+                            <div style = {windowMode !== 0 ? { display: "none"} : {width: 300}} >
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:252, margin: 3, mb: 0, mt: 1.5 }} />
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:252, margin: 3, mb: 0, mt: 0 }} />
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:252, margin: 3, mb: 0, mt: 0 }} />
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:252, margin: 3, mb: 0, mt: 0 }} />
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:252, margin: 3, mb: 0, mt: 0 }} />
+                                <Skeleton variant="text" sx={{ fontSize: '1.2rem',width:175, margin: 3, mt: 0 }} />
+                            </div>
+                        </div>
+
+                    </Stack>
+
+                    <Stack 
+                        className = "loadedDesc"
+                        direction = {windowMode !== 0 ? "row": "column"}
+                        justifyContent="space-between"
+                        style = {imagesLoaded ? {}:{display: "none"}}
+                    >
                         <div>
                             <h2 className = "artTitle" 
                                 style = {windowMode === 2 ? {fontSize: "1.4rem", padding: 16}: {fontSize: "2rem", padding: 24, paddingBottom: 12}}>

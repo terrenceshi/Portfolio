@@ -89,6 +89,35 @@ function Music() {
     } else {
       audioElem.current.pause();
     }
+
+    if(first1 === true & inView1 === true){
+          setFirst1(false)
+    }
+    if(first2 === true & inView2 === true){
+          setFirst2(false)
+    }
+    if(first3 === true & inView3 === true){
+          setFirst3(false)
+    }
+    if(first4 === true & inView4 === true){
+          setFirst4(false)
+    }
+    if(first5 === true & inView5 === true){
+          setFirst5(false)
+    }
+    if(first6 === true & inView6 === true){
+          setFirst6(false)
+    }
+    window.onscroll = function() {
+      if(window.pageYOffset === 0) {
+              setFirst1(true)
+              setFirst2(true)
+              setFirst3(true)
+              setFirst4(true)
+              setFirst5(true)
+              setFirst6(true)
+      }
+};
   })
 
   const onPlaying = () => {
@@ -213,6 +242,13 @@ function Music() {
       threshold: 0.3,
   })
 
+  const [first1, setFirst1] = useState(true)
+  const [first2, setFirst2] = useState(true)
+  const [first3, setFirst3] = useState(true)
+  const [first4, setFirst4] = useState(true)
+  const [first5, setFirst5] = useState(true)
+  const [first6, setFirst6] = useState(true)
+
   return (
     <div  style = {{margin : 0}} >
       <Player playFn = {click} 
@@ -243,27 +279,27 @@ function Music() {
           className = {"Music"}
           sx = {{mt: 0}}
         >
-          <div className = {inView1 ? "trackDiv-zoom" : "trackDiv"} ref = {ref1}>
+          <div className = {inView1 || first1 === false ? "trackDiv-zoom" : "trackDiv"} ref = {ref1}>
             <Track title = {songNames[0]} clickFn = {ozClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
-          <div className = {inView2 ? "trackDiv-zoom" : "trackDiv"} ref = {ref2}>
+          <div className = {inView2 || first2 === false ? "trackDiv-zoom" : "trackDiv"} ref = {ref2}>
             <Track title = {songNames[1]} clickFn = {dinoClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
-          <div className = {inView3 ? "trackDiv-zoom" : "trackDiv"} ref = {ref3}>
+          <div className = {inView3 || first3 === false ? "trackDiv-zoom" : "trackDiv"} ref = {ref3}>
             <Track title = {songNames[2]} clickFn = {stacyClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
-          <div className = {inView4 ? "trackDiv-zoom" : "trackDiv"} ref = {ref4}>
+          <div className = {inView4 || first4 === false ? "trackDiv-zoom" : "trackDiv"} ref = {ref4}>
             <Track title = {songNames[3]} clickFn = {uvClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
-          <div className = {inView5 ? "trackDiv-zoom" : "trackDiv"} ref = {ref5}>
+          <div className = {inView5 || first5 === false ? "trackDiv-zoom" : "trackDiv"} ref = {ref5}>
             <Track title = {songNames[4]} clickFn = {jamesClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>
-          <div className = {inView6 ? "trackDiv-zoom" : "trackDiv"} ref = {ref6}>
+          <div className = {inView6 || first6 === false? "trackDiv-zoom" : "trackDiv"} ref = {ref6}>
             <Track title = {songNames[5]} clickFn = {richardClick} playing = {isPlaying} songName = {songName} windowMode = {windowMode}/>
             <Divider />
           </div>

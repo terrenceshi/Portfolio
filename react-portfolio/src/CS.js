@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import Article from "./components/Article.js"
-import b2n from "./assets/cs_thumbs/b2n.png"
+import b2n from "./assets/cs_thumbs/b2n2.png"
 import aa from "./assets/cs_thumbs/authorship_comp.jpg"
 import monaLisa from "./assets/cs_thumbs/mona_lisa.jpg"
 
