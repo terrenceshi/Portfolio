@@ -12,7 +12,7 @@ import React, { useState } from 'react';
 
 var numLoaded = 0;
 
-const ArtBox = ({ imageSrc, text, title, windowMode, load, setLoad }) => {
+const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded }) => {
     const [current, setCurrent] = useState(0)
     const length = imageSrc.length;
 
@@ -59,6 +59,7 @@ const ArtBox = ({ imageSrc, text, title, windowMode, load, setLoad }) => {
         <div className = "artBox">
             <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
                 style = {windowMode === 2 ? { margin: "5px" } : { margin: "15px"}}
+                onLoad = {()=> {setNumLoaded()} }
             />
 
             <Dialog onClose={handleClose} 

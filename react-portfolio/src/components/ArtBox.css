@@ -33,3 +33,7 @@
 .loadedDesc{
     animation: appLoad 1.25s;
 }
+
+.artBox{
+    animation: appLoad 2s;
+}
