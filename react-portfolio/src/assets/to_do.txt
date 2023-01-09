@@ -6,6 +6,9 @@
 	-have player go down when page is left (optional)
 		-may have to possibly make player a component in app.js
 
+-cs
+	-explain what number of components means
+
 -art page
 	-use original resolution images and add siggy
 
