@@ -158,7 +158,7 @@ function App() {
           <div className = 'bannerContainer'>
                 <div className = "centerBox">
                   <div style = {{textAlign: "left"}}>
-                    <Skeleton variant="text" style = {hiStyle}/>
+                    <Skeleton variant="text" style = {hiStyle} />
                     {windowMode === 3 ? <Skeleton variant="text" sx = {{fontSize: "4rem", width: 90.363}}/> : <div/>}
                     <Skeleton variant="text" style = {imStyle}/>
                   </div>
