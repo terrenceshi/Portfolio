@@ -96,3 +96,11 @@
         text-shadow: -5px 0 rgba(244, 67, 54, 1), 5px -4px rgba(33, 150, 243, 1);
    }
 }
+
+.loadedApp{
+    animation: appLoad 2s;
+}
+@keyframes appLoad {
+    0%    { opacity: 0; }
+    100%  { opacity: 1;}
+}

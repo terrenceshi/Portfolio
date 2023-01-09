@@ -1,5 +1,8 @@
 -add loading screen(s) if using large images
-	-look into preloading images so you dont deal with dumb loading
+	-set up loading hooks
+		-when all banner images are loaded, show the actual app
+
+	-when all art images are loaded, show the actual art page
 
 -CS
 	-work on making mobile view not disgusting (optional)

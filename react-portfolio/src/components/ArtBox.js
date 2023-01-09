@@ -8,7 +8,7 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 
 import React, { useState } from 'react';
 
-const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
+const ArtBox = ({ imageSrc, text, title, windowMode }) => {
     const [current, setCurrent] = useState(0)
     const length = imageSrc.length;
 
@@ -29,6 +29,10 @@ const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
+    const loadFn = () =>{
+        console.log("chads here")
+    }
+
     return (
         <div className = "artBox">
             <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
@@ -44,6 +48,7 @@ const ArtBox = ({ imageSrc, text, type, title, windowMode }) => {
                 <Stack direction = {windowMode !== 0 ? "column" : "row"}>
                     <img src = {imageSrc[current]} alt = "pic" className = "art_img_zoom" id = "art_img_zoom"
                         style={windowMode !== 0 ? { overflow: "hidden", maxHeight : 525 } : { overflow: "hidden", maxHeight : 600 }} 
+                        onLoad = {loadFn}
                     />
 
                     <Stack direction = {windowMode !== 0 ? "row": "column"} justifyContent="space-between">

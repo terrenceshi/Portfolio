@@ -1,8 +1,6 @@
 import './slider.css';
 
-import { useState, useEffect} from 'react';
-
-function Slider({sliderArr, x}) {
+function Slider({sliderArr, x, bannersLoaded, setBannersLoaded}) {
   //const [x, setX] = useState(0)
 
   /*
@@ -22,7 +20,9 @@ function Slider({sliderArr, x}) {
             return(
               //x here corresponds to which image you have open in the slider. 0 = first. -100 = second. -200 = third. etc.
               <div key = {index} className = "slide" style = {{transform: `translateX(${x}%)`}}>
-                <img src = {imgItem} alt = "slideImg" className = "slideImg"></img>
+                <img src = {imgItem} alt = "slideImg" className = "slideImg" 
+                  onLoad={() => setBannersLoaded(bannersLoaded += 1)} 
+                />
               </div>
             )
           })
