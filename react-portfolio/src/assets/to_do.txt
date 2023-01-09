@@ -1,7 +1,3 @@
--figure out art page loading
-	-can easily track all image loading using variables
-	-just react crashes when i try to do stuff
-
 -music
 	-have player go down when page is left (optional)
 		-may have to possibly make player a component in app.js
@@ -10,7 +6,8 @@
 	-explain what number of components means
 
 -art page
-	-use original resolution images and add siggy
+	-when back in college, upload 700px versions of parasyte
+	-add siggy (optional)
 
 -landing page
 	-possibly rewrite bio
