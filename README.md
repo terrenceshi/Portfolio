@@ -21,19 +21,19 @@ If there's anything in general to work on, my phone's display of zoomed in pictu
 
 5. [Art.js](#art)
 
-    5.1. [Adding New Images](#artNew)
+    5.1. [Adding New Images](#artnew)
 
-    5.2. [ArtBox.js](#artBox)
+    5.2. [ArtBox.js](#artbox)
 
 6. [CS.js](#cs)
 
     6.1. [Article.js](#article)
 
-7. [Authorship.js and Compression.js](#authorshipAndCompression)
+7. [Authorship.js and Compression.js](#authorshipandcompression)
 
 8. [Music.js](#music)
 
-    8.1. [Adding New Tracks](#musicNew)
+    8.1. [Adding New Tracks](#musicnew)
 
     8.2. [Player.js](#player)
 
@@ -165,7 +165,7 @@ Then for JSX, you basically just have a bunch of rows. WindowMode determines som
 
 ---
 
-### 5.1. Adding New Images <a name="artNew"></a>
+### 5.1. Adding New Images <a name="artnew"></a>
 
 Man, adding new images will be a huge hassle.
 
@@ -177,7 +177,7 @@ Option 1, you'll have to create a new useInView (one for the row), a new "first"
 
 ---
 
-### 5.2. ArtBox.js <a name="artBox"></a>
+### 5.2. ArtBox.js <a name="artbox"></a>
 
 Artbox.js handles its own loading, as when you click on the image, only then are the alternative images in the "slider" / "carousel" are loaded. 
 
@@ -225,7 +225,7 @@ Then for JSX, we just have a mui paper with a flexbox with the title on top and 
 
 ---
 
-## 7. Authorship.js and Compression.js <a name="authorShipAndCompression"></a>
+## 7. Authorship.js and Compression.js <a name="authorshipandcompression"></a>
 
 Both these pages got more complicated than I expected them to, but that's mainly just because of standard stuff.
 
@@ -277,7 +277,7 @@ We then have a stack which contains every track.
 
 ---
 
-### 8.1. Adding a new track <a name="musicNew"></a>
+### 8.1. Adding a new track <a name="musicnew"></a>
 
 Definitely more work than it should be.
 
