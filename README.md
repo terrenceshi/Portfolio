@@ -42,6 +42,8 @@ We also have a function handleResize() to be used in useEffect which will change
 
 App also uses "useLocation()". useLocation() will tell us which page in the app we're in. I use "useLocation" to change the banner image whenever we go to a different page. I technically should have handled this in the slider component but whatever. The only downside of doing it this way is that the banner will be changed slightly later than it should be. 
 
+---
+
 ### Slider.js
 
 Do note that on github, slider.js's first s is lowercased, but react will get mad at you for that. Be sure that Slider.js's first s is capitalized.
