@@ -1,0 +1,39 @@
+.art_img{
+    cursor: pointer;
+
+    object-fit: cover;
+    height: 25vw;
+    width: 25vw;
+}
+
+.art_img:hover {
+    -webkit-filter: brightness(60%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.arrows{
+    top: 30em;
+}
+
+.artText{
+    max-width: 300px;
+    padding: 24px;
+    padding-top: 0px;
+    margin: 0px;
+}
+
+.artTitle{
+    margin: 0px;
+}
+
+.loadedDesc{
+    animation: appLoad 1.25s;
+}
+
+.artBox{
+    animation: appLoad 2s;
+}

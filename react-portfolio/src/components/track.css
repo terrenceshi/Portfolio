@@ -1,0 +1,18 @@
+.trackTitle{
+    text-align: left;
+    padding: 30px;
+    margin: 0px;
+}
+
+.trackPlayButton{
+    margin: 30px;
+    cursor: pointer;
+}
+
+.trackStack{
+
+}
+
+.trackStack:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
