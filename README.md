@@ -2,11 +2,15 @@ Welp, figured I'd write some documentation while everything is still fresh on my
 
 ## Redeploying Frontend
 
-### npm run deploy
+```
+npm run deploy
+```
 
 npm run deploy is your god. Note the importance of "deploy" under "scripts" in package.json. 
 
-### "gh-pages -b gh3 -d build"
+```
+gh-pages -b gh3 -d build
+```
 
 This command will put your build in a branch titled "gh3" (it will not overwrite the branch if the branch already exists). By default, it writes to a branch called "gh-pages". However, I have not been able to get it to work in this deployment phase.
 
