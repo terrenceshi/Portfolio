@@ -46,13 +46,30 @@ const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded 
 
     let maxH;
     let skMb;
+    let artTitleStyle;
 
     if(windowMode === 0){
         maxH = 600;
         skMb = 0;
-    } else {
+        artTitleStyle = {
+            fontSize: "2rem",
+            padding: 24,
+            paddingBottom: 12
+        }
+    } else if(windowMode === 1){
         maxH = 525;
         skMb = 24;
+        artTitleStyle = {
+            fontSize: "2rem",
+            padding: 24,
+        }
+    } else if(windowMode === 2){
+        maxH = 525;
+        skMb = 24;
+        artTitleStyle = {
+            fontSize: "1.2rem", 
+            padding: 16
+        }
     }
 
     return (
@@ -112,7 +129,7 @@ const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded 
                     >
                         <div>
                             <h2 className = "artTitle" 
-                                style = {windowMode === 2 ? {fontSize: "1.4rem", padding: 16}: {fontSize: "2rem", padding: 24, paddingBottom: 12}}>
+                                style = {artTitleStyle}>
                                 {title}
                             </h2>
                             <p className = "artText" style = {windowMode !== 0 ? { display: "none"} : { display: "block"}}>{text}</p>
@@ -123,11 +140,12 @@ const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded 
                             alignItems="center"
                             justifyContent="space-between"
                             className = "arrows"
+                            style = {imageSrc.length === 1 ? { display: "none"} : {}}
                         >
                             <IconButton 
                                 color="white" 
                                 onClick = {leftArrow}
-                                style = {imageSrc.length === 1 ? { display: "none"} : {}}
+                                style = {windowMode === 0 ? {}:{paddingTop: 0, paddingBottom: 0}}
                             >
                                 <ArrowLeftIcon 
                                      sx={windowMode === 2 ?
@@ -141,7 +159,7 @@ const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded 
                             <IconButton 
                                 color="white" 
                                 onClick = {rightArrow}
-                                style = {imageSrc.length === 1 ? { display: "none"} : {}}
+                                style = {windowMode === 0 ? {}:{paddingTop: 0, paddingBottom: 0}}
                             >
                                 <ArrowRightIcon 
                                      sx={windowMode === 2 ?

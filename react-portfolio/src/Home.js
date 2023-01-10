@@ -67,8 +67,15 @@ function Home() {
     homeHeight = "100%";
   }
 
+  let th;
+  if(windowMode === 2){
+    th = 0.01;
+  } else{
+    th = 0.2;
+  }
+
   const [ ref, inView ] = useInView({
-    threshold: 0.2
+    threshold: th,
   })
 
   useEffect(() => {
@@ -88,7 +95,7 @@ function Home() {
             <div className ="bioRow" style = {{flexDirection : brFlexDir, alignItems : brAlignItems}}>
               <p className = "bio">
                 I'm a CS grad student at Georgia Tech. There, I'm studying Machine Learning and Computer Graphics.
-                Academics are super hard but I still try to find time to work on my own projects and have fun.
+                Academics are super hard, but in my free time, I like to draw, make music, and work out.
                 <br></br>
                 <br></br>
               </p>

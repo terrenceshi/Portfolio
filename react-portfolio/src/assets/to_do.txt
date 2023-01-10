@@ -1,16 +1,5 @@
--music
-	-have player go down when page is left (optional)
-		-may have to possibly make player a component in app.js
-
--cs
-	-explain what number of components means
-
 -art page
 	-when back in college, upload 700px versions of parasyte
-	-add siggy (optional)
-
--landing page
-	-possibly rewrite bio
 
 -banner
 	-consider other options

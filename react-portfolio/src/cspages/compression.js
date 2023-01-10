@@ -154,8 +154,9 @@ function Compression() {
         This first method utilizes SVD (Singular Value Decomposition). An image is essentially a matrix 
         of pixel values. We then decompose the matrix into three different matrices using linear algebra 
         techniques and essentially reduce the size of the matrices. For colored images, you store red, green, 
-        and blue values into three matrices and have to perform SVD for each matrix. Here are the results 
-        (note that RV = Recovered Variance):
+        and blue values into three matrices and have to perform SVD for each matrix. Note that RV refers 
+        "Recovered Variance", and "Number of Components" refers to number of Singular Values, which essentially
+        controls the size of the matrices we decompose the original matrix into. Here are the results:
         </p>
 
         <Stack direction = {windowMode >= 2 ? "column":"row"}
