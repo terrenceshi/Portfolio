@@ -6,8 +6,11 @@ If there's anything in general to work on, my phone's display of zoomed in pictu
 
 # Table of contents
 1. [Redeploying Frontend](#redeploying_frontend)
+2. [Index.js](#index)
+3. [App.js](#app)
+    3.1. [Slider.js](#slider)
 
-## Redeploying Frontend <a name="redeploying_frontend"></a>
+## 1. Redeploying Frontend <a name="redeploying_frontend"></a>
 
 ```
 npm run deploy
@@ -25,13 +28,13 @@ It is possible to simply just alternate between two branches for every time you 
 
 After your new branch is created, go to settings -> pages. You can then tell github to change the branch that builds the site. You will have to change "homepage" under package.json if the custom domain ever changes. If using a new custom domain, be sure to copy the records from the old domain or books2nooks. Be sure to also change the cname file under the public folder. 
 
-## Index.js
+## 2. Index.js <a name="index"></a>
 
 Nothing really special here. However, do note that a hashrouter is literally just better than a regular browser router. I had this issue where terrenceshi.com/art or any other link would not be able to load if you went to it straight. However, with a hashrouter, terrenceshi.com/#/art will load wherever. Do note that with a hashrouter, you do need a /# after your domain name in "homepage" under package.json.
 
 Additionally, we also use a component called ScrollToTop here so that every time you use a react link, you scroll to the top. The code in that component is copy pasted. 
 
-## App.js
+## 3. App.js <a name="app"></a>
 
 Our first huge bulky boy. App.js handles the banner, footer, and routes. 
 
@@ -47,7 +50,7 @@ App also uses "useLocation()". useLocation() will tell us which page in the app 
 
 ---
 
-### Slider.js
+### 3.1. Slider.js <a name="slider"></a>
 
 Do note that on github, slider.js's first s is lowercased, but react will get mad at you for that. Be sure that Slider.js's first s is capitalized.
 
