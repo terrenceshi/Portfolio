@@ -6,8 +6,11 @@ If there's anything in general to work on, my phone's display of zoomed in pictu
 
 # Table of contents
 1. [Redeploying Frontend](#redeploying_frontend)
+
 2. [Index.js](#index)
+
 3. [App.js](#app)
+
     3.1. [Slider.js](#slider)
 
 ## 1. Redeploying Frontend <a name="redeploying_frontend"></a>
