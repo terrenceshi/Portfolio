@@ -13,6 +13,32 @@ If there's anything in general to work on, my phone's display of zoomed in pictu
 
     3.1. [Slider.js](#slider)
 
+    3.2. [Navbar.js](#navbar)
+
+4. [Home.js](#home)
+
+    4.1. [Circlebar.js](#circlebar)
+
+5. [Art.js](#art)
+
+    5.1. [Adding New Images](#artNew)
+
+    5.2. [ArtBox.js](#artBox)
+
+6. [CS.js](#cs)
+
+    6.1. [Article.js](#article)
+
+7. [Authorship.js and Compression.js](#authorshipAndCompression)
+
+8. [Music.js](#music)
+
+    8.1. [Adding New Tracks](#musicNew)
+
+    8.2. [Player.js](#player)
+
+    8.3. [Track.js](#track)
+
 ## 1. Redeploying Frontend <a name="redeploying_frontend"></a>
 
 ```
@@ -77,7 +103,7 @@ https://www.youtube.com/watch?v=0Zlmpbh1s6o&t=1471s
 
 ---
 
-### Navbar.js
+### 3.2. Navbar.js <a name="navbar"></a>
 
 Copy pasted component from before with improvements.
 
@@ -99,7 +125,7 @@ href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.cs
 
 This lets us use classNames for our icons. We also have some css copy pasted which does in our animation.
 
-## Home.js
+## 4. Home.js <a name="home"></a>
 
 Oh god, home.js gave me so many headaches.
 
@@ -113,7 +139,7 @@ We use similar CSS as in app's banner to ensure that the home page component is 
 
 ---
 
-### Circlebar.js
+### 4.1. Circlebar.js <a name="circlebar"></a>
 
 Circlebar.js encompasses the whole paper card with the text and everything. We downloaded the circlebar from 'react-circular-progressbar' because custom circlebars had visual imperfections. We also use inView to make the circlebar's bar go up percentages. 
 
@@ -121,7 +147,7 @@ Circlebar.js encompasses the whole paper card with the text and everything. We d
 
 Home.js's window sizing basically has some preset widths that work for various window sizes (obviously these widths are never bigger than the window size). Once you go mobile, the flexboxes display items in a column way instead of a row way. Note that setting bioBox's  (div containing all bio stuff) width stuff to maxWidth instead of width literally fixes a crazy bug where mobile view looks terrible (bioBox for some reason stays at ~600 pixels even in mobile view's 300 pixel layout).
 
-## Art.js
+## 5. Art.js <a name="art"></a>
 
 Art.js became way more complicated than it had to be because of loading stuff. If I had to do this again, maybe I'd try to do it in a smart way where react will automate stuff for me, because now, updating images will be hard. I expect I will have to shift every image down whenever I add a new one, unless I have three new entries. 
 
@@ -139,7 +165,7 @@ Then for JSX, you basically just have a bunch of rows. WindowMode determines som
 
 ---
 
-### Adding New Images
+### 5.1. Adding New Images <a name="artNew"></a>
 
 Man, adding new images will be a huge hassle.
 
@@ -151,7 +177,7 @@ Option 1, you'll have to create a new useInView (one for the row), a new "first"
 
 ---
 
-### ArtBox.js
+### 5.2. ArtBox.js <a name="artBox"></a>
 
 Artbox.js handles its own loading, as when you click on the image, only then are the alternative images in the "slider" / "carousel" are loaded. 
 
@@ -171,7 +197,7 @@ There are a lot of stacks here because stacks are basically flexboxes and are ea
 
 ---
 
-## CS.js
+## 6. CS.js <a name="cs"></a>
 
 CS.js was okay I guess. Very standard page. 
 
@@ -183,7 +209,7 @@ In terms of JSX, we just have our articles piled on one another. Margins change 
 
 ---
 
-### Article.js
+### 6.1. Article.js <a name="article"></a>
 
 Honestly, I wrote Article.js with a lot of inexperience. I didn't know you could literally, during jsx, just add javascript to render what you wanted based off a boolean. IE:
 
@@ -199,7 +225,7 @@ Then for JSX, we just have a mui paper with a flexbox with the title on top and 
 
 ---
 
-## Authorship.js and Compression.js
+## 7. Authorship.js and Compression.js <a name="authorShipAndCompression"></a>
 
 Both these pages got more complicated than I expected them to, but that's mainly just because of standard stuff.
 
@@ -209,7 +235,7 @@ Authorship JSX is just text and images on top of each other. There are some flex
 
 Compression JSX has more flexbox stuff (MUI stack), as we have like grids with 3x2 images (6 total) and 5x1 images (5 total). Each image is also in a stack with subtitles and such. This was all done, as our original images were not dark mode friendly. These flexboxes also become column when mobile.
 
-## Music.js
+## 8. Music.js <a name="music"></a>
 
 Music.js probably is the most complicated page. I did base my code off of a youtube video. I don't remember which one, but that's fine, as I'm sure all react music player images are similar enough, and I actually understand what these files do.
 
@@ -251,7 +277,7 @@ We then have a stack which contains every track.
 
 ---
 
-### Adding a new track
+### 8.1. Adding a new track <a name="musicNew"></a>
 
 Definitely more work than it should be.
 
@@ -265,7 +291,7 @@ Copy paste a track element to the bottom of the stack in the JSX section.
 
 ---
 
-### Player.js
+### 8.2. Player.js <a name="player"></a>
 
 The controller of the music page.
 
@@ -289,7 +315,7 @@ With the window becoming smaller, the sliders become smaller and eventually with
 
 ---
 
-### Track.js
+### 8.3. Track.js <a name="track"></a>
 
 Honestly fairly simple.
 
