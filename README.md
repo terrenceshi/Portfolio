@@ -4,7 +4,10 @@ Welp, figured I'd write some documentation while everything is still fresh on my
 
 If there's anything in general to work on, my phone's display of zoomed in pictures on the art page has the pictures stretched. However, I honestly have no idea how I could reproduce this issue on my computer.
 
-## Redeploying Frontend
+# Table of contents
+1. [Redeploying Frontend](#redeploying_frontend)
+
+## Redeploying Frontend <a name="redeploying_frontend"></a>
 
 ```
 npm run deploy
