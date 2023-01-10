@@ -1,4 +1,8 @@
+# terrenceshi.com
+
 Welp, figured I'd write some documentation while everything is still fresh on my mind. Let's do this!
+
+If there's anything in general to work on, my phone's display of zoomed in pictures on the art page has the pictures stretched. However, I honestly have no idea how I could reproduce this issue on my computer.
 
 ## Redeploying Frontend
 
@@ -38,4 +42,25 @@ We also have a function handleResize() to be used in useEffect which will change
 
 App also uses "useLocation()". useLocation() will tell us which page in the app we're in. I use "useLocation" to change the banner image whenever we go to a different page. I technically should have handled this in the slider component but whatever. The only downside of doing it this way is that the banner will be changed slightly later than it should be. 
 
-Speaking of the slider,
+### Slider.js
+
+Do note that on github, slider.js's first s is lowercased, but react will get mad at you for that. Be sure that Slider.js's first s is capitalized.
+
+The Slider is essentially a flexbox of multiple images. Here I have 4. Each image has 100% width and height so each takes up the entire screen. Every time you swap images (move to the right), every single image moves -100. Left is +100. If you go to the right most or left most image, you are able to go to nothing if you don't handle your movement well: the slider is not infinite. 
+
+You can change the time it takes for the slider to slide by changing the transition property in slider.css.
+
+---
+
+In app.js, I basically have a react hook [x, setX] that modifies itself based on the location. For example, if the location is "Art" and our x does not correspond to Art's x value (-100 because it is the second page and home, the first page, has a value of 0), then we set x to be -100, moving the slider.
+
+If you're super rusty, a react hook or useState is simply a value that will cause react to rerender itself. [x, setX]'s x is simply a variable. setX is a function that will change x's value. Whenever you use setX, any div that depends on x will be rerendered. There are issues with setting useState variables in useEffect, as you can possibly enter an infinite loop of rerendered the document, but react will throw you an error if that happens. I also honestly find it safer setting useState variables in useEffect if you have no other choice.
+
+We then have a chain of if statements that determine the style of a certain div. This is done honestly just because there are so many options. Typically, if a div's style only has 2 choices, you can just use a ternary operator (the question mark: ?).
+
+In the actual jsx part (the stuff that looks like html and css), everything is wrapped in a div called "loadedApp". Above is a div called "loadingApp". "loadingApp" will only show itself before all banner images are loaded. Once all banner images are loaded, we can see the actual "loadedApp". 
+
+The banner follows CSS from the video below. I still don't fully understand but its honestly not that huge of a deal.
+
+https://www.youtube.com/watch?v=0Zlmpbh1s6o&t=1471s
+
