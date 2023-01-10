@@ -103,7 +103,8 @@ We also have a useState for whether profile picture is loaded. If not, we have s
 We use similar CSS as in app's banner to ensure that the home page component is full width and height of the window. Then, there's a flexbox for my bio and profile picture; then another flexbox for the circle bars. 
 
 ---
-# Circlebar.js
+
+### Circlebar.js
 
 Circlebar.js encompasses the whole paper card with the text and everything. We downloaded the circlebar from 'react-circular-progressbar' because custom circlebars had visual imperfections. We also use inView to make the circlebar's bar go up percentages. 
 
@@ -129,7 +130,7 @@ Then for JSX, you basically just have a bunch of rows. WindowMode determines som
 
 ---
 
-# Adding New Images
+### Adding New Images
 
 Man, adding new images will be a huge hassle.
 
@@ -141,7 +142,7 @@ Option 1, you'll have to create a new useInView (one for the row), a new "first"
 
 ---
 
-# ArtBox.js
+### ArtBox.js
 
 Artbox.js handles its own loading, as when you click on the image, only then are the alternative images in the "slider" / "carousel" are loaded. 
 
@@ -173,7 +174,7 @@ In terms of JSX, we just have our articles piled on one another. Margins change 
 
 ---
 
-# Article.js
+### Article.js
 
 Honestly, I wrote Article.js with a lot of inexperience. I didn't know you could literally, during jsx, just add javascript to render what you wanted based off a boolean. IE:
 
@@ -241,7 +242,7 @@ We then have a stack which contains every track.
 
 ---
 
-# Adding a new track
+### Adding a new track
 
 Definitely more work than it should be.
 
@@ -255,7 +256,7 @@ Copy paste a track element to the bottom of the stack in the JSX section.
 
 ---
 
-# Player.js
+### Player.js
 
 The controller of the music page.
 
@@ -279,7 +280,7 @@ With the window becoming smaller, the sliders become smaller and eventually with
 
 ---
 
-# Track.js
+### Track.js
 
 Honestly fairly simple.
 
