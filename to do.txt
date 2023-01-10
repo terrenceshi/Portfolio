@@ -1,7 +1,0 @@
--figure out portfolio layout
-
--make sure skill bar is border radius'd
--write the CS page LOL
-
--music
--video
