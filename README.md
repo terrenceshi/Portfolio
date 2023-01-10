@@ -243,7 +243,7 @@ Start with standard window resizing stuff.
 
 We have an array for the actual song sources and another for their names. That probably wasn't the smartest way to do it (maybe an array of dictionaries could be better), but that's fine.
 
-We have a bunch of useState variables for isPlaying, currentSong, songName, songDuration, currentTime, maxDuration, volume, and mute. We use a react useRef() function to refer to the audio element. 
+We have a bunch of useState variables for isPlaying, currentSong, songName, songDuration, currentTime, maxDuration, volume, and mute. We use a react useRef() function to refer to the audio element. Note that maxDuration is hardcoded to 0:25 at first, as that is the first track's duration. I would try to get that information programatically but its much more difficult doing so than you'd expect. If I don't hardcode it, then it will be NaN instead of 0:25.
 
 Under useEffect(), we do a few things.
 
