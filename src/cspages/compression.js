@@ -4,8 +4,6 @@ import './cspage.css';
 
 import Stack from '@mui/material/Stack';
 
-import gmm from "./../assets/cs_thumbs/gmm_white.png"
-
 import svd1 from "./../assets/cs_thumbs/svd1.png"
 import svd2 from "./../assets/cs_thumbs/svd2.png"
 import svd5 from "./../assets/cs_thumbs/svd5.png"

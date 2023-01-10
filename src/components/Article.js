@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Skeleton from '@mui/material/Skeleton';
 
 import { Link } from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 
 const externalReadMore = ({link}) => {
     return (

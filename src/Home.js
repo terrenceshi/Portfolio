@@ -100,7 +100,7 @@ function Home() {
                 <br></br>
               </p>
 
-              <img src = {pfp} className = "pfp" id = "pfp" onLoad = {() => setPfpLoaded(true)} style = {pfpLoaded ? {}:{display: "none"}}/>
+              <img src = {pfp} className = "pfp" alt = "pfp" onLoad = {() => setPfpLoaded(true)} style = {pfpLoaded ? {}:{display: "none"}}/>
               <div >
                 <Skeleton variant="circular" width={175} height={175} style = {pfpLoaded ? {display: "none"}:{margin: 25, marginTop: 15}}/>
               </div>
