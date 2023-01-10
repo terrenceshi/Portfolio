@@ -114,8 +114,6 @@ const setLoad12 = () => {
         load12 = true
 }
 
-var firstAll = true;
-
 function Art() {
         //refs and inviews for each row
         const [ ref1, inView1, entry1 ] = useInView({
@@ -195,9 +193,8 @@ function Art() {
                                 setFirst2L(true)
                         }
                 };
-                if(load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12 & firstAll){
+                if(load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12){
                         setAllLoaded(true)
-                        firstAll = false;
                 }
                 
         })
