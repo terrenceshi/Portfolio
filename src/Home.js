@@ -105,8 +105,6 @@ function Home() {
                 <Skeleton variant="circular" width={175} height={175} style = {pfpLoaded ? {display: "none"}:{margin: 25, marginTop: 15}}/>
               </div>
 
-              
-
             </div>
           </div>
 
