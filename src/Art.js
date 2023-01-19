@@ -109,8 +109,6 @@ function Art() {
         const [load11, setLoad11] = useState(false)
         const [load12, setLoad12] = useState(false)
 
-        const [allLoaded, setAllLoaded] = useState(false);
-
         const handleResize = () => {
                 if (window.innerWidth >= 970){
                   setWindowMode(0)
@@ -156,9 +154,6 @@ function Art() {
                                 setFirst2L(true)
                         }
                 };
-                if(load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12){
-                        setAllLoaded(true)
-                }
                 
         })
 
@@ -166,7 +161,9 @@ function Art() {
         <div className="Art">
                 <div style = {windowMode === 2 ? {paddingTop: 30, paddingBottom: 0}:{paddingTop: 60, paddingBottom: 60}}>
                         <div className = {inView1 || first1 === false ? "artRow-zoom":"artRow"} ref = {ref1}>
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[getOut, getOut1, getOut2, getOut3, getOut4, getOut5]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad1} 
                                         title  = "Get Out"
@@ -174,12 +171,16 @@ function Art() {
                                                 I wanted to try a style of having sharp edges and clear geometric shapes for this facial study."}/>
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
                                 
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[para, para1,para2,para3,para4,para5,para6,para7,para9]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad2}
                                         title  = "Split Face"
@@ -187,19 +188,25 @@ function Art() {
                                                 geometric planes to make this painting from imagination, lighting and everything."} />
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
                                 
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[eren, eren1,eren2,eren3,eren4,eren5]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad3}
                                         title  = "Eren Yeager"
                                         text = {"I wanted to make something Attack on Titan related since Season 4 aired. After a few other sketches, I settled on something Eren focused."}/>
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
@@ -207,43 +214,57 @@ function Art() {
                         </div>
 
                         <div className = {inView2 || first2 === false ? "artRow-zoom":"artRow"} ref = {ref2}>
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[ramiGif, ramiAngry, ramiHappy, ramiSad, ramiSurprised]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad4}
                                         title  = "3D Head"
                                         text = {"I needed to get some practice modeling, rigging, and skinning the human face. This additionally helped my knowledge of anatomy. I chose Rami Malek as my base, as I had recently seen 'No Time to Die', and his face looks nice."}/>        
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
 
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[hl,hl1,hl2,hl3,hl4,hl5]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad5}
                                         title = "Homelander"
                                         text = {"Simple drawing from a frame of the television series, The Boys. Testing out polygonal lasso style drawing trying to capture Anthony Starr's facial expression."}/>
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
-                                <div style = {allLoaded ? {}:{display: "none"}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {}:{display: "none"}}
+                                >
                                         <ArtBox imageSrc = {[bizFront, bizBack, poster]}
                                         windowMode = {windowMode} setNumLoaded = {setLoad6}
                                         title = "Price Heist"
                                         text = {"I imagined and designed a fictional pirating software company as a project. Here's my card!"}/>
                                 </div>
 
-                                <div style = {allLoaded ? {display: "none"}:{}}>
+                                <div style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                ? {display: "none"}:{}}
+                                >
                                         <Skeleton variant="rectangular" width={"25vw"} height={"25vw"} 
                                         style = {windowMode === 2 ? {margin:5}:{margin:15}}/>
                                 </div>
                         </div>
 
-                        <div className = "artToLoad" style = {allLoaded ? {}:{display: "none"}}>
+                        <div className = "artToLoad" style = {load1 & load2 & load3 & load4 & load5 & load6 & load7 & load8 & load9 & load10 & load11 & load12
+                                                                ? {}:{display: "none"}}
+                        >
                                 <div className = {inView3 || first3 === false ? "artRow-zoom":"artRow"} ref = {ref3}>
                                         <ArtBox imageSrc = {[portal]}
                                                 windowMode = {windowMode} setNumLoaded = {setLoad7}
