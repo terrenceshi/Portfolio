@@ -76,7 +76,7 @@ const ArtBox = ({ imageSrc, text, title, windowMode, setNumLoaded, getNumLoaded 
         <div className = "artBox">
             <img src = {imageSrc[0]} alt = "pic" className = "art_img" onClick={handleToggle}
                 style = {windowMode === 2 ? { margin: "5px" } : { margin: "15px"}}
-                onLoad = {()=> {setNumLoaded()} }
+                onLoad = {()=> {setNumLoaded(true)} }
             />
 
             <Dialog onClose={handleClose} 

@@ -64,59 +64,9 @@ function getWindowDimensions() {
         }
 }
 
-var load1 = false
-var load2 = false
-var load3 = false
-var load4 = false
-var load5 = false
-var load6 = false
-var load7 = false
-var load8 = false
-var load9 = false
-var load10 = false
-var load11 = false
-var load12 = false
-
-const setLoad1 = () => {
-        load1 = true
-}
-const setLoad2 = () => {
-        load2 = true
-}
-const setLoad3 = () => {
-        load3 = true
-}
-const setLoad4 = () => {
-        load4 = true
-}
-const setLoad5 = () => {
-        load5 = true
-}
-const setLoad6 = () => {
-        load6 = true
-}
-const setLoad7 = () => {
-        load7 = true
-}
-const setLoad8 = () => {
-        load8 = true
-}
-const setLoad9 = () => {
-        load9 = true
-}
-const setLoad10 = () => {
-        load10 = true
-}
-const setLoad11 = () => {
-        load11 = true
-}
-const setLoad12 = () => {
-        load12 = true
-}
-
 function Art() {
         //refs and inviews for each row
-        const [ ref1, inView1, entry1 ] = useInView({
+        const [ ref1, inView1 ] = useInView({
                 threshold: 0.2,
         })
         const [ ref2, inView2 ] = useInView({
@@ -145,6 +95,19 @@ function Art() {
 
         const [first1L, setFirst1L] = useState(true)
         const [first2L, setFirst2L] = useState(true)
+
+        const [load1, setLoad1] = useState(false)
+        const [load2, setLoad2] = useState(false)
+        const [load3, setLoad3] = useState(false)
+        const [load4, setLoad4] = useState(false)
+        const [load5, setLoad5] = useState(false)
+        const [load6, setLoad6] = useState(false)
+        const [load7, setLoad7] = useState(false)
+        const [load8, setLoad8] = useState(false)
+        const [load9, setLoad9] = useState(false)
+        const [load10, setLoad10] = useState(false)
+        const [load11, setLoad11] = useState(false)
+        const [load12, setLoad12] = useState(false)
 
         const [allLoaded, setAllLoaded] = useState(false);
 
