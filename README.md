@@ -4,6 +4,9 @@ Welp, figured I'd write some documentation while everything is still fresh on my
 
 If there's anything in general to work on, my phone's display of zoomed in pictures on the art page has the pictures stretched. However, I honestly have no idea how I could reproduce this issue on my computer. Additionally, the timeline in the music page does not seem super centered sometimes. May have to add some margin or something to the volume set to balance out the play buttons.
 
+## Most Recent Change
+Changed up art.js and artbox.js to fix loading issue. Previously, you had to scroll around to make the images show themselves, even if they were loaded already. Used some react states, got rid of allLoaded useState, and moved some code around to fix this. (1/19/23)
+
 # Table of contents
 1. [Redeploying Frontend](#redeploying_frontend)
 
@@ -153,9 +156,7 @@ Art.js became way more complicated than it had to be because of loading stuff. I
 
 Start with some window dimension stuff.
 
-The loading is kind of scuffed because I honestly am not fully sure of the best ways to pass data between components. We have a bunch of loading boolean variables and functions to set them as true. They probably could have been useStates but I was scared of react rerendering too much. 
-
-We have 12 art images on this page. Each art image gets a loading boolean variable and sets it to true with the function. Once all 12 loading variables are true, we set useState variable allLoaded as true. allLoaded stops setting the last 2 rows of pictures's display to none and also sets it so that the first 2 rows show images instead of mui skeletons. 
+The loading is kind of scuffed because I honestly am not fully sure of the best ways to pass data between components. We have a bunch of useState loading boolean variables and functions to set them as true. artBox.js takes in the function and once the image is loaded, it sets the loading useState variable to true. Once all loading useState variables are true, we will get rid of loading skeletons and show images. Before all images are loaded, we only see two rows of images.
 
 We have 4 useInView sets for each row (3 images per row). In addition, we also have a "first" useState variable for each useInView set (eg: first1, firs2, first3, first4). Basically, this sets it so that image rows cannot reappear after appearing when scrolling up, as that looks bad. 
 
