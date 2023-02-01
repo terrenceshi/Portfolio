@@ -2,7 +2,13 @@
 
 Welp, figured I'd write some documentation while everything is still fresh on my mind. Let's do this!
 
-If there's anything in general to work on, my phone's display of zoomed in pictures on the art page has the pictures stretched. However, I honestly have no idea how I could reproduce this issue on my computer. Additionally, the timeline in the music page does not seem super centered sometimes. May have to add some margin or something to the volume set to balance out the play buttons.
+## Known issues / to do
+
+* My phone's display of zoomed in pictures on the art page has the pictures stretched. However, I honestly have no idea how I could reproduce this issue on my computer. Other people's phones have it work properly, so I don't know. 
+
+* The timeline in the music page does not seem super centered sometimes. May have to add some margin or something to the volume set to balance out the play buttons.
+
+* On big monitors, home page is tiny. RETHINK structure of home page.
 
 ## Most Recent Change (1/19/23)
 Changed up art.js and artbox.js to fix loading issue. Previously, you had to scroll around to make the images show themselves, even if they were loaded already. Used some react states, got rid of allLoaded useState, and moved some code around to fix this. 
