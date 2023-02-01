@@ -10,6 +10,8 @@ Welp, figured I'd write some documentation while everything is still fresh on my
 
 * On big monitors, home page is tiny. RETHINK structure of home page.
 
+* Maybe make hamburger menu links integrated into the menu item. Could fix phone issue of button press not going through.
+
 ## Most Recent Change (1/19/23)
 Changed up art.js and artbox.js to fix loading issue. Previously, you had to scroll around to make the images show themselves, even if they were loaded already. Used some react states, got rid of allLoaded useState, and moved some code around to fix this. 
 
