@@ -1,7 +1,7 @@
 {
   "name": "react-portfolio",
   "version": "0.1.0",
-  "homepage": "https://terrenceshi.com/#",
+  "homepage": "https://imterrence.com/#",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh6 -d build"
+    "deploy": "gh-pages -b gh8 -d build"
   },
   "eslintConfig": {
     "extends": [
