@@ -75,10 +75,12 @@ Changing the domain name is as easy as simply following a list of steps.
 * Go to the github settings tab and tell it to use your custom domain. This might be a necessary first step because github creates cname files.
 
 * Edit your custom domain's DNS settings so that they point to github pages.
-** Add 185.199.111.153
-** 185.199.110.153
-** 185.199.109.153
-** 185.199.108.153
+* Add 185.199.111.153, 185.199.110.153, 185.199.109.153, 185.199.108.153 as an A record. (Check here if these values are outdated https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider)
+* Add a CNAME with a value of "www" that points to "terrenceshi.github.io."
+
+* Make sure you go to package.json and edit the homepage value to your new domain name. As of now, the homepage value is "https://imterrence.com/#". We have /# as we are using a hashrouter.
+
+Article source: https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58.
 
 ## 2. Index.js <a name="index"></a>
 
