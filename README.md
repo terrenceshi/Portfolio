@@ -18,6 +18,8 @@ Changed up art.js and artbox.js to fix loading issue. Previously, you had to scr
 # Table of contents
 1. [Redeploying Frontend](#redeploying_frontend)
 
+    1.1. [Custom Domain](#domain)
+
 2. [Index.js](#index)
 
 3. [App.js](#app)
@@ -68,7 +70,7 @@ It is possible to simply just alternate between two branches for every time you 
 
 After your new branch is created, go to settings -> pages. You can then tell github to change the branch that builds the site. You will have to change "homepage" under package.json if the custom domain ever changes. If using a new custom domain, be sure to copy the records from the old domain or books2nooks. Be sure to also change the cname file under the public folder. 
 
-### 1.1 Changing domain name
+### 1.1 Custom Domain <a name="domain"></a>
 
 Changing the domain name is as easy as simply following a list of steps.
 
