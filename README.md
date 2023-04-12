@@ -1,4 +1,4 @@
-# terrenceshi.com
+# imterrence.com
 
 Welp, figured I'd write some documentation while everything is still fresh on my mind. Let's do this!
 
@@ -67,6 +67,18 @@ This command will put your build in a branch titled "gh3" (it will not overwrite
 It is possible to simply just alternate between two branches for every time you redeploy the app. While this is kind of stupid, its not a bad habit to have, as the old branch can serve as a last working good if the new build has any errors.
 
 After your new branch is created, go to settings -> pages. You can then tell github to change the branch that builds the site. You will have to change "homepage" under package.json if the custom domain ever changes. If using a new custom domain, be sure to copy the records from the old domain or books2nooks. Be sure to also change the cname file under the public folder. 
+
+### 1.1 Changing domain name
+
+Changing the domain name is as easy as simply following a list of steps.
+
+* Go to the github settings tab and tell it to use your custom domain. This might be a necessary first step because github creates cname files.
+
+* Edit your custom domain's DNS settings so that they point to github pages.
+** Add 185.199.111.153
+** 185.199.110.153
+** 185.199.109.153
+** 185.199.108.153
 
 ## 2. Index.js <a name="index"></a>
 
