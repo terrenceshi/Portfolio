@@ -12,8 +12,8 @@ Welp, figured I'd write some documentation while everything is still fresh on my
 
 * Maybe make hamburger menu links integrated into the menu item. Could fix phone issue of button press not going through.
 
-## Most Recent Change (1/19/23)
-Changed up art.js and artbox.js to fix loading issue. Previously, you had to scroll around to make the images show themselves, even if they were loaded already. Used some react states, got rid of allLoaded useState, and moved some code around to fix this. 
+## Most Recent Change (5/29/23)
+Added Azula art. Don't like how it's framed in the preview. Should look into changing that. Additionally, the process of adding pictures to the art page is painful unless you replace an image. Should look into having data in a json file then parsing that.
 
 # Table of contents
 1. [Redeploying Frontend](#redeploying_frontend)
